@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "维修记录",
+  "usingComponents": {
+    "rreecc": "/pages/template/recordTemple/recordTemple"
+  }
+}

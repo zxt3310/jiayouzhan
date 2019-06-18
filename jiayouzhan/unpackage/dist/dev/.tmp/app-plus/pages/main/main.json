@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "维修记录",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "维修申请",
+        "fontSize": "12",
+        "color": "#0FAEFF",
+        "width": "80px"
+      }
+    ]
+  },
+  "usingComponents": {
+    "rreecc": "/pages/template/recordTemple/recordTemple"
+  }
+}
