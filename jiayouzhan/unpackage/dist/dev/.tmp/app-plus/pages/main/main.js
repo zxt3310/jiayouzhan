@@ -143,6 +143,17 @@ var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | page
   methods: {},
 
 
+  onNavigationBarButtonTap: function onNavigationBarButtonTap() {
+    if (this.hasLogin) {
+      uni.navigateTo({
+        url: '../startRepairReq/startRepairReq' });
+
+    } else {
+      uni.navigateTo({
+        url: '../login/login' });
+
+    }
+  },
   onLoad: function onLoad() {var _this = this;
     if (!this.hasLogin) {
       uni.showModal({

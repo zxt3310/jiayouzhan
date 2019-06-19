@@ -35,7 +35,7 @@ const store = new Vuex.Store({
          * 是否需要强制登录
          */
         forcedLogin: false,
-        hasLogin: false,
+        hasLogin: true,
         userName: ""
     },
     mutations: {

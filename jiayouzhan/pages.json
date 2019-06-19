@@ -32,8 +32,10 @@
             }
         }
         ,{
-            "path" : "template/recordTemple/recordTemple",
-            "style" : {}
+            "path" : "pages/startRepairReq/startRepairReq",
+            "style" : {
+				"navigationBarTitleText": "维修申请"
+			}
         }
     ],
     "tabBar": {

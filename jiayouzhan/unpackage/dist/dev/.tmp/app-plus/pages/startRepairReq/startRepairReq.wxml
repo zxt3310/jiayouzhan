@@ -1,0 +1,1 @@
+<view><button type="primary" data-event-opts="{{[['tap',[['pickershow',['$event']]]]]}}" bindtap="__e">联动</button><mpvue-picker class="vue-ref" vue-id="1" mode="{{mode}}" pickerValueArray="{{pickerAry}}" pickerValueDefault="{{pickerDefault}}" deepLenth="{{deep}}" data-ref="mpvuePicker" bind:__l="__l"></mpvue-picker></view>

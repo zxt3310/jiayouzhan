@@ -43,6 +43,17 @@
 		methods:{
 			
 		},
+		onNavigationBarButtonTap() {
+			if (this.hasLogin) {
+				uni.navigateTo({
+					url:'../startRepairReq/startRepairReq'
+				});
+			} else{
+				uni.navigateTo({
+					url: '../login/login'
+                });
+			}
+		},
         onLoad() {
             if (!this.hasLogin) {
                 uni.showModal({

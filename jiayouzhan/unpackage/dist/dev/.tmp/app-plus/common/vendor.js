@@ -97,6 +97,23 @@ createPage(_reg.default);
 
 /***/ }),
 
+/***/ "../../../../../../Users/zhangxintao/Documents/jiayouzhan/jiayouzhan/main.js?{\"page\":\"pages%2FstartRepairReq%2FstartRepairReq\"}":
+/*!*********************************************************************************************************************!*\
+  !*** /Users/zhangxintao/Documents/jiayouzhan/jiayouzhan/main.js?{"page":"pages%2FstartRepairReq%2FstartRepairReq"} ***!
+  \*********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/zhangxintao/Documents/jiayouzhan/jiayouzhan/pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _startRepairReq = _interopRequireDefault(__webpack_require__(/*! ./pages/startRepairReq/startRepairReq.vue */ "../../../../../../Users/zhangxintao/Documents/jiayouzhan/jiayouzhan/pages/startRepairReq/startRepairReq.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_startRepairReq.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
 /***/ "../../../../../../Users/zhangxintao/Documents/jiayouzhan/jiayouzhan/main.js?{\"page\":\"pages%2Fuser%2Fuser\"}":
 /*!*************************************************************************************************!*\
   !*** /Users/zhangxintao/Documents/jiayouzhan/jiayouzhan/main.js?{"page":"pages%2Fuser%2Fuser"} ***!
@@ -110,23 +127,6 @@ createPage(_reg.default);
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
 var _user = _interopRequireDefault(__webpack_require__(/*! ./pages/user/user.vue */ "../../../../../../Users/zhangxintao/Documents/jiayouzhan/jiayouzhan/pages/user/user.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_user.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
-/***/ "../../../../../../Users/zhangxintao/Documents/jiayouzhan/jiayouzhan/main.js?{\"page\":\"template%2FrecordTemple%2FrecordTemple\"}":
-/*!********************************************************************************************************************!*\
-  !*** /Users/zhangxintao/Documents/jiayouzhan/jiayouzhan/main.js?{"page":"template%2FrecordTemple%2FrecordTemple"} ***!
-  \********************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/zhangxintao/Documents/jiayouzhan/jiayouzhan/pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _recordTemple = _interopRequireDefault(__webpack_require__(/*! ./template/recordTemple/recordTemple.vue */ "../../../../../../Users/zhangxintao/Documents/jiayouzhan/jiayouzhan/template/recordTemple/recordTemple.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_recordTemple.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),
@@ -225,7 +225,7 @@ var store = new _vuex.default.Store({
             * 是否需要强制登录
             */
     forcedLogin: false,
-    hasLogin: false,
+    hasLogin: true,
     userName: "" },
 
   mutations: {

@@ -3,12 +3,12 @@
 		<view style="background-color: white; width:100%;">
 		<!-- 头 -->
 			<view class="header">
-				<!-- <image style="width: 20; height: 20;" src="../../static/img/jilu.png" mode=""></image> -->
+				<image style="width: 20px; height: 20px;" src="../../static/img/jilu.png" mode=""></image>
 				<text>{{idCode}}</text>
 				<text>{{status}}</text>
 			</view>
 			<!-- 内容 -->
-			<view>
+			<view style="margin-top: 30upx;">
 				<view class="contentText">
 					<text>故障项目：</text>
 					<text>{{xm}}</text>
@@ -71,21 +71,18 @@
 		width: 100%;
 		box-sizing: border-box;
 		background-color: white;
+		margin-bottom: 20upx;
 	}
 	.containor text{
 		font-size: 28upx;
+		
 	}
 	.header {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 	}
-	.content {
-		
-	}
 	.contentText {
-		padding-top: 10upx;
-		padding-bottom: 10upx;
-		font-size: 12;
+		line-height: 100%;
 	}
 </style>

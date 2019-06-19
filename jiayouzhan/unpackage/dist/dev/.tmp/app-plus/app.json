@@ -5,7 +5,7 @@
     "pages/reg/reg",
     "pages/pwd/pwd",
     "pages/user/user",
-    "template/recordTemple/recordTemple"
+    "pages/startRepairReq/startRepairReq"
   ],
   "subPackages": [],
   "window": {
