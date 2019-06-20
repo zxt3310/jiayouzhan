@@ -56,6 +56,7 @@
 		flex-direction: column;
 		background-color: #efeff4;
 		padding: 20upx;
+		box-sizing: border-box;
 	}
 
 	.input-group {

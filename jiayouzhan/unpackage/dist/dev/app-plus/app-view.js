@@ -1245,10 +1245,68 @@ function gz$gwx_7(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_7)return __WXML_GLOBAL__.ops_cached.$gwx_7
 __WXML_GLOBAL__.ops_cached.$gwx_7=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'content'])
+Z([3,'inputsytle'])
+Z([3,'故障项目'])
 Z([3,'__e'])
-Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'pickershow']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[1,'pickershow']]]]]]]]])
+Z([3,'请选择'])
+Z([3,'line'])
+Z(z[1])
+Z([3,'故障描述'])
+Z([3,'请输入'])
+Z([3,'margin-top:2px;'])
+Z([3,''])
+Z(z[6])
+Z(z[1])
+Z([3,'加油站'])
+Z(z[3])
+Z(z[4])
+Z(z[5])
+Z(z[6])
+Z(z[1])
+Z([3,'详细地址'])
+Z(z[9])
+Z(z[10])
+Z(z[11])
+Z(z[6])
+Z(z[1])
+Z([3,'align-self:center;'])
+Z([3,'联系人'])
+Z(z[9])
+Z([3,'text'])
+Z(z[11])
+Z(z[6])
+Z(z[1])
+Z(z[26])
+Z([3,'联系电话'])
+Z(z[9])
+Z(z[29])
+Z(z[11])
+Z(z[6])
+Z(z[1])
+Z([3,'上传图片\n最多四张\n长按删除'])
+Z([3,'uni-uploader-body'])
+Z([3,'uni-uploader__files'])
+Z([3,'index'])
+Z([3,'image'])
+Z([[7],[3,'imageList']])
+Z(z[43])
+Z([3,'uni-uploader__file'])
+Z(z[3])
+Z(z[3])
+Z([3,'uni-uploader__img'])
+Z([[4],[[5],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'previewImage']],[[4],[[5],[1,'$event']]]]]]]]]],[[4],[[5],[[5],[1,'longpress']],[[4],[[5],[[4],[[5],[[5],[1,'deleteImg']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z([[7],[3,'image']])
+Z(z[52])
+Z([3,'uni-uploader__input-box'])
+Z(z[3])
+Z([3,'uni-uploader__input'])
+Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'chooseImage']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z(z[6])
+Z([3,'commit'])
 Z([3,'primary'])
-Z([3,'联动'])
+Z([3,'提交'])
 Z([3,'__l'])
 Z([3,'vue-ref'])
 Z([3,'mpvuePicker'])
@@ -1637,12 +1695,128 @@ d_[x[6]]={}
 var m6=function(e,s,r,gg){
 var z=gz$gwx_7()
 var aJC=_n('view')
-var tKC=_mz(z,'button',['bindtap',0,'data-event-opts',1,'type',1],[],e,s,gg)
-var eLC=_oz(z,3,e,s,gg)
+_rz(z,aJC,'class',0,e,s,gg)
+var tKC=_n('view')
+_rz(z,tKC,'class',1,e,s,gg)
+var eLC=_n('text')
+var bMC=_oz(z,2,e,s,gg)
+_(eLC,bMC)
 _(tKC,eLC)
+var oNC=_mz(z,'text',['bindtap',3,'data-event-opts',1],[],e,s,gg)
+var xOC=_oz(z,5,e,s,gg)
+_(oNC,xOC)
+_(tKC,oNC)
 _(aJC,tKC)
-var bMC=_mz(z,'mpvue-picker',['bind:__l',4,'class',1,'data-ref',2,'deepLenth',3,'mode',4,'pickerValueArray',5,'pickerValueDefault',6,'vueId',7],[],e,s,gg)
-_(aJC,bMC)
+var oPC=_n('view')
+_rz(z,oPC,'class',6,e,s,gg)
+_(aJC,oPC)
+var fQC=_n('view')
+_rz(z,fQC,'class',7,e,s,gg)
+var cRC=_n('text')
+var hSC=_oz(z,8,e,s,gg)
+_(cRC,hSC)
+_(fQC,cRC)
+var oTC=_mz(z,'textarea',['placeholder',9,'style',1,'value',2],[],e,s,gg)
+_(fQC,oTC)
+_(aJC,fQC)
+var cUC=_n('view')
+_rz(z,cUC,'class',12,e,s,gg)
+_(aJC,cUC)
+var oVC=_n('view')
+_rz(z,oVC,'class',13,e,s,gg)
+var lWC=_n('text')
+var aXC=_oz(z,14,e,s,gg)
+_(lWC,aXC)
+_(oVC,lWC)
+var tYC=_mz(z,'text',['bindtap',15,'data-event-opts',1],[],e,s,gg)
+var eZC=_oz(z,17,e,s,gg)
+_(tYC,eZC)
+_(oVC,tYC)
+_(aJC,oVC)
+var b1C=_n('view')
+_rz(z,b1C,'class',18,e,s,gg)
+_(aJC,b1C)
+var o2C=_n('view')
+_rz(z,o2C,'class',19,e,s,gg)
+var x3C=_n('text')
+var o4C=_oz(z,20,e,s,gg)
+_(x3C,o4C)
+_(o2C,x3C)
+var f5C=_mz(z,'textarea',['placeholder',21,'style',1,'value',2],[],e,s,gg)
+_(o2C,f5C)
+_(aJC,o2C)
+var c6C=_n('view')
+_rz(z,c6C,'class',24,e,s,gg)
+_(aJC,c6C)
+var h7C=_n('view')
+_rz(z,h7C,'class',25,e,s,gg)
+var o8C=_n('text')
+_rz(z,o8C,'style',26,e,s,gg)
+var c9C=_oz(z,27,e,s,gg)
+_(o8C,c9C)
+_(h7C,o8C)
+var o0C=_mz(z,'input',['placeholder',28,'type',1,'value',2],[],e,s,gg)
+_(h7C,o0C)
+_(aJC,h7C)
+var lAD=_n('view')
+_rz(z,lAD,'class',31,e,s,gg)
+_(aJC,lAD)
+var aBD=_n('view')
+_rz(z,aBD,'class',32,e,s,gg)
+var tCD=_n('text')
+_rz(z,tCD,'style',33,e,s,gg)
+var eDD=_oz(z,34,e,s,gg)
+_(tCD,eDD)
+_(aBD,tCD)
+var bED=_mz(z,'input',['placeholder',35,'type',1,'value',2],[],e,s,gg)
+_(aBD,bED)
+_(aJC,aBD)
+var oFD=_n('view')
+_rz(z,oFD,'class',38,e,s,gg)
+_(aJC,oFD)
+var xGD=_n('view')
+_rz(z,xGD,'class',39,e,s,gg)
+var oHD=_n('text')
+var fID=_oz(z,40,e,s,gg)
+_(oHD,fID)
+_(xGD,oHD)
+var cJD=_n('view')
+_rz(z,cJD,'class',41,e,s,gg)
+var hKD=_n('view')
+_rz(z,hKD,'class',42,e,s,gg)
+var oLD=_v()
+_(hKD,oLD)
+var cMD=function(lOD,oND,aPD,gg){
+var eRD=_n('view')
+_rz(z,eRD,'class',47,lOD,oND,gg)
+var bSD=_mz(z,'image',['bindlongpress',48,'bindtap',1,'class',2,'data-event-opts',3,'data-src',4,'src',5],[],lOD,oND,gg)
+_(eRD,bSD)
+_(aPD,eRD)
+return aPD
+}
+oLD.wxXCkey=2
+_2z(z,45,cMD,e,s,gg,oLD,'image','index','index')
+var oTD=_n('view')
+_rz(z,oTD,'class',54,e,s,gg)
+var xUD=_mz(z,'view',['bindtap',55,'class',1,'data-event-opts',2],[],e,s,gg)
+_(oTD,xUD)
+_(hKD,oTD)
+_(cJD,hKD)
+_(xGD,cJD)
+_(aJC,xGD)
+var oVD=_n('view')
+_rz(z,oVD,'class',58,e,s,gg)
+_(aJC,oVD)
+var fWD=_n('view')
+_rz(z,fWD,'class',59,e,s,gg)
+var cXD=_n('button')
+_rz(z,cXD,'type',60,e,s,gg)
+var hYD=_oz(z,61,e,s,gg)
+_(cXD,hYD)
+_(fWD,cXD)
+_(aJC,fWD)
+var oZD=_mz(z,'mpvue-picker',['bind:__l',62,'class',1,'data-ref',2,'deepLenth',3,'mode',4,'pickerValueArray',5,'pickerValueDefault',6,'vueId',7],[],e,s,gg)
+_(aJC,oZD)
 _(r,aJC)
 return r
 }
@@ -1650,294 +1824,294 @@ e_[x[6]]={f:m6,j:[],i:[],ti:[],ic:[]}
 d_[x[7]]={}
 var m7=function(e,s,r,gg){
 var z=gz$gwx_8()
-var xOC=_n('view')
-_rz(z,xOC,'class',0,e,s,gg)
-var oPC=_mz(z,'view',['bindtap',1,'catchtouchmove',1,'class',2,'data-event-opts',3],[],e,s,gg)
-_(xOC,oPC)
-var fQC=_n('view')
-_rz(z,fQC,'class',5,e,s,gg)
-var lWC=_mz(z,'view',['catchtouchmove',6,'class',1],[],e,s,gg)
-var aXC=_mz(z,'view',['bindtap',8,'class',1,'data-event-opts',2],[],e,s,gg)
-var tYC=_oz(z,11,e,s,gg)
-_(aXC,tYC)
-_(lWC,aXC)
-var eZC=_mz(z,'view',['bindtap',12,'class',1,'data-event-opts',2,'style',3],[],e,s,gg)
-var b1C=_oz(z,16,e,s,gg)
-_(eZC,b1C)
-_(lWC,eZC)
-_(fQC,lWC)
-var cRC=_v()
-_(fQC,cRC)
-if(_oz(z,17,e,s,gg)){cRC.wxVkey=1
-var o2C=_mz(z,'picker-view',['bindchange',18,'class',1,'data-event-opts',2,'indicatorStyle',3,'value',4],[],e,s,gg)
-var x3C=_n('picker-view-column')
-var o4C=_v()
-_(x3C,o4C)
-var f5C=function(h7C,c6C,o8C,gg){
-var o0C=_n('view')
-_rz(z,o0C,'class',27,h7C,c6C,gg)
-var lAD=_oz(z,28,h7C,c6C,gg)
-_(o0C,lAD)
-_(o8C,o0C)
-return o8C
-}
-o4C.wxXCkey=2
-_2z(z,25,f5C,e,s,gg,o4C,'item','index','index')
-_(o2C,x3C)
-_(cRC,o2C)
-}
-var hSC=_v()
-_(fQC,hSC)
-if(_oz(z,29,e,s,gg)){hSC.wxVkey=1
-var aBD=_mz(z,'picker-view',['bindchange',30,'class',1,'data-event-opts',2,'indicatorStyle',3,'value',4],[],e,s,gg)
-var tCD=_n('picker-view-column')
-var eDD=_v()
-_(tCD,eDD)
-var bED=function(xGD,oFD,oHD,gg){
-var cJD=_n('view')
-_rz(z,cJD,'class',39,xGD,oFD,gg)
-var hKD=_oz(z,40,xGD,oFD,gg)
-_(cJD,hKD)
-_(oHD,cJD)
-return oHD
-}
-eDD.wxXCkey=2
-_2z(z,37,bED,e,s,gg,eDD,'item','index','index')
-_(aBD,tCD)
-var oLD=_n('picker-view-column')
-var cMD=_v()
-_(oLD,cMD)
-var oND=function(aPD,lOD,tQD,gg){
-var bSD=_n('view')
-_rz(z,bSD,'class',45,aPD,lOD,gg)
-var oTD=_oz(z,46,aPD,lOD,gg)
-_(bSD,oTD)
-_(tQD,bSD)
-return tQD
-}
-cMD.wxXCkey=2
-_2z(z,43,oND,e,s,gg,cMD,'item','index','index')
-_(aBD,oLD)
-_(hSC,aBD)
-}
-var oTC=_v()
-_(fQC,oTC)
-if(_oz(z,47,e,s,gg)){oTC.wxVkey=1
-var xUD=_mz(z,'picker-view',['bindchange',48,'class',1,'data-event-opts',2,'indicatorStyle',3,'value',4],[],e,s,gg)
-var oVD=_v()
-_(xUD,oVD)
-var fWD=function(hYD,cXD,oZD,gg){
-var o2D=_n('picker-view-column')
-var l3D=_v()
+var o2D=_n('view')
+_rz(z,o2D,'class',0,e,s,gg)
+var l3D=_mz(z,'view',['bindtap',1,'catchtouchmove',1,'class',2,'data-event-opts',3],[],e,s,gg)
 _(o2D,l3D)
-var a4D=function(e6D,t5D,b7D,gg){
-var x9D=_n('view')
-_rz(z,x9D,'class',61,e6D,t5D,gg)
-var o0D=_oz(z,62,e6D,t5D,gg)
-_(x9D,o0D)
-_(b7D,x9D)
-return b7D
-}
-l3D.wxXCkey=2
-_2z(z,59,a4D,hYD,cXD,gg,l3D,'item','index1','index1')
-_(oZD,o2D)
-return oZD
-}
-oVD.wxXCkey=2
-_2z(z,55,fWD,e,s,gg,oVD,'n','index','index')
-_(oTC,xUD)
-}
-var cUC=_v()
-_(fQC,cUC)
-if(_oz(z,63,e,s,gg)){cUC.wxVkey=1
-var fAE=_mz(z,'picker-view',['bindchange',64,'class',1,'data-event-opts',2,'indicatorStyle',3,'value',4],[],e,s,gg)
-var cBE=_n('picker-view-column')
-var hCE=_v()
-_(cBE,hCE)
-var oDE=function(oFE,cEE,lGE,gg){
-var tIE=_n('view')
-_rz(z,tIE,'class',73,oFE,cEE,gg)
-var eJE=_oz(z,74,oFE,cEE,gg)
-_(tIE,eJE)
-_(lGE,tIE)
-return lGE
-}
-hCE.wxXCkey=2
-_2z(z,71,oDE,e,s,gg,hCE,'item','index','index')
+var a4D=_n('view')
+_rz(z,a4D,'class',5,e,s,gg)
+var o0D=_mz(z,'view',['catchtouchmove',6,'class',1],[],e,s,gg)
+var fAE=_mz(z,'view',['bindtap',8,'class',1,'data-event-opts',2],[],e,s,gg)
+var cBE=_oz(z,11,e,s,gg)
 _(fAE,cBE)
-var bKE=_n('picker-view-column')
-var oLE=_v()
-_(bKE,oLE)
-var xME=function(fOE,oNE,cPE,gg){
-var oRE=_n('view')
-_rz(z,oRE,'class',79,fOE,oNE,gg)
-var cSE=_oz(z,80,fOE,oNE,gg)
-_(oRE,cSE)
-_(cPE,oRE)
-return cPE
+_(o0D,fAE)
+var hCE=_mz(z,'view',['bindtap',12,'class',1,'data-event-opts',2,'style',3],[],e,s,gg)
+var oDE=_oz(z,16,e,s,gg)
+_(hCE,oDE)
+_(o0D,hCE)
+_(a4D,o0D)
+var t5D=_v()
+_(a4D,t5D)
+if(_oz(z,17,e,s,gg)){t5D.wxVkey=1
+var cEE=_mz(z,'picker-view',['bindchange',18,'class',1,'data-event-opts',2,'indicatorStyle',3,'value',4],[],e,s,gg)
+var oFE=_n('picker-view-column')
+var lGE=_v()
+_(oFE,lGE)
+var aHE=function(eJE,tIE,bKE,gg){
+var xME=_n('view')
+_rz(z,xME,'class',27,eJE,tIE,gg)
+var oNE=_oz(z,28,eJE,tIE,gg)
+_(xME,oNE)
+_(bKE,xME)
+return bKE
 }
-oLE.wxXCkey=2
-_2z(z,77,xME,e,s,gg,oLE,'item','index','index')
-_(fAE,bKE)
-_(cUC,fAE)
+lGE.wxXCkey=2
+_2z(z,25,aHE,e,s,gg,lGE,'item','index','index')
+_(cEE,oFE)
+_(t5D,cEE)
 }
-var oVC=_v()
-_(fQC,oVC)
-if(_oz(z,81,e,s,gg)){oVC.wxVkey=1
-var oTE=_mz(z,'picker-view',['bindchange',82,'class',1,'data-event-opts',2,'indicatorStyle',3,'value',4],[],e,s,gg)
-var lUE=_n('picker-view-column')
-var aVE=_v()
-_(lUE,aVE)
-var tWE=function(bYE,eXE,oZE,gg){
-var o2E=_n('view')
-_rz(z,o2E,'class',91,bYE,eXE,gg)
-var f3E=_oz(z,92,bYE,eXE,gg)
-_(o2E,f3E)
-_(oZE,o2E)
-return oZE
+var e6D=_v()
+_(a4D,e6D)
+if(_oz(z,29,e,s,gg)){e6D.wxVkey=1
+var fOE=_mz(z,'picker-view',['bindchange',30,'class',1,'data-event-opts',2,'indicatorStyle',3,'value',4],[],e,s,gg)
+var cPE=_n('picker-view-column')
+var hQE=_v()
+_(cPE,hQE)
+var oRE=function(oTE,cSE,lUE,gg){
+var tWE=_n('view')
+_rz(z,tWE,'class',39,oTE,cSE,gg)
+var eXE=_oz(z,40,oTE,cSE,gg)
+_(tWE,eXE)
+_(lUE,tWE)
+return lUE
 }
-aVE.wxXCkey=2
-_2z(z,89,tWE,e,s,gg,aVE,'item','index','index')
-_(oTE,lUE)
-var c4E=_n('picker-view-column')
-var h5E=_v()
-_(c4E,h5E)
-var o6E=function(o8E,c7E,l9E,gg){
-var tAF=_n('view')
-_rz(z,tAF,'class',97,o8E,c7E,gg)
-var eBF=_oz(z,98,o8E,c7E,gg)
-_(tAF,eBF)
-_(l9E,tAF)
-return l9E
+hQE.wxXCkey=2
+_2z(z,37,oRE,e,s,gg,hQE,'item','index','index')
+_(fOE,cPE)
+var bYE=_n('picker-view-column')
+var oZE=_v()
+_(bYE,oZE)
+var x1E=function(f3E,o2E,c4E,gg){
+var o6E=_n('view')
+_rz(z,o6E,'class',45,f3E,o2E,gg)
+var c7E=_oz(z,46,f3E,o2E,gg)
+_(o6E,c7E)
+_(c4E,o6E)
+return c4E
 }
-h5E.wxXCkey=2
-_2z(z,95,o6E,e,s,gg,h5E,'item','index','index')
-_(oTE,c4E)
-var bCF=_n('picker-view-column')
-var oDF=_v()
-_(bCF,oDF)
-var xEF=function(fGF,oFF,cHF,gg){
-var oJF=_n('view')
-_rz(z,oJF,'class',103,fGF,oFF,gg)
-var cKF=_oz(z,104,fGF,oFF,gg)
-_(oJF,cKF)
-_(cHF,oJF)
-return cHF
+oZE.wxXCkey=2
+_2z(z,43,x1E,e,s,gg,oZE,'item','index','index')
+_(fOE,bYE)
+_(e6D,fOE)
 }
-oDF.wxXCkey=2
-_2z(z,101,xEF,e,s,gg,oDF,'item','index','index')
-_(oTE,bCF)
-_(oVC,oTE)
+var b7D=_v()
+_(a4D,b7D)
+if(_oz(z,47,e,s,gg)){b7D.wxVkey=1
+var o8E=_mz(z,'picker-view',['bindchange',48,'class',1,'data-event-opts',2,'indicatorStyle',3,'value',4],[],e,s,gg)
+var l9E=_v()
+_(o8E,l9E)
+var a0E=function(eBF,tAF,bCF,gg){
+var xEF=_n('picker-view-column')
+var oFF=_v()
+_(xEF,oFF)
+var fGF=function(hIF,cHF,oJF,gg){
+var oLF=_n('view')
+_rz(z,oLF,'class',61,hIF,cHF,gg)
+var lMF=_oz(z,62,hIF,cHF,gg)
+_(oLF,lMF)
+_(oJF,oLF)
+return oJF
 }
-cRC.wxXCkey=1
-hSC.wxXCkey=1
-oTC.wxXCkey=1
-cUC.wxXCkey=1
-oVC.wxXCkey=1
-_(xOC,fQC)
-_(r,xOC)
+oFF.wxXCkey=2
+_2z(z,59,fGF,eBF,tAF,gg,oFF,'item','index1','index1')
+_(bCF,xEF)
+return bCF
+}
+l9E.wxXCkey=2
+_2z(z,55,a0E,e,s,gg,l9E,'n','index','index')
+_(b7D,o8E)
+}
+var o8D=_v()
+_(a4D,o8D)
+if(_oz(z,63,e,s,gg)){o8D.wxVkey=1
+var aNF=_mz(z,'picker-view',['bindchange',64,'class',1,'data-event-opts',2,'indicatorStyle',3,'value',4],[],e,s,gg)
+var tOF=_n('picker-view-column')
+var ePF=_v()
+_(tOF,ePF)
+var bQF=function(xSF,oRF,oTF,gg){
+var cVF=_n('view')
+_rz(z,cVF,'class',73,xSF,oRF,gg)
+var hWF=_oz(z,74,xSF,oRF,gg)
+_(cVF,hWF)
+_(oTF,cVF)
+return oTF
+}
+ePF.wxXCkey=2
+_2z(z,71,bQF,e,s,gg,ePF,'item','index','index')
+_(aNF,tOF)
+var oXF=_n('picker-view-column')
+var cYF=_v()
+_(oXF,cYF)
+var oZF=function(a2F,l1F,t3F,gg){
+var b5F=_n('view')
+_rz(z,b5F,'class',79,a2F,l1F,gg)
+var o6F=_oz(z,80,a2F,l1F,gg)
+_(b5F,o6F)
+_(t3F,b5F)
+return t3F
+}
+cYF.wxXCkey=2
+_2z(z,77,oZF,e,s,gg,cYF,'item','index','index')
+_(aNF,oXF)
+_(o8D,aNF)
+}
+var x9D=_v()
+_(a4D,x9D)
+if(_oz(z,81,e,s,gg)){x9D.wxVkey=1
+var x7F=_mz(z,'picker-view',['bindchange',82,'class',1,'data-event-opts',2,'indicatorStyle',3,'value',4],[],e,s,gg)
+var o8F=_n('picker-view-column')
+var f9F=_v()
+_(o8F,f9F)
+var c0F=function(oBG,hAG,cCG,gg){
+var lEG=_n('view')
+_rz(z,lEG,'class',91,oBG,hAG,gg)
+var aFG=_oz(z,92,oBG,hAG,gg)
+_(lEG,aFG)
+_(cCG,lEG)
+return cCG
+}
+f9F.wxXCkey=2
+_2z(z,89,c0F,e,s,gg,f9F,'item','index','index')
+_(x7F,o8F)
+var tGG=_n('picker-view-column')
+var eHG=_v()
+_(tGG,eHG)
+var bIG=function(xKG,oJG,oLG,gg){
+var cNG=_n('view')
+_rz(z,cNG,'class',97,xKG,oJG,gg)
+var hOG=_oz(z,98,xKG,oJG,gg)
+_(cNG,hOG)
+_(oLG,cNG)
+return oLG
+}
+eHG.wxXCkey=2
+_2z(z,95,bIG,e,s,gg,eHG,'item','index','index')
+_(x7F,tGG)
+var oPG=_n('picker-view-column')
+var cQG=_v()
+_(oPG,cQG)
+var oRG=function(aTG,lSG,tUG,gg){
+var bWG=_n('view')
+_rz(z,bWG,'class',103,aTG,lSG,gg)
+var oXG=_oz(z,104,aTG,lSG,gg)
+_(bWG,oXG)
+_(tUG,bWG)
+return tUG
+}
+cQG.wxXCkey=2
+_2z(z,101,oRG,e,s,gg,cQG,'item','index','index')
+_(x7F,oPG)
+_(x9D,x7F)
+}
+t5D.wxXCkey=1
+e6D.wxXCkey=1
+b7D.wxXCkey=1
+o8D.wxXCkey=1
+x9D.wxXCkey=1
+_(o2D,a4D)
+_(r,o2D)
 return r
 }
 e_[x[7]]={f:m7,j:[],i:[],ti:[],ic:[]}
 d_[x[8]]={}
 var m8=function(e,s,r,gg){
 var z=gz$gwx_9()
-var lMF=_n('view')
-_rz(z,lMF,'class',0,e,s,gg)
-var aNF=_n('view')
-_rz(z,aNF,'style',1,e,s,gg)
-var tOF=_n('view')
-_rz(z,tOF,'class',2,e,s,gg)
-var ePF=_mz(z,'image',['mode',-1,'src',3,'style',1],[],e,s,gg)
-_(tOF,ePF)
-var bQF=_n('text')
-var oRF=_oz(z,5,e,s,gg)
-_(bQF,oRF)
-_(tOF,bQF)
-var xSF=_n('text')
-var oTF=_oz(z,6,e,s,gg)
-_(xSF,oTF)
-_(tOF,xSF)
-_(aNF,tOF)
-var fUF=_n('view')
-_rz(z,fUF,'style',7,e,s,gg)
-var cVF=_n('view')
-_rz(z,cVF,'class',8,e,s,gg)
-var hWF=_n('text')
-var oXF=_oz(z,9,e,s,gg)
-_(hWF,oXF)
-_(cVF,hWF)
-var cYF=_n('text')
-var oZF=_oz(z,10,e,s,gg)
-_(cYF,oZF)
-_(cVF,cYF)
-_(fUF,cVF)
-var l1F=_n('view')
-_rz(z,l1F,'class',11,e,s,gg)
-var a2F=_n('text')
-var t3F=_oz(z,12,e,s,gg)
-_(a2F,t3F)
-_(l1F,a2F)
-var e4F=_n('text')
-var b5F=_oz(z,13,e,s,gg)
-_(e4F,b5F)
-_(l1F,e4F)
-_(fUF,l1F)
-var o6F=_n('view')
-_rz(z,o6F,'class',14,e,s,gg)
-var x7F=_n('text')
-var o8F=_oz(z,15,e,s,gg)
-_(x7F,o8F)
-_(o6F,x7F)
-var f9F=_n('text')
-var c0F=_oz(z,16,e,s,gg)
-_(f9F,c0F)
-_(o6F,f9F)
-_(fUF,o6F)
-var hAG=_n('view')
-_rz(z,hAG,'class',17,e,s,gg)
-var oBG=_n('text')
-var cCG=_oz(z,18,e,s,gg)
-_(oBG,cCG)
-_(hAG,oBG)
-var oDG=_n('text')
-var lEG=_oz(z,19,e,s,gg)
-_(oDG,lEG)
-_(hAG,oDG)
-_(fUF,hAG)
-_(aNF,fUF)
-_(lMF,aNF)
-_(r,lMF)
+var oZG=_n('view')
+_rz(z,oZG,'class',0,e,s,gg)
+var f1G=_n('view')
+_rz(z,f1G,'style',1,e,s,gg)
+var c2G=_n('view')
+_rz(z,c2G,'class',2,e,s,gg)
+var h3G=_mz(z,'image',['mode',-1,'src',3,'style',1],[],e,s,gg)
+_(c2G,h3G)
+var o4G=_n('text')
+var c5G=_oz(z,5,e,s,gg)
+_(o4G,c5G)
+_(c2G,o4G)
+var o6G=_n('text')
+var l7G=_oz(z,6,e,s,gg)
+_(o6G,l7G)
+_(c2G,o6G)
+_(f1G,c2G)
+var a8G=_n('view')
+_rz(z,a8G,'style',7,e,s,gg)
+var t9G=_n('view')
+_rz(z,t9G,'class',8,e,s,gg)
+var e0G=_n('text')
+var bAH=_oz(z,9,e,s,gg)
+_(e0G,bAH)
+_(t9G,e0G)
+var oBH=_n('text')
+var xCH=_oz(z,10,e,s,gg)
+_(oBH,xCH)
+_(t9G,oBH)
+_(a8G,t9G)
+var oDH=_n('view')
+_rz(z,oDH,'class',11,e,s,gg)
+var fEH=_n('text')
+var cFH=_oz(z,12,e,s,gg)
+_(fEH,cFH)
+_(oDH,fEH)
+var hGH=_n('text')
+var oHH=_oz(z,13,e,s,gg)
+_(hGH,oHH)
+_(oDH,hGH)
+_(a8G,oDH)
+var cIH=_n('view')
+_rz(z,cIH,'class',14,e,s,gg)
+var oJH=_n('text')
+var lKH=_oz(z,15,e,s,gg)
+_(oJH,lKH)
+_(cIH,oJH)
+var aLH=_n('text')
+var tMH=_oz(z,16,e,s,gg)
+_(aLH,tMH)
+_(cIH,aLH)
+_(a8G,cIH)
+var eNH=_n('view')
+_rz(z,eNH,'class',17,e,s,gg)
+var bOH=_n('text')
+var oPH=_oz(z,18,e,s,gg)
+_(bOH,oPH)
+_(eNH,bOH)
+var xQH=_n('text')
+var oRH=_oz(z,19,e,s,gg)
+_(xQH,oRH)
+_(eNH,xQH)
+_(a8G,eNH)
+_(f1G,a8G)
+_(oZG,f1G)
+_(r,oZG)
 return r
 }
 e_[x[8]]={f:m8,j:[],i:[],ti:[],ic:[]}
 d_[x[9]]={}
 var m9=function(e,s,r,gg){
 var z=gz$gwx_10()
-var tGG=_n('view')
-_rz(z,tGG,'class',0,e,s,gg)
-var eHG=_n('view')
-_rz(z,eHG,'class',1,e,s,gg)
-var bIG=_v()
-_(eHG,bIG)
-if(_oz(z,2,e,s,gg)){bIG.wxVkey=1
-var xKG=_mz(z,'button',['bindtap',3,'class',1,'data-event-opts',2,'type',3],[],e,s,gg)
-var oLG=_oz(z,7,e,s,gg)
-_(xKG,oLG)
-_(bIG,xKG)
+var cTH=_n('view')
+_rz(z,cTH,'class',0,e,s,gg)
+var hUH=_n('view')
+_rz(z,hUH,'class',1,e,s,gg)
+var oVH=_v()
+_(hUH,oVH)
+if(_oz(z,2,e,s,gg)){oVH.wxVkey=1
+var oXH=_mz(z,'button',['bindtap',3,'class',1,'data-event-opts',2,'type',3],[],e,s,gg)
+var lYH=_oz(z,7,e,s,gg)
+_(oXH,lYH)
+_(oVH,oXH)
 }
-var oJG=_v()
-_(eHG,oJG)
-if(_oz(z,8,e,s,gg)){oJG.wxVkey=1
-var fMG=_mz(z,'button',['bindtap',9,'data-event-opts',1,'type',2],[],e,s,gg)
-var cNG=_oz(z,12,e,s,gg)
-_(fMG,cNG)
-_(oJG,fMG)
+var cWH=_v()
+_(hUH,cWH)
+if(_oz(z,8,e,s,gg)){cWH.wxVkey=1
+var aZH=_mz(z,'button',['bindtap',9,'data-event-opts',1,'type',2],[],e,s,gg)
+var t1H=_oz(z,12,e,s,gg)
+_(aZH,t1H)
+_(cWH,aZH)
 }
-bIG.wxXCkey=1
-oJG.wxXCkey=1
-_(tGG,eHG)
-_(r,tGG)
+oVH.wxXCkey=1
+cWH.wxXCkey=1
+_(cTH,hUH)
+_(r,cTH)
 return r
 }
 e_[x[9]]={f:m9,j:[],i:[],ti:[],ic:[]}
@@ -1996,7 +2170,7 @@ var setCssToHead = function(file, _xcInvalid, info) {
 var Ca = {};
 var css_id;
 var info = info || {};
-var _C= [[[2,1],],["body, body { min-height: 100%; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; }\nwx-m-input { width: 100%; min-height: 100%; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; }\n.",[1],"content { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; background-color: #efeff4; padding: ",[0,20],"; }\n.",[1],"input-group { background-color: #ffffff; margin-top: ",[0,40],"; position: relative; }\n.",[1],"input-group::before { position: absolute; right: 0; top: 0; left: 0; height: ",[0,1],"; content: \x27\x27; -webkit-transform: scaleY(.5); -ms-transform: scaleY(.5); transform: scaleY(.5); background-color: #c8c7cc; }\n.",[1],"input-group::after { position: absolute; right: 0; bottom: 0; left: 0; height: ",[0,1],"; content: \x27\x27; -webkit-transform: scaleY(.5); -ms-transform: scaleY(.5); transform: scaleY(.5); background-color: #c8c7cc; }\n.",[1],"input-row { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; position: relative; }\n.",[1],"input-row .",[1],"title { width: 20%; height: ",[0,50],"; min-height: ",[0,50],"; padding: ",[0,15]," 0; padding-left: ",[0,30],"; line-height: ",[0,50],"; }\n.",[1],"input-row.",[1],"border::after { position: absolute; right: 0; bottom: 0; left: ",[0,15],"; height: ",[0,1],"; content: \x27\x27; -webkit-transform: scaleY(.5); -ms-transform: scaleY(.5); transform: scaleY(.5); background-color: #c8c7cc; }\n.",[1],"btn-row { margin-top: ",[0,50],"; padding: ",[0,20],"; }\nwx-button.",[1],"primary { background-color: #0faeff; }\n",],];
+var _C= [[[2,1],],["body, body { min-height: 100%; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; }\nwx-m-input { width: 100%; min-height: 100%; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; }\n.",[1],"content { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; background-color: #efeff4; padding: ",[0,20],"; -webkit-box-sizing: border-box; box-sizing: border-box; }\n.",[1],"input-group { background-color: #ffffff; margin-top: ",[0,40],"; position: relative; }\n.",[1],"input-group::before { position: absolute; right: 0; top: 0; left: 0; height: ",[0,1],"; content: \x27\x27; -webkit-transform: scaleY(.5); -ms-transform: scaleY(.5); transform: scaleY(.5); background-color: #c8c7cc; }\n.",[1],"input-group::after { position: absolute; right: 0; bottom: 0; left: 0; height: ",[0,1],"; content: \x27\x27; -webkit-transform: scaleY(.5); -ms-transform: scaleY(.5); transform: scaleY(.5); background-color: #c8c7cc; }\n.",[1],"input-row { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; position: relative; }\n.",[1],"input-row .",[1],"title { width: 20%; height: ",[0,50],"; min-height: ",[0,50],"; padding: ",[0,15]," 0; padding-left: ",[0,30],"; line-height: ",[0,50],"; }\n.",[1],"input-row.",[1],"border::after { position: absolute; right: 0; bottom: 0; left: ",[0,15],"; height: ",[0,1],"; content: \x27\x27; -webkit-transform: scaleY(.5); -ms-transform: scaleY(.5); transform: scaleY(.5); background-color: #c8c7cc; }\n.",[1],"btn-row { margin-top: ",[0,50],"; padding: ",[0,20],"; }\nwx-button.",[1],"primary { background-color: #0faeff; }\n",],];
 function makeup(file, opt) {
 var _n = typeof(file) === "number";
 if ( _n && Ca.hasOwnProperty(file)) return "";
@@ -2083,7 +2257,7 @@ __wxAppCode__['pages/pwd/pwd.wxml']=$gwx('./pages/pwd/pwd.wxml');
 __wxAppCode__['pages/reg/reg.wxss']=undefined;    
 __wxAppCode__['pages/reg/reg.wxml']=$gwx('./pages/reg/reg.wxml');
 
-__wxAppCode__['pages/startRepairReq/startRepairReq.wxss']=undefined;    
+__wxAppCode__['pages/startRepairReq/startRepairReq.wxss']=setCssToHead([".",[1],"inputsytle{ display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; padding: 10px; }\n.",[1],"inputsytle wx-text{ font-size: 14px; color: #333333; width: 25%; }\n.",[1],"inputsytle wx-input,wx-textarea{ font-size: 14px; color: #333333; width: 75%; }\n.",[1],"line{ height: 1px; background-color: #dddddd; }\n.",[1],"uni-uploader-body { width: 100%; }\n.",[1],"uni-uploader__files { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }\n.",[1],"uni-uploader__file { margin: ",[0,10],"; width: ",[0,210],"; height: ",[0,210],"; }\n.",[1],"uni-uploader__img { display: block; width: ",[0,210],"; height: ",[0,210],"; }\n.",[1],"uni-uploader__input-box { position: relative; margin:",[0,10],"; width: ",[0,208],"; height: ",[0,208],"; border: ",[0,2]," solid #D9D9D9; }\n.",[1],"uni-uploader__input-box:before, .",[1],"uni-uploader__input-box:after { content: \x22 \x22; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); background-color: #D9D9D9; }\n.",[1],"uni-uploader__input-box:before { width: ",[0,4],"; height: ",[0,79],"; }\n.",[1],"uni-uploader__input-box:after { width: ",[0,79],"; height: ",[0,4],"; }\n.",[1],"uni-uploader__input-box:active { border-color: #999999; }\n.",[1],"uni-uploader__input-box:active:before, .",[1],"uni-uploader__input-box:active:after { background-color: #999999; }\n.",[1],"uni-uploader__input { position: absolute; z-index: 1; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; }\n.",[1],"commit{ display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; height: ",[0,300],"; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }\n.",[1],"commit wx-button{ width: ",[0,400],"; height: ",[0,88],"; }\n",],undefined,{path:"./pages/startRepairReq/startRepairReq.wxss"});    
 __wxAppCode__['pages/startRepairReq/startRepairReq.wxml']=$gwx('./pages/startRepairReq/startRepairReq.wxml');
 
 __wxAppCode__['pages/template/mpvue-picker/mpvuePicker.wxss']=setCssToHead([".",[1],"pickerMask { position: fixed; z-index: 1000; top: 0; right: 0; left: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); }\n.",[1],"mpvue-picker-content { position: fixed; bottom: 0; left: 0; width: 100%; -webkit-transition: all 0.3s ease; -o-transition: all 0.3s ease; transition: all 0.3s ease; -webkit-transform: translateY(100%); -ms-transform: translateY(100%); transform: translateY(100%); z-index: 3000; }\n.",[1],"mpvue-picker-view-show { -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }\n.",[1],"mpvue-picker__hd { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; padding: 9px 15px; background-color: #fff; position: relative; text-align: center; font-size: 17px; }\n.",[1],"mpvue-picker__hd:after { content: \x27 \x27; position: absolute; left: 0; bottom: 0; right: 0; height: 1px; border-bottom: 1px solid #e5e5e5; color: #e5e5e5; -webkit-transform-origin: 0 100%; -ms-transform-origin: 0 100%; transform-origin: 0 100%; -webkit-transform: scaleY(0.5); -ms-transform: scaleY(0.5); transform: scaleY(0.5); }\n.",[1],"mpvue-picker__action { display: block; -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; color: #1aad19; }\n.",[1],"mpvue-picker__action:first-child { text-align: left; color: #888; }\n.",[1],"mpvue-picker__action:last-child { text-align: right; }\n.",[1],"picker-item { text-align: center; line-height: 40px; font-size: 16px; }\n.",[1],"mpvue-picker-view { position: relative; bottom: 0; left: 0; width: 100%; height: 238px; background-color: rgba(255, 255, 255, 1); }\n",],undefined,{path:"./pages/template/mpvue-picker/mpvuePicker.wxss"});    
