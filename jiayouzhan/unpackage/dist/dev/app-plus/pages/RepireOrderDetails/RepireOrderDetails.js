@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"headBar{ padding: ",[0,40],"; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; }\n.",[1],"orderInfo{ }\n",],undefined,{path:"./pages/RepireOrderDetails/RepireOrderDetails.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/RepireOrderDetails/RepireOrderDetails.wxml') } }));

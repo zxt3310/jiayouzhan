@@ -1,7 +1,9 @@
 <template>
     <view class="content">
 		<view v-for="(item,index) in list" :key="index">
-			<rreecc :idCode='item.idCode' :status="item.status" :xm="item.xm" :ms="item.ms" :jyz="item.jyz" :ts="item.ts"> </rreecc>
+			<view @tap="showDetails(item)">
+				<rreecc :idCode='item.idCode' :status="item.status" :xm="item.xm" :ms="item.ms" :jyz="item.jyz" :ts="item.ts"> </rreecc>
+			</view>
 		</view>
     </view>
 </template>
@@ -41,7 +43,17 @@
 		},
         computed: mapState(['forcedLogin', 'hasLogin', 'userName','test']),
 		methods:{
-			
+			showDetails: function(e){
+				var param = JSON.stringify(e);
+				uni.navigateTo({
+					url:'../RepireOrderDetails/RepireOrderDetails?' + 'idCode=' + e.idCode +
+																	 '&status=' + e.status 
+																	   + '&xm=' + e.xm 
+																	   + '&ms=' + e.xm 
+																	  + '&jyz=' + e.jyz 
+																	   + '&ts=' + e.ts
+				})
+			},
 		},
 		onNavigationBarButtonTap() {
 			if (this.hasLogin) {

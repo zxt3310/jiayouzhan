@@ -5,7 +5,9 @@
     "pages/reg/reg",
     "pages/pwd/pwd",
     "pages/user/user",
-    "pages/startRepairReq/startRepairReq"
+    "pages/startRepairReq/startRepairReq",
+    "pages/RepireOrderDetails/RepireOrderDetails",
+    "pages/new/new/new"
   ],
   "subPackages": [],
   "window": {
