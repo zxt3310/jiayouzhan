@@ -43,10 +43,6 @@
 				"navigationBarTitleText":"详情"
 			}
         }
-        ,{
-            "path" : "pages/new/new/new",
-            "style" : {}
-        }
     ],
     "tabBar": {
         "color": "#7a7e83",

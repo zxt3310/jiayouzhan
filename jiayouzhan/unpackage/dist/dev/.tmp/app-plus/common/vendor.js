@@ -80,23 +80,6 @@ createPage(_main.default);
 
 /***/ }),
 
-/***/ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/main.js?{\"page\":\"pages%2Fnew%2Fnew%2Fnew\"}":
-/*!**************************************************************************************************!*\
-  !*** /Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/main.js?{"page":"pages%2Fnew%2Fnew%2Fnew"} ***!
-  \**************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages.json");
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _new = _interopRequireDefault(__webpack_require__(/*! ./pages/new/new/new.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/new/new/new.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_new.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
-
-/***/ }),
-
 /***/ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/main.js?{\"page\":\"pages%2Fpwd%2Fpwd\"}":
 /*!********************************************************************************************!*\
   !*** /Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/main.js?{"page":"pages%2Fpwd%2Fpwd"} ***!

@@ -1,16 +1,40 @@
-
-.headBar{
-	padding: 40rpx;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
-	        flex-direction: row;
+.headBar {
+  padding: 30rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 14px;
 }
-.orderInfo{
+.orderInfo {
+  padding: 20rpx;
+  font-size: 14px;
+}
+.orderInfo .title {
+    margin-bottom: 40rpx;
+}
+.orderInfo .title .infodetail {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+}
+.orderInfo .title .infodetail view:last-child {
+        width: 80%;
+}
+.orderInfo .title .infodetail view:first-child {
+        -webkit-align-self: center;
+            -ms-flex-item-align: center;
+                align-self: center;
 }
 
