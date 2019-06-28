@@ -207,17 +207,48 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
         account: this.account,
         password: this.password };
 
-      var validUser = _service.default.getUsers().some(function (user) {
-        return data.account === user.account && data.password === user.password;
-      });
-      if (validUser) {
-        this.toMain(this.account);
-      } else {
+      // const validUser = service.getUsers().some(function (user) {
+      //     return data.account === user.account && data.password === user.password;
+      // });
+      // if (validUser) {
+      //     this.toMain(this.account);
+      // } else {
+      //     uni.showToast({
+      //         icon: 'none',
+      //         title: '用户账号或密码不正确',
+      //     });
+      // }
+      this.$fly.post('api/check-credentials', {
+        mobile: data.account,
+        password: data.password }).
+      then(function (response) {
+        console.log('登录成功', " at pages/login/login.vue:125");
+        console.log(response, " at pages/login/login.vue:126");
+        //存token
+        var token = response.accessToken;
+        console.log(typeof token, " at pages/login/login.vue:129");
+
+        var userInfo = {
+          token: token,
+          haslogin: true };
+
+
+        uni.setStorage({
+          key: 'userInfo',
+          data: userInfo,
+          success: function success() {
+            console.log('save', " at pages/login/login.vue:140");
+          } });
+
+
+      }).catch(function (error) {
+        console.log('fail', " at pages/login/login.vue:145");
+        console.log(error, " at pages/login/login.vue:146");
         uni.showToast({
           icon: 'none',
-          title: '用户账号或密码不正确' });
+          title: error.message });
 
-      }
+      });
     },
     oauth: function oauth(value) {var _this2 = this;
       uni.login({
@@ -235,7 +266,7 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
 
         },
         fail: function fail(err) {
-          console.error('授权登录失败：' + JSON.stringify(err), " at pages/login/login.vue:138");
+          console.error('授权登录失败：' + JSON.stringify(err), " at pages/login/login.vue:169");
         } });
 
     },

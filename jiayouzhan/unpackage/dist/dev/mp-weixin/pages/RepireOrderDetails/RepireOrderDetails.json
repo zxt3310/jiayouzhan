@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "详情",
+  "usingComponents": {
+    "uni-rate": "/pages/template/uni-rate/uni-rate"
+  }
+}

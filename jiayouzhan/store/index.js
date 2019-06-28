@@ -26,6 +26,9 @@ const moduleA = {
 	}
 }
 
+var info = uni.getStorageSync('userInfo')
+console.log(info)
+
 const store = new Vuex.Store({
 	modules:{
 		test : moduleA
@@ -35,7 +38,7 @@ const store = new Vuex.Store({
          * 是否需要强制登录
          */
         forcedLogin: false,
-        hasLogin: true,
+        hasLogin: info.haslogin,
         userName: ""
     },
     mutations: {

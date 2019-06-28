@@ -98,7 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var mpvuePicker = function mpvuePicker() {return __webpack_require__.e(/*! import() | pages/template/mpvue-picker/mpvuePicker */ "pages/template/mpvue-picker/mpvuePicker").then(__webpack_require__.bind(null, /*! ../template/mpvue-picker/mpvuePicker.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/mpvue-picker/mpvuePicker.vue"));};
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js"));
 
 
 
@@ -163,6 +163,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var _fly = _interopRequireDefault(__webpack_require__(/*! ../../commonJs/fly.js */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/commonJs/fly.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var mpvuePicker = function mpvuePicker() {return __webpack_require__.e(/*! import() | pages/template/mpvue-picker/mpvuePicker */ "pages/template/mpvue-picker/mpvuePicker").then(__webpack_require__.bind(null, /*! ../template/mpvue-picker/mpvuePicker.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/mpvue-picker/mpvuePicker.vue"));};
 var sourceType = [
 ['camera'],
 ['album'],
@@ -269,6 +270,18 @@ var sizeType = [
     deleteImg: function deleteImg(e) {
       var current = e.target.dataset.src;
       this.imageList.splice(this.imageList.findIndex(function (item) {return item === current;}), 1);
+    },
+
+    submit: function submit() {
+      // console.log(this.$fly)
+      // this.$fly.get("")
+      // .then(function(response){
+      // 	console.log(response)
+      // }).catch(function(error){
+      // 	console.log(error.url);
+      // })
+      _fly.default.print(3);
+      _fly.default.wuli('哈哈哈');
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 

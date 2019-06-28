@@ -54,7 +54,7 @@
 		<view class="line" />
 		
 		<view class="commit">
-			<button type="primary">提交</button>
+			<button type="primary" @tap="submit">提交</button>
 		</view>
 		
 		<mpvuePicker :mode='mode' ref='mpvuePicker' :pickerValueArray='pickerAry' :pickerValueDefault='pickerDefault' :deepLenth='deep'></mpvuePicker>
@@ -63,6 +63,7 @@
 
 <script>
 	import mpvuePicker from '../template/mpvue-picker/mpvuePicker.vue';
+	import test from '../../commonJs/fly.js'
 	var sourceType = [
 		['camera'],
 		['album'],
@@ -169,6 +170,18 @@
 			deleteImg: function(e){
 				var current = e.target.dataset.src
 				this.imageList.splice(this.imageList.findIndex(item => item === current), 1)
+			},
+				
+			submit(){
+				// console.log(this.$fly)
+				// this.$fly.get("")
+				// .then(function(response){
+				// 	console.log(response)
+				// }).catch(function(error){
+				// 	console.log(error.url);
+				// })
+				test.print(3);
+				test.wuli('哈哈哈')
 			}
 		}
 	}

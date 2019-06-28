@@ -107,17 +107,48 @@
                     account: this.account,
                     password: this.password
                 };
-                const validUser = service.getUsers().some(function (user) {
-                    return data.account === user.account && data.password === user.password;
-                });
-                if (validUser) {
-                    this.toMain(this.account);
-                } else {
-                    uni.showToast({
-                        icon: 'none',
-                        title: '用户账号或密码不正确',
-                    });
-                }
+                // const validUser = service.getUsers().some(function (user) {
+                //     return data.account === user.account && data.password === user.password;
+                // });
+                // if (validUser) {
+                //     this.toMain(this.account);
+                // } else {
+                //     uni.showToast({
+                //         icon: 'none',
+                //         title: '用户账号或密码不正确',
+                //     });
+                // }
+				this.$fly.post('api/check-credentials',{
+					mobile:data.account,
+					password:data.password
+				}).then(function(response){
+					console.log('登录成功');
+					console.log(response);
+					//存token
+					var token = response.accessToken;
+					console.log(typeof(token));
+					
+					var userInfo = {
+						token:token,
+						haslogin:true
+					}
+					
+					uni.setStorage({
+						key:'userInfo',
+						data:userInfo,
+						success:function(){
+							console.log('save')
+						}
+					})
+					
+				}).catch(function(error){
+					console.log('fail')
+					console.log(error)
+					uni.showToast({
+						icon:'none',
+						title:error.message
+					})
+				})
             },
             oauth(value) {
                 uni.login({
