@@ -1,9 +1,31 @@
 <template>
     <view class="content">
-        <view class="btn-row">
+        <!-- <view class="btn-row">
             <button v-if="!hasLogin" type="primary" class="primary" @tap="bindLogin">登录</button>
             <button v-if="hasLogin" type="default" @tap="bindLogout">退出登录</button>
-        </view>
+        </view> -->
+		<view class="headBar">
+			<view class="headerimg">
+				<image style="width: 100%; height: 100%;" src="" mode=""></image>
+			</view>
+			<view class="headerInfo">
+				<view>用户昵称</view>
+				<view>性别</view>
+			</view>
+		</view>
+		
+		<view class="menuList">
+			<view class="menu">
+				<image src="" mode=""></image>
+				<text>加油站</text>
+			</view>
+			<view style="width:100%;height: 1px; background-color: #333333;"></view>
+			<view class="menu">
+				<image src="" mode=""></image>
+				<text>设置</text>
+			</view>
+			<view style="width:100%;height: 1px; background-color: #333333;"></view>
+		</view>
     </view>
 </template>
 
@@ -39,6 +61,52 @@
     }
 </script>
 
-<style>
-
+<style lang="scss">
+	.headBar{
+		display: flex;
+		flex-direction: row;
+		padding: 30upx;
+		padding-top: 60upx;
+		padding-bottom: 60upx;
+		.headerimg{
+			width: 140upx;
+			height: 140upx;
+			background-color: black;
+			border-radius: 70upx;
+		}
+		.headerInfo{
+			display: flex;
+			flex-direction: column;
+			margin-left: 40upx;
+			justify-content: space-between;
+			
+			:first-child{
+				font-size: 16px;
+			}
+			:last-child{
+				font-size: 14px;
+			}
+			
+		}
+	}
+	
+	.menuList{
+		.menu{
+			padding: 30upx;
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			font-size: 14px;
+			image {
+				height: 56upx;
+				width: 56upx;
+				background-color: black;
+			}
+			text{
+				margin-left: 40upx;
+			}
+		}
+	}
+	
 </style>

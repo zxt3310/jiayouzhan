@@ -94,7 +94,7 @@ m-input {
 	position: relative;
 }
 .input-row .title {
-	width: 20%;
+	width: 25%;
 	height: 50rpx;
 	min-height: 50rpx;
 	padding: 15rpx 0;

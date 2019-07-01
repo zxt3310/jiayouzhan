@@ -96,7 +96,7 @@
 	}
 
 	.input-row .title {
-		width: 20%;
+		width: 25%;
 		height: 50upx;
 		min-height: 50upx;
 		padding: 15upx 0;

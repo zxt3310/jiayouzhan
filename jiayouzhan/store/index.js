@@ -49,6 +49,12 @@ const store = new Vuex.Store({
         logout(state) {
             state.userName = "";
             state.hasLogin = false;
+			uni.removeStorage({
+				key:'userInfo',
+				success: (e) => {
+					console.log('登出成功');
+				}
+			})
         }
     }
 })

@@ -118,6 +118,7 @@
                 //         title: '用户账号或密码不正确',
                 //     });
                 // }
+				var that = this;
 				this.$fly.post('api/check-credentials',{
 					mobile:data.account,
 					password:data.password
@@ -136,10 +137,11 @@
 					uni.setStorage({
 						key:'userInfo',
 						data:userInfo,
-						success:function(){
-							console.log('save')
-						}
+						success:((e)=>{
+							console.log('save');
+						})
 					})
+					that.toMain('userTest');
 					
 				}).catch(function(error){
 					console.log('fail')

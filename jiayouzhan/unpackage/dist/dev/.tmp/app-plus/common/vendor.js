@@ -317,6 +317,12 @@ var store = new _vuex.default.Store({
     logout: function logout(state) {
       state.userName = "";
       state.hasLogin = false;
+      uni.removeStorage({
+        key: 'userInfo',
+        success: function success(e) {
+          console.log('登出成功', " at store/index.js:55");
+        } });
+
     } } });var _default =
 
 
