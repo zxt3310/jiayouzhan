@@ -1,5 +1,11 @@
 <template>
     <view class="content">
+		<view class="main-title">
+			<view class="">维修记录</view>
+			<view class="title-btn" @tap="createOrder">
+				<text>维修申请</text>
+			</view>
+		</view>
 		<view v-for="(item,index) in list" :key="index">
 			<view @tap="showDetails(item)">
 				<rreecc :idCode='item.idCode' :status="item.status" :xm="item.xm" :ms="item.ms" :jyz="item.jyz" :ts="item.ts"> </rreecc>
@@ -21,7 +27,7 @@
 				list:[
 					{
 						idCode:'GZ2019042112540110',
-						status:'已完成',
+						status:0,
 						xm:'三星加油机',
 						ms:'加油机出现少量漏油情况',
 						jyz:'中国石化（日坛加油站）',
@@ -29,7 +35,7 @@
 					},
 					{
 						idCode:'GK5019042112540220',
-						status:'待评价',
+						status:4,
 						xm:'飞利浦加油机',
 						ms:'加油泵老化',
 						jyz:'中国石油（展览路加油站）',
@@ -54,6 +60,11 @@
 																	   + '&ts=' + e.ts
 				})
 			},
+			createOrder(){
+				uni.navigateTo({
+					url: '../startRepairReq/startRepairReq'
+				});
+			}
 		},
 		onNavigationBarButtonTap() {
 			if (this.hasLogin) {
@@ -97,7 +108,31 @@
     }
 </script>
 
-<style>
+<style lang="scss">
+	.main-title{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 40upx;
+		view{
+			&:first-child{
+				font-size: 44upx;
+			}
+		}
+		.title-btn{
+			display: flex;
+			justify-content: center;
+			background-color: #fafafa;
+			color: #1c713d;
+			align-items: center;
+			padding: 10upx;
+			padding-left: 30upx;
+			padding-right: 30upx;
+			font-size: 28upx;
+			box-shadow:0px 0px 10px #ececec;
+		}
+	}
+	
     .hello {
         display: flex;
         flex: 1;

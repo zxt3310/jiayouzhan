@@ -180,6 +180,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 {
   data: function data() {
     return {};
@@ -193,7 +204,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
   onLoad: function onLoad(option) {
-    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:96");
+    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:107");
   } };exports.default = _default;
 
 /***/ }),

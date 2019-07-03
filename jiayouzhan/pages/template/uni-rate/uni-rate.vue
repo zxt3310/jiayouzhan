@@ -25,7 +25,7 @@
 			color: {
 				// 星星的颜色
 				type: String,
-				default: '#ececec'
+				default: '#fec957'
 			},
 			activeColor: {
 				// 星星选中状态颜色

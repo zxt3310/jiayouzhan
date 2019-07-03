@@ -80,9 +80,10 @@ fly.interceptors.request.use(function (request) {
 });
 
 fly.interceptors.response.use(function (response) {
-  if (response.data.ret == 0) {
+  if (response.data.err == 0) {
     return response.data.data;
   } else {
+    console.log(response, " at main.js:50");
     return Promise.reject(new Error(response.data.msg));
   }
 });

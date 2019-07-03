@@ -43,9 +43,10 @@ fly.interceptors.request.use((request)=>{
 })
 
 fly.interceptors.response.use((response)=>{
-	if (response.data.ret == 0){
+	if (response.data.err == 0){
 		return response.data.data;
 	}else{
+		console.log(response);
 		return Promise.reject(new Error(response.data.msg));
 	}
 })

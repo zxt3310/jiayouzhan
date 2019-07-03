@@ -19,12 +19,18 @@
 				<image src="" mode=""></image>
 				<text>加油站</text>
 			</view>
-			<view style="width:100%;height: 1px; background-color: #333333;"></view>
+			<view style="width:100%;height: 1px; background-color: gray;"></view>
 			<view class="menu">
 				<image src="" mode=""></image>
 				<text>设置</text>
 			</view>
-			<view style="width:100%;height: 1px; background-color: #333333;"></view>
+			<view style="width:100%;height: 1px; background-color: gray;"></view>
+			
+			<view class="menu" @tap="bindLogout">
+				<image src="" mode=""></image>
+				<text>登出</text>
+			</view>
+			<view style="width:100%;height: 1px; background-color: gray;"></view>
 		</view>
     </view>
 </template>

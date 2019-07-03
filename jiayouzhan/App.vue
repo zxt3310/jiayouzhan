@@ -54,7 +54,7 @@
 		display: flex;
 		flex: 1;
 		flex-direction: column;
-		background-color: #efeff4;
+		background-color: #f2f7f8;
 		padding: 20upx;
 		box-sizing: border-box;
 	}

@@ -130,11 +130,25 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
+//
 var _default =
 {
   name: 'rreecc',
   data: function data() {
-    return {};
+    return {
+      statusColor: [
+      '1c713d',
+      'fe4a47',
+      '4185de',
+      '201a62'],
+
+      statusText: [
+      '已完成',
+      '待处理',
+      '已接单',
+      '进行中'] };
 
 
   },
@@ -143,7 +157,7 @@ var _default =
       type: String },
 
     status: {
-      type: String },
+      type: Number },
 
     xm: {
       type: String },
@@ -158,8 +172,17 @@ var _default =
       type: String } },
 
 
+  computed: {},
+
+
+  methods: {
+    getcolor: function getcolor(e) {
+      var color = '#' + this.statusColor[e];
+      return color;
+    } },
+
   created: function created() {
-    console.log('adfadfadf', " at pages/template/recordTemple/recordTemple.vue:62");
+    console.log('adfadfadf', " at pages/template/recordTemple/recordTemple.vue:85");
   } };exports.default = _default;
 
 /***/ }),
@@ -190,6 +213,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var m0 = _vm.getcolor(_vm.status)
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        m0: m0
+      }
+    }
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
