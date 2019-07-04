@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "维修记录",
+  "enablePullDownRefresh": true,
+  "navigationStyle": "custom",
   "usingComponents": {
     "rreecc": "/pages/template/recordTemple/recordTemple"
   }

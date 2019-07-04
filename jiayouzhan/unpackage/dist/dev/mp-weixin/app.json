@@ -6,17 +6,19 @@
     "pages/pwd/pwd",
     "pages/user/user",
     "pages/startRepairReq/startRepairReq",
-    "pages/RepireOrderDetails/RepireOrderDetails"
+    "pages/RepireOrderDetails/RepireOrderDetails",
+    "pages/main/orderRate"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "white",
-    "backgroundColor": "#fbf9fe"
+    "backgroundColor": "#f2f7f8",
+    "backgroundColorTop": "#f2f7f8"
   },
   "tabBar": {
-    "color": "#7a7e83",
-    "selectedColor": "#0faeff",
+    "color": "#b9b8c2",
+    "selectedColor": "#1c713d",
     "backgroundColor": "#ffffff",
     "list": [
       {
@@ -33,5 +35,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
 }

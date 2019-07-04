@@ -1,5 +1,31 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
 
+/***/ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/commonJs/fly.js":
+/*!***********************************************************************!*\
+  !*** /Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/commonJs/fly.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var a = '这是一条log';
+var b = 1;
+
+var print = function print(e) {
+  console.log(b + e);
+};
+
+var wuli = function wuli(str) {
+  console.log(a + str);
+};
+
+module.exports = {
+  print: print,
+  wuli: wuli };
+
+/***/ }),
+
 /***/ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/main.js":
 /*!***************************************************************!*\
   !*** /Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/main.js ***!
@@ -8,7 +34,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createApp) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages.json");
+/* WEBPACK VAR INJECTION */(function(createApp, uni) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages.json");
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
 var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/App.vue"));
 var _store = _interopRequireDefault(__webpack_require__(/*! ./store */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/store/index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
@@ -21,7 +47,7 @@ _App.default.mpType = 'app';
 
 var Fly = __webpack_require__(/*! flyio/dist/npm/wx */ "./node_modules/flyio/dist/npm/wx.js");
 var fly = new Fly();
-fly.config.baseUrl = "https://baidu.com";
+fly.config.baseURL = "http://gsj.dev.rsc.ranknowcn.com";
 
 _vue.default.prototype.$fly = fly;
 
@@ -34,7 +60,8 @@ createApp(app).$mount();
 //拦截请求
 fly.interceptors.request.use(function (request) {
   //给所有请求添加自定义header
-  request.headers["X-Tag"] = "flyio";
+  var token = uni.getStorageSync('token');
+  request.headers["Authorization"] = 'bearer ' + token;
   if (request.method == 'GET') {
     console.log('GET');
   }
@@ -51,7 +78,16 @@ fly.interceptors.request.use(function (request) {
   //可以显式返回request, 也可以不返回，没有返回值时拦截器中默认返回request
   return request;
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createApp"]))
+
+fly.interceptors.response.use(function (response) {
+  if (response.data.err == 0) {
+    return response.data.data;
+  } else {
+    console.log(response);
+    return Promise.reject(new Error(response.data.msg));
+  }
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createApp"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
 
 /***/ }),
 
@@ -102,6 +138,23 @@ createPage(_login.default);
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
 var _main = _interopRequireDefault(__webpack_require__(/*! ./pages/main/main.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/main/main.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_main.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/main.js?{\"page\":\"pages%2Fmain%2ForderRate\"}":
+/*!***************************************************************************************************!*\
+  !*** /Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/main.js?{"page":"pages%2Fmain%2ForderRate"} ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _orderRate = _interopRequireDefault(__webpack_require__(/*! ./pages/main/orderRate.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/main/orderRate.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_orderRate.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
 
 /***/ }),
@@ -231,7 +284,7 @@ var addUser = function addUser(userInfo) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
 var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 _vue.default.use(_vuex.default);
@@ -259,6 +312,9 @@ var moduleA = {
 
 
 
+var info = uni.getStorageSync('userInfo');
+console.log(info);
+
 var store = new _vuex.default.Store({
   modules: {
     test: moduleA },
@@ -268,7 +324,7 @@ var store = new _vuex.default.Store({
             * 是否需要强制登录
             */
     forcedLogin: false,
-    hasLogin: true,
+    hasLogin: info.haslogin,
     userName: "" },
 
   mutations: {
@@ -279,11 +335,18 @@ var store = new _vuex.default.Store({
     logout: function logout(state) {
       state.userName = "";
       state.hasLogin = false;
+      uni.removeStorage({
+        key: 'userInfo',
+        success: function success(e) {
+          console.log('登出成功');
+        } });
+
     } } });var _default =
 
 
 
 store;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
 
 /***/ }),
 

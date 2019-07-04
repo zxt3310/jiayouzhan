@@ -115,6 +115,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
 var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js"); //
 //
 //
@@ -131,18 +136,12 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
 //
 //
 //
-var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | pages/template/recordTemple/recordTemple */ "pages/template/recordTemple/recordTemple").then(__webpack_require__.bind(null, /*! ../template/recordTemple/recordTemple.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/recordTemple/recordTemple.vue"));};var _default = { data: function data() {return { list: [{ idCode: 'GZ2019042112540110', status: 0, xm: '三星加油机', ms: '加油机出现少量漏油情况', jyz: '中国石化（日坛加油站）', ts: '2019-04-12 15:32' },
-
-      {
-        idCode: 'GK5019042112540220',
-        status: 4,
-        xm: '飞利浦加油机',
-        ms: '加油泵老化',
-        jyz: '中国石油（展览路加油站）',
-        ts: '2019-06-12 09:15' }] };
-
-
-
+//
+//
+//
+//
+//
+var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | pages/template/recordTemple/recordTemple */ "pages/template/recordTemple/recordTemple").then(__webpack_require__.bind(null, /*! ../template/recordTemple/recordTemple.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/recordTemple/recordTemple.vue"));};var _default = { data: function data() {return { orderModel: { order_no: '', faulty_item: '', faulty_desc: '', pic: '', submit_time: '', completion: '', status: 0, gs_name: '', address: '' }, list: [] };
   },
   components: {
     rreecc: rreecc },
@@ -161,23 +160,34 @@ var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | page
 
     },
     createOrder: function createOrder() {
+      if (this.hasLogin) {
+        uni.navigateTo({
+          url: '../startRepairReq/startRepairReq' });
+
+      } else {
+        uni.navigateTo({
+          url: '../login/login' });
+
+      }
+    },
+    gotoRate: function gotoRate(orderId) {
+      console.log(orderId, " at pages/main/main.vue:74");
       uni.navigateTo({
-        url: '../startRepairReq/startRepairReq' });
+        url: 'orderRate' });
 
     } },
 
-  onNavigationBarButtonTap: function onNavigationBarButtonTap() {
-    if (this.hasLogin) {
-      uni.navigateTo({
-        url: '../startRepairReq/startRepairReq' });
+  onShow: function onShow() {var _this = this;
+    this.$fly.post('api/mgr-orders', {}).
 
-    } else {
-      uni.navigateTo({
-        url: '../login/login' });
-
-    }
+    then(function (res) {
+      console.log(res, " at pages/main/main.vue:84");
+      _this.list = res;
+    }).catch(function (error) {
+      Console.log(error);
+    });
   },
-  onLoad: function onLoad() {var _this = this;
+  onLoad: function onLoad() {var _this2 = this;
     if (!this.hasLogin) {
       uni.showModal({
         title: '未登录',
@@ -191,7 +201,7 @@ var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | page
             /**
                              * 如果需要强制登录，使用reLaunch方式
                              */
-            if (_this.forcedLogin) {
+            if (_this2.forcedLogin) {
               uni.reLaunch({
                 url: '../login/login' });
 

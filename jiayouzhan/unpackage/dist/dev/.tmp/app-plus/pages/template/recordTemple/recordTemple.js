@@ -179,11 +179,10 @@ var _default =
     getcolor: function getcolor(e) {
       var color = '#' + this.statusColor[e];
       return color;
-    } },
-
-  created: function created() {
-    console.log('adfadfadf', " at pages/template/recordTemple/recordTemple.vue:85");
-  } };exports.default = _default;
+    },
+    gotoRate: function gotoRate(id) {
+      this.$emit("gotoRate", id);
+    } } };exports.default = _default;
 
 /***/ }),
 

@@ -1,5 +1,5 @@
 <template>
-    <view class="content">
+    <view class="content" style="padding: 0px;">
         <!-- <view class="btn-row">
             <button v-if="!hasLogin" type="primary" class="primary" @tap="bindLogin">登录</button>
             <button v-if="hasLogin" type="default" @tap="bindLogout">退出登录</button>
@@ -16,21 +16,21 @@
 		
 		<view class="menuList">
 			<view class="menu">
-				<image src="" mode=""></image>
+				<image src="../../static/img/iconGas.png" mode=""></image>
 				<text>加油站</text>
 			</view>
-			<view style="width:100%;height: 1px; background-color: gray;"></view>
+			<view style="width:100%;height: 1px; background-color: #edecf2"></view>
 			<view class="menu">
-				<image src="" mode=""></image>
+				<image src="../../static/img/iconSet.png" mode=""></image>
 				<text>设置</text>
 			</view>
-			<view style="width:100%;height: 1px; background-color: gray;"></view>
+			<view style="width:100%;height: 1px; background-color: #edecf2"></view>
 			
 			<view class="menu" @tap="bindLogout">
 				<image src="" mode=""></image>
 				<text>登出</text>
 			</view>
-			<view style="width:100%;height: 1px; background-color: gray;"></view>
+			<view style="width:100%;height: 1px; background-color: #edecf2"></view>
 		</view>
     </view>
 </template>
@@ -98,19 +98,20 @@
 	
 	.menuList{
 		.menu{
-			padding: 30upx;
+			background-color: white;
+			padding: 20upx;
 			box-sizing: border-box;
 			display: flex;
 			flex-direction: row;
 			align-items: center;
 			font-size: 14px;
 			image {
-				height: 56upx;
-				width: 56upx;
-				background-color: black;
+				height: 44upx;
+				width: 44upx;
+				margin-left: 30upx;
 			}
 			text{
-				margin-left: 40upx;
+				margin-left: 20upx;
 			}
 		}
 	}

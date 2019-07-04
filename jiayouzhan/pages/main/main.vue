@@ -6,9 +6,14 @@
 				<text>维修申请</text>
 			</view>
 		</view>
-		<view v-for="(item,index) in list" :key="index">
-			<view @tap="showDetails(item)">
-				<rreecc :idCode='item.idCode' :status="item.status" :xm="item.xm" :ms="item.ms" :jyz="item.jyz" :ts="item.ts"> </rreecc>
+		<view v-for="(order,index) in list" :key="index">
+			<view v-on:click="showDetails(order)">
+				<rreecc :idCode='order.order_no' 
+						:status="order.status" 
+						:xm="order.faulty_item" 
+						:ms="order.faulty_desc" 
+						:jyz="order.gs_name" 
+						:ts="order.submit_time" v-on:gotoRate="gotoRate"> </rreecc>
 			</view>
 		</view>
     </view>
@@ -24,24 +29,18 @@
     export default {
 		data(){
 			return {
-				list:[
-					{
-						idCode:'GZ2019042112540110',
-						status:0,
-						xm:'三星加油机',
-						ms:'加油机出现少量漏油情况',
-						jyz:'中国石化（日坛加油站）',
-						ts:'2019-04-12 15:32'
-					},
-					{
-						idCode:'GK5019042112540220',
-						status:4,
-						xm:'飞利浦加油机',
-						ms:'加油泵老化',
-						jyz:'中国石油（展览路加油站）',
-						ts:'2019-06-12 09:15'
-					}
-				]
+				orderModel:{
+					order_no:'',
+					faulty_item:'',
+					faulty_desc:'',
+					pic:'',
+					submit_time:'',
+					completion:'',
+					status:0,
+					gs_name:'',
+					address:''
+				},
+				list:[]
 			}
 		},
 		components:{
@@ -61,21 +60,32 @@
 				})
 			},
 			createOrder(){
+				if (this.hasLogin) {
+						uni.navigateTo({
+						url:'../startRepairReq/startRepairReq'
+					});
+				} else{
+					uni.navigateTo({
+						url: '../login/login'
+					});
+				}
+			},
+			gotoRate: function (orderId){
+				console.log(orderId);
 				uni.navigateTo({
-					url: '../startRepairReq/startRepairReq'
-				});
+					url:'orderRate'
+				})
 			}
 		},
-		onNavigationBarButtonTap() {
-			if (this.hasLogin) {
-				uni.navigateTo({
-					url:'../startRepairReq/startRepairReq'
-				});
-			} else{
-				uni.navigateTo({
-					url: '../login/login'
-                });
-			}
+		onShow() {
+			this.$fly.post('api/mgr-orders',{
+				
+			}).then((res)=>{
+				console.log(res);
+				this.list = res;
+			}).catch((error)=>{
+				Console.log(error);
+			})
 		},
         onLoad() {
             if (!this.hasLogin) {

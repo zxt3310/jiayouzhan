@@ -1,63 +1,72 @@
 <template>
-	<view class="content">
-		<view class="inputsytle">
-			<text>故障项目</text>
-			<text @tap="pickershow()">请选择</text>
-		</view>
-		<view class="line" />
-		
-		<view class="inputsytle">
-			<text>故障描述</text>
-			<textarea style="margin-top: 2px;" value="" placeholder="请输入" />
-		</view>
-		<view class="line" />
-		
-		<view class="inputsytle">
-			<text>加油站</text>
-			<text @tap="pickershow()">请选择</text>
-		</view>
-		<view class="line" />
-		
-		<view class="inputsytle">
-			<text>详细地址</text>
-			<textarea style="margin-top: 2px;" value="" placeholder="请输入" />
-		</view>
-		<view class="line" />
-		
-		<view class="inputsytle">
-			<text style="align-self: center;">联系人</text>
-			<input type="text" placeholder="请输入" value="" />
-		</view>
-		<view class="line" />
-		
-		<view class="inputsytle">
-			<text style="align-self: center;">联系电话</text>
-			<input type="text" placeholder="请输入" value="" />
-		</view>
-		<view class="line" />
-		
-		<view class="inputsytle">
-			<text>上传图片\n最多四张\n长按删除</text>
-			<view class="uni-uploader-body">
-				<view class="uni-uploader__files">
-					<block v-for="(image,index) in imageList" :key="index">
-						<view class="uni-uploader__file">
-							<image class="uni-uploader__img" :src="image" :data-src="image" @tap="previewImage" @longpress="deleteImg"></image>
+	<view class="thiscontent">
+		<view style="background-color: white; border-radius: 20px;">
+			<view class="inputsytle">
+				<text>故障项目</text>
+				<view class="inputContext" @tap="pickershow()">
+					<text>请选择</text>
+					<image src="/static/img/extra.png" mode=""></image>
+				</view>
+			</view>
+
+			<view class="inputsytle">
+				<text style="align-self: flex-start;margin-top: 8px;">故障描述</text>
+				<view class="inputContext">
+					<textarea style="margin-top: 2px;" value="" placeholder="请输入" />
+				</view>
+			</view>
+			
+			<view class="inputsytle">
+				<text>加油站</text>
+				<view class="inputContext" @tap="pickershow()">
+					<text >请选择</text>
+					<image src="/static/img/extra.png" mode=""></image>
+				</view>
+			</view>
+			
+			<view class="inputsytle">
+				<text style="align-self: flex-start;margin-top: 8px;">详细地址</text>
+				<view class="inputContext">
+					<textarea style="margin-top: 2px;" value="" placeholder="请输入" />
+				</view>
+			</view>
+			
+			<view class="inputsytle">
+				<text style="align-self: center;">联系人</text>
+				<view class="inputContext">
+					<input type="text" placeholder="请输入" value="" />
+				</view>
+			</view>
+			
+			<view class="inputsytle">
+				<text style="align-self: center;">联系电话</text>
+				<view class="inputContext">
+					<input type="text" placeholder="请输入" value="" />
+				</view>
+			</view>
+			
+			<view class="inputsytle">
+				<text style="align-self: flex-start;margin-top: 8px;">上传图片\n最多四张\n长按删除</text>
+				<view class="uni-uploader-body">
+					<view class="uni-uploader__files">
+						<block v-for="(image,index) in imageList" :key="index">
+							<view class="uni-uploader__file">
+								<image class="uni-uploader__img" :src="image" :data-src="image" @tap="previewImage" @longpress="deleteImgkmkl"></image>
+							</view>
+						</block>
+						<view class="uni-uploader__input-box">
+							<view class="uni-uploader__input" @tap="chooseImage"></view>
 						</view>
-					</block>
-					<view class="uni-uploader__input-box">
-						<view class="uni-uploader__input" @tap="chooseImage"></view>
 					</view>
 				</view>
 			</view>
+			
+			<view class="commit">
+				<button @tap="submit">提交</button>
+			</view>
+			
+			<mpvuePicker :mode='mode' ref='mpvuePicker' :pickerValueArray='pickerAry' :pickerValueDefault='pickerDefault' :deepLenth='deep'></mpvuePicker>
 		</view>
-		<view class="line" />
-		
-		<view class="commit">
-			<button type="primary" @tap="submit">提交</button>
-		</view>
-		
-		<mpvuePicker :mode='mode' ref='mpvuePicker' :pickerValueArray='pickerAry' :pickerValueDefault='pickerDefault' :deepLenth='deep'></mpvuePicker>
 	</view>
 </template>
 
@@ -187,21 +196,47 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
+	.thiscontent{
+		background-color: #f2f7f8;
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		box-sizing: border-box;
+	}
 	.inputsytle{
 		display: flex;
 		flex-direction: row;
 		padding: 10px;
+		.inputContext{
+			display: flex;
+			flex: 1;
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 8px;
+			border-width: 1px;
+			border-color: #e6e6e6;
+			background-color: #f8f8f8;
+			image{
+				width: 22px;
+				height: 22px;
+			}
+			textarea{
+				height: 100px;
+			}
+		}
 	}
 	.inputsytle text{
 		font-size: 14px;
 		color: #333333;
-		width: 25%;
+		width: 20%;
+		text-align: center;
+		align-self: center;
 	}
 	.inputsytle input,textarea{
 		font-size: 14px;
 		color: #333333;
-		width: 75%;
+		width: 80%;
 	}
 
 	.line{
@@ -209,7 +244,7 @@
 		background-color: #dddddd;
 	}
 	.uni-uploader-body {
-		width: 100%;
+		width: 80%;
 	}
 	.uni-uploader__files {
 		display: flex;
@@ -276,5 +311,7 @@
 	.commit button{
 		width: 400upx;
 		height: 88upx;
+		background-color: #1c713d;
+		color: white;
 	}
 </style>

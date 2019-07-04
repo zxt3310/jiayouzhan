@@ -60,8 +60,8 @@ createApp(app).$mount();
 //拦截请求
 fly.interceptors.request.use(function (request) {
   //给所有请求添加自定义header
-  var token = uni.getStorageSync('token');
-  request.headers["token"] = token;
+  var token = uni.getStorageSync('userInfo');
+  request.headers["Authorization"] = 'bearer ' + token.token;
   if (request.method == 'GET') {
     console.log('GET', " at main.js:30");
   }
@@ -138,6 +138,23 @@ createPage(_login.default);
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
 var _main = _interopRequireDefault(__webpack_require__(/*! ./pages/main/main.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/main/main.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_main.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/main.js?{\"page\":\"pages%2Fmain%2ForderRate\"}":
+/*!***************************************************************************************************!*\
+  !*** /Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/main.js?{"page":"pages%2Fmain%2ForderRate"} ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _orderRate = _interopRequireDefault(__webpack_require__(/*! ./pages/main/orderRate.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/main/orderRate.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_orderRate.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),

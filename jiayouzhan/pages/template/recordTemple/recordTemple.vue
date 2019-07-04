@@ -6,7 +6,7 @@
 				<image style="width: 22px; height: 22px;" src="/static/img/icoDot.png" mode=""></image>
 				<text style="font-family: PingFangSC-Medium;">{{idCode}}</text>
 				<view v-if="status<4" style="font-size: 14px;" :style="{color:getcolor(status)}">{{statusText[status]}}</view>
-				<view class="PJ" v-if="status == 4">
+				<view class="PJ" v-if="status == 4" @tap.stop="gotoRate(idCode)">
 					<text>待评价</text>
 				</view>
 			</view>
@@ -79,10 +79,10 @@
 			getcolor: function(e){
 				var color = '#' + this.statusColor[e];
 				return color;
+			},
+			gotoRate: function (id) {
+				this.$emit("gotoRate",id);
 			}
-		},
-		created(){
-			console.log('adfadfadf');
 		}
 	}
 </script>

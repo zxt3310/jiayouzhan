@@ -207,17 +207,50 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
         account: this.account,
         password: this.password };
 
-      var validUser = _service.default.getUsers().some(function (user) {
-        return data.account === user.account && data.password === user.password;
-      });
-      if (validUser) {
-        this.toMain(this.account);
-      } else {
+      // const validUser = service.getUsers().some(function (user) {
+      //     return data.account === user.account && data.password === user.password;
+      // });
+      // if (validUser) {
+      //     this.toMain(this.account);
+      // } else {
+      //     uni.showToast({
+      //         icon: 'none',
+      //         title: '用户账号或密码不正确',
+      //     });
+      // }
+      var that = this;
+      this.$fly.post('api/check-credentials', {
+        mobile: data.account,
+        password: data.password }).
+      then(function (response) {
+        console.log('登录成功');
+        console.log(response);
+        //存token
+        var token = response.accessToken;
+        console.log(typeof token);
+
+        var userInfo = {
+          token: token,
+          haslogin: true };
+
+
+        uni.setStorage({
+          key: 'userInfo',
+          data: userInfo,
+          success: function success(e) {
+            console.log('save');
+          } });
+
+        that.toMain('userTest');
+
+      }).catch(function (error) {
+        console.log('fail');
+        console.log(error);
         uni.showToast({
           icon: 'none',
-          title: '用户账号或密码不正确' });
+          title: error.message });
 
-      }
+      });
     },
     oauth: function oauth(value) {var _this2 = this;
       uni.login({

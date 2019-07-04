@@ -34,7 +34,8 @@
         ,{
             "path" : "pages/startRepairReq/startRepairReq",
             "style" : {
-				"navigationBarTitleText": "维修申请"
+				"navigationBarTitleText": "维修申请",
+				"navigationBarBackgroundColor":"#F2F7F8"
 			}
         }
         ,{
@@ -43,6 +44,13 @@
 				"navigationBarTitleText":"详情"
 			}
         }
+		,{
+			"path":"pages/main/orderRate",
+			"style" : {
+				"navigationBarTitleText":"服务评价",
+				"navigationBarBackgroundColor":"#F2F7F8"
+			}
+		}
     ],
     "tabBar": {
         "color": "#b9b8c2",
@@ -63,6 +71,7 @@
     "globalStyle": {
         "navigationBarTextStyle": "black",
         "navigationBarBackgroundColor": "white",
-        "backgroundColor": "#fbf9fe"
+        "backgroundColor":"#f2f7f8",
+		"backgroundColorTop":"#f2f7f8"
     }
 }

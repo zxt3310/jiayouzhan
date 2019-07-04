@@ -23,8 +23,8 @@ app.$mount()
 //拦截请求
 fly.interceptors.request.use((request)=>{
     //给所有请求添加自定义header
-	let token = uni.getStorageSync('token');
-    request.headers["token"]= token;
+	let token = uni.getStorageSync('userInfo');
+    request.headers["Authorization"] = 'bearer ' + token.token;
 	if(request.method == 'GET'){
 		console.log('GET');
 	}
