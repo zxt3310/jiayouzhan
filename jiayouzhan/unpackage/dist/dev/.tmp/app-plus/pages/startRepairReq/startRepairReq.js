@@ -186,10 +186,10 @@ var sizeType = [
 {
   data: function data() {
     return {
-      mode: '',
+      mode: 'multiLinkageSelector',
       pickerAry: [],
       pickerDefault: [],
-      deep: 0,
+      deepL: 0,
       imageList: [] };
 
   },
@@ -199,58 +199,7 @@ var sizeType = [
   methods: {
     pickershow: function pickershow() {
       this.mode = 'multiLinkageSelector';
-      this.pickerAry = [
-      {
-        label: '第一',
-        value: 1,
-        children:
-        [
-        {
-          label: '1-1',
-          value: 1 },
-
-        {
-          label: '1-2',
-          value: 2 }] },
-
-
-
-      {
-        label: '第二',
-        value: 2,
-        children:
-        [
-        {
-          label: '2-1',
-          value: 1 },
-
-        {
-          label: '2-2',
-          value: 2 },
-
-        {
-          label: '2-3',
-          value: 3 }] },
-
-
-
-      {
-        label: '第三',
-        value: 3,
-        children:
-        [
-        {
-          label: '3-1',
-          value: 1 },
-
-        {
-          label: '3-2',
-          value: 2 }] }];
-
-
-
-      this.pickerDefault = [0];
-      this.deep = 2;
+      this.deepL = 3;
       this.$refs.mpvuePicker.show();
     },
     chooseImage: function () {var _chooseImage = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _this = this;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:if (!(
@@ -291,7 +240,17 @@ var sizeType = [
       // })
       _fly.default.print(3);
       _fly.default.wuli('哈哈哈');
-    } } };exports.default = _default;
+    } },
+
+  onLoad: function onLoad() {var _this2 = this;
+    this.$fly.post('api/accessories', {}).
+
+    then(function (res) {
+      _this2.pickerAry = res;
+    }).catch(function (error) {
+
+    });
+  } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),

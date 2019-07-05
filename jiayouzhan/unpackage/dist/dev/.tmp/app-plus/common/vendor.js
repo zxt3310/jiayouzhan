@@ -48,6 +48,7 @@ _App.default.mpType = 'app';
 var Fly = __webpack_require__(/*! flyio/dist/npm/wx */ "./node_modules/flyio/dist/npm/wx.js");
 var fly = new Fly();
 fly.config.baseURL = "http://gsj.dev.rsc.ranknowcn.com";
+fly.config.withCredentials = true;
 
 _vue.default.prototype.$fly = fly;
 
@@ -63,13 +64,13 @@ fly.interceptors.request.use(function (request) {
   var token = uni.getStorageSync('userInfo');
   request.headers["Authorization"] = 'bearer ' + token.token;
   if (request.method == 'GET') {
-    console.log('GET', " at main.js:30");
+    console.log('GET', " at main.js:31");
   }
   if (request.method == 'POST') {
-    console.log('POST', " at main.js:33");
+    console.log('POST', " at main.js:34");
   }
   //打印出请求体
-  console.log(request, " at main.js:36");
+  console.log(request, " at main.js:37");
   //终止请求
   //var err=new Error("xxx")
   //err.request=request
@@ -83,8 +84,9 @@ fly.interceptors.response.use(function (response) {
   if (response.data.err == 0) {
     return response.data.data;
   } else {
-    console.log(response, " at main.js:50");
+    console.log(response, " at main.js:51");
     return Promise.reject(new Error(response.data.msg));
+    return response;
   }
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createApp"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))

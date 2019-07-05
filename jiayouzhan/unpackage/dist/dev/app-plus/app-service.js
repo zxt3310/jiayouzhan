@@ -1204,7 +1204,7 @@ __WXML_GLOBAL__.ops_cached.$gwx_9=[];
 Z([3,'__l'])
 Z([3,'vue-ref'])
 Z([3,'mpvuePicker'])
-Z([[7],[3,'deep']])
+Z([[7],[3,'deepL']])
 Z([[7],[3,'mode']])
 Z([[7],[3,'pickerAry']])
 Z([[7],[3,'pickerDefault']])
@@ -1386,7 +1386,7 @@ e_[x[7]]={f:m7,j:[],i:[],ti:[],ic:[]}
 d_[x[8]]={}
 var m8=function(e,s,r,gg){
 var z=gz$gwx_9()
-var o0=_mz(z,'mpvue-picker',['bind:__l',0,'class',1,'data-ref',1,'deepLenth',2,'mode',3,'pickerValueArray',4,'pickerValueDefault',5,'vueId',6],[],e,s,gg)
+var o0=_mz(z,'mpvue-picker',['bind:__l',0,'class',1,'data-ref',1,'deepLength',2,'mode',3,'pickerValueArray',4,'pickerValueDefault',5,'vueId',6],[],e,s,gg)
 _(r,o0)
 return r
 }
@@ -1965,6 +1965,7 @@ _App.default.mpType = 'app';
 var Fly = __webpack_require__(/*! flyio/dist/npm/wx */ "./node_modules/flyio/dist/npm/wx.js");
 var fly = new Fly();
 fly.config.baseURL = "http://gsj.dev.rsc.ranknowcn.com";
+fly.config.withCredentials = true;
 
 _vue.default.prototype.$fly = fly;
 
@@ -1980,13 +1981,13 @@ fly.interceptors.request.use(function (request) {
   var token = uni.getStorageSync('userInfo');
   request.headers["Authorization"] = 'bearer ' + token.token;
   if (request.method == 'GET') {
-    console.log('GET', " at main.js:30");
+    console.log('GET', " at main.js:31");
   }
   if (request.method == 'POST') {
-    console.log('POST', " at main.js:33");
+    console.log('POST', " at main.js:34");
   }
   //打印出请求体
-  console.log(request, " at main.js:36");
+  console.log(request, " at main.js:37");
   //终止请求
   //var err=new Error("xxx")
   //err.request=request
@@ -2000,8 +2001,9 @@ fly.interceptors.response.use(function (response) {
   if (response.data.err == 0) {
     return response.data.data;
   } else {
-    console.log(response, " at main.js:50");
+    console.log(response, " at main.js:51");
     return Promise.reject(new Error(response.data.msg));
+    return response;
   }
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createApp"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
@@ -13872,6 +13874,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js"); //
 //
 //
@@ -13893,22 +13896,16 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
 //
 //
 //
-var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | pages/template/recordTemple/recordTemple */ "pages/template/recordTemple/recordTemple").then(__webpack_require__.bind(null, /*! ../template/recordTemple/recordTemple.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/recordTemple/recordTemple.vue"));};var _default = { data: function data() {return { orderModel: { order_no: '', faulty_item: '', faulty_desc: '', pic: '', submit_time: '', completion: '', status: 0, gs_name: '', address: '' }, list: [] };
-  },
+//
+var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | pages/template/recordTemple/recordTemple */ "pages/template/recordTemple/recordTemple").then(__webpack_require__.bind(null, /*! ../template/recordTemple/recordTemple.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/recordTemple/recordTemple.vue"));};var _default = { data: function data() {return { orderModel: { order_no: '', faulty_item: '', faulty_desc: '', pic: '', submit_time: '', completion: '', status: 0, gs_name: '', address: '' }, list: [] };},
   components: {
     rreecc: rreecc },
 
   computed: (0, _vuex.mapState)(['forcedLogin', 'hasLogin', 'userName', 'test']),
   methods: {
     showDetails: function showDetails(e) {
-      var param = JSON.stringify(e);
       uni.navigateTo({
-        url: '../RepireOrderDetails/RepireOrderDetails?' + 'idCode=' + e.idCode +
-        '&status=' + e.status +
-        '&xm=' + e.xm +
-        '&ms=' + e.xm +
-        '&jyz=' + e.jyz +
-        '&ts=' + e.ts });
+        url: '../RepireOrderDetails/RepireOrderDetails?' + 'orderNo=' + e.order_no });
 
     },
     createOrder: function createOrder() {
@@ -13923,7 +13920,7 @@ var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | page
       }
     },
     gotoRate: function gotoRate(orderId) {
-      console.log(orderId, " at pages/main/main.vue:74");
+      console.log(orderId, " at pages/main/main.vue:69");
       uni.navigateTo({
         url: 'orderRate' });
 
@@ -13933,7 +13930,7 @@ var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | page
     this.$fly.post('api/mgr-orders', {}).
 
     then(function (res) {
-      console.log(res, " at pages/main/main.vue:84");
+      console.log(res, " at pages/main/main.vue:79");
       _this.list = res;
     }).catch(function (error) {
       Console.log(error);
@@ -15100,10 +15097,10 @@ var sizeType = [
 {
   data: function data() {
     return {
-      mode: '',
+      mode: 'multiLinkageSelector',
       pickerAry: [],
       pickerDefault: [],
-      deep: 0,
+      deepL: 0,
       imageList: [] };
 
   },
@@ -15113,58 +15110,7 @@ var sizeType = [
   methods: {
     pickershow: function pickershow() {
       this.mode = 'multiLinkageSelector';
-      this.pickerAry = [
-      {
-        label: '第一',
-        value: 1,
-        children:
-        [
-        {
-          label: '1-1',
-          value: 1 },
-
-        {
-          label: '1-2',
-          value: 2 }] },
-
-
-
-      {
-        label: '第二',
-        value: 2,
-        children:
-        [
-        {
-          label: '2-1',
-          value: 1 },
-
-        {
-          label: '2-2',
-          value: 2 },
-
-        {
-          label: '2-3',
-          value: 3 }] },
-
-
-
-      {
-        label: '第三',
-        value: 3,
-        children:
-        [
-        {
-          label: '3-1',
-          value: 1 },
-
-        {
-          label: '3-2',
-          value: 2 }] }];
-
-
-
-      this.pickerDefault = [0];
-      this.deep = 2;
+      this.deepL = 3;
       this.$refs.mpvuePicker.show();
     },
     chooseImage: function () {var _chooseImage = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _this = this;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:if (!(
@@ -15205,7 +15151,17 @@ var sizeType = [
       // })
       _fly.default.print(3);
       _fly.default.wuli('哈哈哈');
-    } } };exports.default = _default;
+    } },
+
+  onLoad: function onLoad() {var _this2 = this;
+    this.$fly.post('api/accessories', {}).
+
+    then(function (res) {
+      _this2.pickerAry = res;
+    }).catch(function (error) {
+
+    });
+  } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
@@ -15445,7 +15401,42 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 {
   data: function data() {
-    return {};
+    return {
+      order: {
+        "id": 0,
+        "repair_num": "",
+        "gas_station_id": "",
+        "faulty_item": "",
+        "faulty_desc": "",
+        "pic": "",
+        "contact": "",
+        "contact_phone": "",
+        "order_taker": "",
+        "order_taken_time": "",
+        "completion": "",
+        "result": "",
+        "status": 0,
+        "related_order": "",
+        "action": "",
+        "voice": "",
+        "notified": "",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": "",
+        "gs_name": "",
+        "address": "",
+        "lat": "39.888809",
+        "lon": "116.435602",
+        "owner": "30",
+        "admin_user_id": "",
+        "mobile": "",
+        "maint_c_id": "" },
+
+      statusText: [
+      '已完成',
+      '待处理',
+      '已接单',
+      '进行中'] };
 
 
   },
@@ -15455,8 +15446,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   methods: {},
 
 
-  onLoad: function onLoad(option) {
-    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:107");
+  onLoad: function onLoad(option) {var _this = this;
+    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:142");
+    this.$fly.post("api/mgr-orders-details", {
+      repairNum: option.orderNo }).
+    then(function (res) {
+      _this.order = res;
+    }).catch(function (error) {
+      console.log(error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:148");
+    });
   } };exports.default = _default;
 
 /***/ }),

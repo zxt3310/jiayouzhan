@@ -120,6 +120,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js"); //
 //
 //
@@ -141,22 +142,16 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
 //
 //
 //
-var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | pages/template/recordTemple/recordTemple */ "pages/template/recordTemple/recordTemple").then(__webpack_require__.bind(null, /*! ../template/recordTemple/recordTemple.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/recordTemple/recordTemple.vue"));};var _default = { data: function data() {return { orderModel: { order_no: '', faulty_item: '', faulty_desc: '', pic: '', submit_time: '', completion: '', status: 0, gs_name: '', address: '' }, list: [] };
-  },
+//
+var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | pages/template/recordTemple/recordTemple */ "pages/template/recordTemple/recordTemple").then(__webpack_require__.bind(null, /*! ../template/recordTemple/recordTemple.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/recordTemple/recordTemple.vue"));};var _default = { data: function data() {return { orderModel: { order_no: '', faulty_item: '', faulty_desc: '', pic: '', submit_time: '', completion: '', status: 0, gs_name: '', address: '' }, list: [] };},
   components: {
     rreecc: rreecc },
 
   computed: (0, _vuex.mapState)(['forcedLogin', 'hasLogin', 'userName', 'test']),
   methods: {
     showDetails: function showDetails(e) {
-      var param = JSON.stringify(e);
       uni.navigateTo({
-        url: '../RepireOrderDetails/RepireOrderDetails?' + 'idCode=' + e.idCode +
-        '&status=' + e.status +
-        '&xm=' + e.xm +
-        '&ms=' + e.xm +
-        '&jyz=' + e.jyz +
-        '&ts=' + e.ts });
+        url: '../RepireOrderDetails/RepireOrderDetails?' + 'orderNo=' + e.order_no });
 
     },
     createOrder: function createOrder() {
@@ -171,7 +166,7 @@ var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | page
       }
     },
     gotoRate: function gotoRate(orderId) {
-      console.log(orderId, " at pages/main/main.vue:74");
+      console.log(orderId, " at pages/main/main.vue:69");
       uni.navigateTo({
         url: 'orderRate' });
 
@@ -181,7 +176,7 @@ var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | page
     this.$fly.post('api/mgr-orders', {}).
 
     then(function (res) {
-      console.log(res, " at pages/main/main.vue:84");
+      console.log(res, " at pages/main/main.vue:79");
       _this.list = res;
     }).catch(function (error) {
       Console.log(error);

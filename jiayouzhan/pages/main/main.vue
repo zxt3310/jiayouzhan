@@ -13,7 +13,8 @@
 						:xm="order.faulty_item" 
 						:ms="order.faulty_desc" 
 						:jyz="order.gs_name" 
-						:ts="order.submit_time" v-on:gotoRate="gotoRate"> </rreecc>
+						:ts="order.submit_time" 
+					v-on:gotoRate="gotoRate"> </rreecc>
 			</view>
 		</view>
     </view>
@@ -49,14 +50,8 @@
         computed: mapState(['forcedLogin', 'hasLogin', 'userName','test']),
 		methods:{
 			showDetails: function(e){
-				var param = JSON.stringify(e);
 				uni.navigateTo({
-					url:'../RepireOrderDetails/RepireOrderDetails?' + 'idCode=' + e.idCode +
-																	 '&status=' + e.status 
-																	   + '&xm=' + e.xm 
-																	   + '&ms=' + e.xm 
-																	  + '&jyz=' + e.jyz 
-																	   + '&ts=' + e.ts
+					url:'../RepireOrderDetails/RepireOrderDetails?' + 'orderNo=' + e.order_no
 				})
 			},
 			createOrder(){

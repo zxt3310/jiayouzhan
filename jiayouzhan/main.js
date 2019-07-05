@@ -11,6 +11,7 @@ App.mpType = 'app'
 var Fly = require("flyio/dist/npm/wx");
 const fly = new Fly();
 fly.config.baseURL = "http://gsj.dev.rsc.ranknowcn.com";
+fly.config.withCredentials = true;
 
 Vue.prototype.$fly = fly;
 
@@ -48,6 +49,7 @@ fly.interceptors.response.use((response)=>{
 	}else{
 		console.log(response);
 		return Promise.reject(new Error(response.data.msg));
+		return response;
 	}
 })
 

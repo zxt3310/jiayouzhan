@@ -193,7 +193,42 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 {
   data: function data() {
-    return {};
+    return {
+      order: {
+        "id": 0,
+        "repair_num": "",
+        "gas_station_id": "",
+        "faulty_item": "",
+        "faulty_desc": "",
+        "pic": "",
+        "contact": "",
+        "contact_phone": "",
+        "order_taker": "",
+        "order_taken_time": "",
+        "completion": "",
+        "result": "",
+        "status": 0,
+        "related_order": "",
+        "action": "",
+        "voice": "",
+        "notified": "",
+        "created_at": "",
+        "updated_at": "",
+        "deleted_at": "",
+        "gs_name": "",
+        "address": "",
+        "lat": "39.888809",
+        "lon": "116.435602",
+        "owner": "30",
+        "admin_user_id": "",
+        "mobile": "",
+        "maint_c_id": "" },
+
+      statusText: [
+      '已完成',
+      '待处理',
+      '已接单',
+      '进行中'] };
 
 
   },
@@ -203,8 +238,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   methods: {},
 
 
-  onLoad: function onLoad(option) {
-    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:107");
+  onLoad: function onLoad(option) {var _this = this;
+    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:142");
+    this.$fly.post("api/mgr-orders-details", {
+      repairNum: option.orderNo }).
+    then(function (res) {
+      _this.order = res;
+    }).catch(function (error) {
+      console.log(error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:148");
+    });
   } };exports.default = _default;
 
 /***/ }),

@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<view class="headBar">
-			<text>已完成</text>
+			<text>{{statusText[order.status]}}</text>
 		</view>
 		<view class="orderInfo">
 			<view class="title">
@@ -11,17 +11,17 @@
 				</view>
 				<view class="infodetail">
 					<text>故障项目</text>
-					<text>三星加油机</text>
+					<text>{{order.faulty_item}}</text>
 				</view>
 				<view class="infodetail">
 					<view style="width: 20%;align-self: flex-start;">故障描述</view>
 					<view>
-						加油机出现少量漏油情况加油机出现少量漏油情况加油机出现少量漏油情况加油机出现少量漏油情况加油机出现少量漏油情况
+						{{order.faulty_desc}}
 					</view>
 				</view>
 				<view class="infodetail">
 					<text>提交时间</text>
-					<text>2019-04-12 15:32</text>
+					<text>{{order.created_at}}</text>
 				</view>
 			</view>
 			
@@ -32,19 +32,19 @@
 				</view>
 				<view class="infodetail">
 					<text>处 理 人</text>
-					<text>张三</text>
+					<text>{{order.order_taker}}</text>
 				</view>
 				<view class="infodetail">
 					<text>接单时间</text>
-					<text>2019-04-13 15:32</text>
+					<text>{{order.order_taken_time}}</text>
 				</view>
 				<view class="infodetail">
 					<text>完成时间</text>
-					<text>2019-04-13 15:32</text>
+					<text>{{order.completion}}</text>
 				</view>
 				<view class="infodetail">
 					<text>处理说明</text>
-					<text>更换加油机</text>
+					<text>{{action}}</text>
 				</view>
 				<view class="infodetail">
 					<text>验 证 码</text>
@@ -59,11 +59,11 @@
 				</view>
 				<view class="infodetail">
 					<text>加 油 站</text>
-					<text>中国石化(日坛加油站)</text>
+					<text>{{order.gs_name}}</text>
 				</view>
 				<view class="infodetail">
 					<text class="">地 址</text>
-					<view class="">北京市朝阳区日坛路9号,菲律宾大使馆以东方向</view>
+					<view class="">{{order.address}}</view>
 				</view>
 			</view>
 			
@@ -94,7 +94,42 @@
 	export default {
 		data() {
 			return {
-				
+				order:{
+					"id": 0,
+					"repair_num": "",
+					"gas_station_id": "",
+					"faulty_item": "",
+					"faulty_desc": "",
+					"pic": "",
+					"contact": "",
+					"contact_phone": "",
+					"order_taker": "",
+					"order_taken_time": "",
+					"completion": "",
+					"result": "",
+					"status": 0,
+					"related_order":"",
+					"action": "",
+					"voice": "",
+					"notified": "",
+					"created_at": "",
+					"updated_at": "",
+					"deleted_at": "",
+					"gs_name": "",
+					"address": "",
+					"lat": "39.888809",
+					"lon": "116.435602",
+					"owner": "30",
+					"admin_user_id": "",
+					"mobile": "",
+					"maint_c_id": ""
+				},
+				statusText:[
+					'已完成',
+					'待处理',
+					'已接单',
+					'进行中'
+				]
 			}
 		},
 		components:{
@@ -105,6 +140,13 @@
 		},
 		onLoad(option){
 			console.log(option);
+			this.$fly.post("api/mgr-orders-details",{
+				repairNum:option.orderNo
+			}).then((res)=>{
+				this.order = res;
+			}).catch((error)=>{
+				console.log(error);
+			})
 		}
 		
 	} 

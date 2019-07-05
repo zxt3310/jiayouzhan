@@ -3,7 +3,7 @@
 		<view style="background-color: white; border-radius: 20px;">
 			<view class="inputsytle">
 				<text>故障项目</text>
-				<view class="inputContext" @tap="pickershow()">
+				<view class="inputContext" @tap="pickershow">
 					<text>请选择</text>
 					<image src="/static/img/extra.png" mode=""></image>
 				</view>
@@ -18,7 +18,7 @@
 			
 			<view class="inputsytle">
 				<text>加油站</text>
-				<view class="inputContext" @tap="pickershow()">
+				<view class="inputContext" @tap="pickershow">
 					<text >请选择</text>
 					<image src="/static/img/extra.png" mode=""></image>
 				</view>
@@ -65,7 +65,7 @@
 				<button @tap="submit">提交</button>
 			</view>
 			
-			<mpvuePicker :mode='mode' ref='mpvuePicker' :pickerValueArray='pickerAry' :pickerValueDefault='pickerDefault' :deepLenth='deep'></mpvuePicker>
+			<mpvue-picker :mode="mode" ref="mpvuePicker" :pickerValueArray="pickerAry" :pickerValueDefault="pickerDefault" :deepLength="deepL"></mpvue-picker>
 		</view>
 	</view>
 </template>
@@ -86,10 +86,10 @@
 	export default {
 		data() {
 			return {
-				mode:'',
+				mode:'multiLinkageSelector',
 				pickerAry:[],
 				pickerDefault:[],
-				deep:0,
+				deepL:0,
 				imageList:[]
 			}
 		},
@@ -99,58 +99,7 @@
 		methods: {
 			pickershow(){
 				this.mode = 'multiLinkageSelector';
-				this.pickerAry = [
-					{
-						label:'第一',
-						value:1,
-						children:
-						[
-							{
-								label:'1-1',
-								value:1
-							},
-							{
-								label:'1-2',
-								value:2
-							}
-						]
-					},
-					{
-						label:'第二',
-						value:2,
-						children:
-						[
-							{
-								label:'2-1',
-								value:1
-							},
-							{
-								label:'2-2',
-								value:2
-							},
-							{
-								label:'2-3',
-								value:3
-							}
-						]
-					},
-					{
-						label:'第三',
-						value:3,
-						children:
-						[
-							{
-								label:'3-1',
-								value:1
-							},
-							{
-								label:'3-2',
-								value:2
-							}
-						]
-					}];
-				this.pickerDefault = [0];
-				this.deep = 2;
+				this.deepL = 3;
 				this.$refs.mpvuePicker.show();
 			},
 			chooseImage: async function() {
@@ -192,6 +141,15 @@
 				test.print(3);
 				test.wuli('哈哈哈')
 			}
+		},
+		onLoad() {
+			this.$fly.post('api/accessories',{
+				
+			}).then((res)=>{
+				this.pickerAry = res;
+			}).catch((error)=>{
+				
+			})
 		}
 	}
 </script>
