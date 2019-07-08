@@ -43,13 +43,27 @@ fly.interceptors.request.use((request)=>{
     return request;
 })
 
+
 fly.interceptors.response.use((response)=>{
 	if (response.data.err == 0){
 		return response.data.data;
-	}else{
+	}else if (response.data.err == 999){
+		// if(app.$store.hasLogin){
+			//app.$store.logout();
+			uni.reLaunch({
+				url: '../login/login',
+			});
+			uni.showToast({
+				icon:'none',
+				title:'登录过期'
+			});
+		// }else{
+		// 	console.log('新用户，请登录');
+		// }
+	}
+	else{
 		console.log(response);
 		return Promise.reject(new Error(response.data.msg));
-		return response;
 	}
 })
 

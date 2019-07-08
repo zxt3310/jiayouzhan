@@ -53,15 +53,20 @@
                 });
             },
             bindLogout() {
-                this.logout();
-                /**
-                 * 如果需要强制登录跳转回登录页面
-                 */
-                if (this.forcedLogin) {
-                    uni.reLaunch({
-                        url: '../login/login',
-                    });
-                }
+				uni.showModal({
+					title:'提示',
+					content:'是否注销',
+					success: ((res) => {
+						if (res.confirm) {
+							this.logout();
+							if (this.forcedLogin) {
+								uni.reLaunch({
+									url: '../login/login',
+								});
+							}
+						}
+					})
+				})
             }
         }
     }

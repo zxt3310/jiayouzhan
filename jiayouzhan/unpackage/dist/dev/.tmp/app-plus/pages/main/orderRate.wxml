@@ -1,1 +1,1 @@
-<view class="_div"></view>
+<view class="thiscontent"><view class="title">您对本次维修满意吗？</view><view class="rateArea"><view>服务态度</view><uni-rate vue-id="1" max="{{5}}" isFill="{{false}}" margin="{{30}}" bind:__l="__l"></uni-rate></view><view class="rateArea"><view>服务质量</view><uni-rate vue-id="2" max="{{5}}" isFill="{{false}}" margin="{{30}}" bind:__l="__l"></uni-rate></view><view class="submit"><button>提交</button></view></view>

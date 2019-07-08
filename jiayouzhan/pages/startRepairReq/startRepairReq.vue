@@ -3,8 +3,8 @@
 		<view style="background-color: white; border-radius: 20px;">
 			<view class="inputsytle">
 				<text>故障项目</text>
-				<view class="inputContext" @tap="pickershow">
-					<text>请选择</text>
+				<view class="inputContext" @tap="faultyPickerShow">
+					<text style="flex: 1; text-align: left;">{{fau_name}}</text>
 					<image src="/static/img/extra.png" mode=""></image>
 				</view>
 			</view>
@@ -12,14 +12,14 @@
 			<view class="inputsytle">
 				<text style="align-self: flex-start;margin-top: 8px;">故障描述</text>
 				<view class="inputContext">
-					<textarea style="margin-top: 2px;" value="" placeholder="请输入" />
+					<textarea style="margin-top: 2px;" value={{faulty_desc}} placeholder="请输入" @input="bindDesc"></textarea>
 				</view>
 			</view>
 			
 			<view class="inputsytle">
 				<text>加油站</text>
-				<view class="inputContext" @tap="pickershow">
-					<text >请选择</text>
+				<view class="inputContext" @tap="gasPickerShow">
+					<text style="flex: 1; text-align: left;">{{gas_name}}</text>
 					<image src="/static/img/extra.png" mode=""></image>
 				</view>
 			</view>
@@ -27,21 +27,21 @@
 			<view class="inputsytle">
 				<text style="align-self: flex-start;margin-top: 8px;">详细地址</text>
 				<view class="inputContext">
-					<textarea style="margin-top: 2px;" value="" placeholder="请输入" />
+					<textarea style="margin-top: 2px;" value={{gas_addr}}></textarea>
 				</view>
 			</view>
 			
 			<view class="inputsytle">
 				<text style="align-self: center;">联系人</text>
 				<view class="inputContext">
-					<input type="text" placeholder="请输入" value="" />
+					<input type="text" placeholder="请输入" value={{contact}} @input="bindContact"/>
 				</view>
 			</view>
 			
 			<view class="inputsytle">
 				<text style="align-self: center;">联系电话</text>
 				<view class="inputContext">
-					<input type="text" placeholder="请输入" value="" />
+					<input type="text" placeholder="请输入" value={{phone}} @input="bindPhone"/>
 				</view>
 			</view>
 			
@@ -65,7 +65,8 @@
 				<button @tap="submit">提交</button>
 			</view>
 			
-			<mpvue-picker :mode="mode" ref="mpvuePicker" :pickerValueArray="pickerAry" :pickerValueDefault="pickerDefault" :deepLength="deepL"></mpvue-picker>
+			<mpvue-picker :mode="mode" ref="faultyPicker" :pickerValueArray="faultyPickerAry" :deepLength="deepL" v-on:onConfirm="faultyConfirm"></mpvue-picker>
+			<mpvue-picker :mode="mode" ref="gasPicker" :pickerValueArray="gasPickerAry" :deepLength="deepL" v-on:onConfirm="gasConfirm"></mpvue-picker>
 		</view>
 	</view>
 </template>
@@ -87,20 +88,36 @@
 		data() {
 			return {
 				mode:'multiLinkageSelector',
-				pickerAry:[],
-				pickerDefault:[],
+				pickerAry:[],         //展示列表
+				faultyPickerAry:[],   //故障列表
+				gasPickerAry:[],	  //加油站列表
+				faultyId:0,			  //故障ID
+				fau_name:'请选择',	  //故障项目
+				faulty_desc:'',		  //描述		
+				gasId:0,			  //加油站ID
+				gas_name:'请选择',	  //加油站名字
+				gas_addr:'',		  //加油站地址
 				deepL:0,
-				imageList:[]
+				imageList:[],
+				contact:'',
+				phone:''
 			}
 		},
 		components:{
 			mpvuePicker
 		},
 		methods: {
-			pickershow(){
-				this.mode = 'multiLinkageSelector';
-				this.deepL = 3;
-				this.$refs.mpvuePicker.show();
+			faultyPickerShow(){
+				//this.pickerAry = faultyPickerAry;
+				this.mode = 'selector';
+				this.deepL = 1;
+				this.$refs.faultyPicker.show();
+			},
+			gasPickerShow(){
+				//this.pickerAry = gasPickerAry;
+				this.mode = 'selector';
+				this.deepL = 1;
+				this.$refs.gasPicker.show();
 			},
 			chooseImage: async function() {
 				if (this.imageList.length === 4) {
@@ -129,27 +146,73 @@
 				var current = e.target.dataset.src
 				this.imageList.splice(this.imageList.findIndex(item => item === current), 1)
 			},
+			
+			faultyConfirm: function (faulty){
+				this.faultyId = (faulty.value)[0];
+				this.fau_name = faulty.label;
+				console.log(this.faultyId);
+			},
+			
+			gasConfirm: function (gas){
+				console.log(gas);
+				this.gas_name = gas.label;
+				this.gasId = (gas.value)[0];
 				
+				var index = (gas.index)[0];
+				this.gas_addr = (this.gasPickerAry[index]).address;
+				console.log(this.gasId);
+			},
+			bindDesc: function (e){
+				this.faulty_desc = e.detail.value;
+			},
+			bindContact: function (e){
+				this.contact = e.detail.value;
+			},
+			bindPhone: function (e){
+				this.phone = e.detail.value;
+			},
+			//提交表单
 			submit(){
-				// console.log(this.$fly)
-				// this.$fly.get("")
-				// .then(function(response){
-				// 	console.log(response)
-				// }).catch(function(error){
-				// 	console.log(error.url);
-				// })
-				test.print(3);
-				test.wuli('哈哈哈')
+				console.log(this.faultyId + '  ' + this.faulty_desc + '  ' + this.gasId + '  ' + this.contact + '  ' + this.phone);
+				
+				var post = {
+					faulty_item:this.faultyId,
+					faulth_desc:this.faulty_desc,
+					gas_station_id:this.gasId,
+					contact:this.contact,
+					contact_phone:this.phone
+				}
+				
+				this.$fly.post('api/sub-maint-order',{
+					faulty_item:this.faultyId,
+					faulth_desc:this.faulty_desc,
+					gas_station_id:this.gasId,
+					contact:this.contact,
+					contact_phone:this.phone
+				}).then((res)=>{
+					console.log(res);
+				}).catch((error)=>{
+					console.log(error);
+				})
 			}
 		},
 		onLoad() {
-			this.$fly.post('api/accessories',{
+			this.$fly.post('api/issue-desc',{
 				
 			}).then((res)=>{
-				this.pickerAry = res;
+				this.faultyPickerAry = res;
 			}).catch((error)=>{
 				
-			})
+			});
+			
+			
+			this.$fly.post('api/retrive-gas-station',{
+				
+			}).then((res)=>{
+				this.gasPickerAry = res;
+			}).catch((error)=>{
+				
+			});
 		}
 	}
 </script>

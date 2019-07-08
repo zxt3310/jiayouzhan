@@ -80,13 +80,27 @@ fly.interceptors.request.use(function (request) {
   return request;
 });
 
+
 fly.interceptors.response.use(function (response) {
   if (response.data.err == 0) {
     return response.data.data;
-  } else {
-    console.log(response, " at main.js:51");
+  } else if (response.data.err == 999) {
+    // if(app.$store.hasLogin){
+    //app.$store.logout();
+    uni.reLaunch({
+      url: '../login/login' });
+
+    uni.showToast({
+      icon: 'none',
+      title: '登录过期' });
+
+    // }else{
+    // 	console.log('新用户，请登录');
+    // }
+  } else
+  {
+    console.log(response, " at main.js:66");
     return Promise.reject(new Error(response.data.msg));
-    return response;
   }
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createApp"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
@@ -325,7 +339,7 @@ var store = new _vuex.default.Store({
     /**
             * 是否需要强制登录
             */
-    forcedLogin: false,
+    forcedLogin: true,
     hasLogin: info.haslogin,
     userName: "" },
 
