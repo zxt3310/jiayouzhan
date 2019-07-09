@@ -168,19 +168,22 @@ var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | page
     gotoRate: function gotoRate(orderId) {
       console.log(orderId, " at pages/main/main.vue:69");
       uni.navigateTo({
-        url: 'orderRate' });
+        url: 'orderRate?orderId=' + orderId });
 
+    },
+    pullOrder: function pullOrder() {var _this = this;
+      this.$fly.post('api/mgr-orders', {}).
+
+      then(function (res) {
+        console.log(res, " at pages/main/main.vue:78");
+        _this.list = res;
+      }).catch(function (error) {
+        Console.log(error);
+      });
     } },
 
-  onShow: function onShow() {var _this = this;
-    this.$fly.post('api/mgr-orders', {}).
-
-    then(function (res) {
-      console.log(res, " at pages/main/main.vue:79");
-      _this.list = res;
-    }).catch(function (error) {
-      Console.log(error);
-    });
+  onShow: function onShow() {
+    this.pullOrder();
   },
   onLoad: function onLoad() {var _this2 = this;
     if (!this.hasLogin) {
@@ -209,6 +212,13 @@ var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | page
         } });
 
     }
+  },
+  onPullDownRefresh: function onPullDownRefresh() {
+    this.pullOrder();
+    console.log('下拉刷新', " at pages/main/main.vue:118");
+    setTimeout(function () {
+      uni.stopPullDownRefresh();
+    }, 500);
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 

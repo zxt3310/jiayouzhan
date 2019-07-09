@@ -1089,6 +1089,11 @@ function gz$gwx_3(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_3)return __WXML_GLOBAL__.ops_cached.$gwx_3
 __WXML_GLOBAL__.ops_cached.$gwx_3=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'content'])
+Z([3,'headBar'])
+Z([[2,'!='],[[6],[[7],[3,'order']],[3,'status']],[[2,'-'],[1,1]]])
+Z([[2,'=='],[[6],[[7],[3,'order']],[3,'status']],[[2,'-'],[1,1]]])
+Z([[2,'<'],[[6],[[7],[3,'order']],[3,'status']],[1,2]])
 Z([3,'title'])
 Z([3,'__l'])
 Z([1,false])
@@ -1096,10 +1101,10 @@ Z([1,20])
 Z([1,5])
 Z([1,2])
 Z([3,'1'])
-Z(z[1])
-Z(z[2])
-Z(z[3])
-Z(z[4])
+Z(z[6])
+Z(z[7])
+Z(z[8])
+Z(z[9])
 Z([1,4])
 Z([3,'2'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_3);return __WXML_GLOBAL__.ops_cached.$gwx_3
@@ -1154,14 +1159,19 @@ __WXML_GLOBAL__.ops_cached.$gwx_6=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'thiscontent'])
 Z([3,'__l'])
+Z([3,'__e'])
+Z([[4],[[5],[[4],[[5],[[5],[1,'^change']],[[4],[[5],[[4],[[5],[1,'changeA']]]]]]]]])
 Z([1,false])
 Z([1,30])
 Z([1,5])
 Z([3,'1'])
 Z(z[1])
 Z(z[2])
-Z(z[3])
+Z([[4],[[5],[[4],[[5],[[5],[1,'^change']],[[4],[[5],[[4],[[5],[1,'changeQ']]]]]]]]])
 Z(z[4])
+Z(z[5])
+Z(z[6])
+Z([[7],[3,'star_a']])
 Z([3,'2'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_6);return __WXML_GLOBAL__.ops_cached.$gwx_6
 }
@@ -1248,7 +1258,8 @@ if( __WXML_GLOBAL__.ops_cached.$gwx_11)return __WXML_GLOBAL__.ops_cached.$gwx_11
 __WXML_GLOBAL__.ops_cached.$gwx_11=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'header'])
-Z([[2,'<'],[[7],[3,'status']],[1,4]])
+Z([[2,'&'],[[2,'!='],[[7],[3,'status']],[1,4]],[[2,'!='],[[7],[3,'status']],[[2,'-'],[1,1]]]])
+Z([[2,'=='],[[7],[3,'status']],[[2,'-'],[1,1]]])
 Z([[2,'=='],[[7],[3,'status']],[1,4]])
 })(__WXML_GLOBAL__.ops_cached.$gwx_11);return __WXML_GLOBAL__.ops_cached.$gwx_11
 }
@@ -1328,10 +1339,31 @@ var m2=function(e,s,r,gg){
 var z=gz$gwx_3()
 var cI=_n('view')
 _rz(z,cI,'class',0,e,s,gg)
-var oJ=_mz(z,'uni-rate',['bind:__l',1,'isFill',1,'margin',2,'max',3,'value',4,'vueId',5],[],e,s,gg)
+var oJ=_n('view')
+_rz(z,oJ,'class',1,e,s,gg)
+var lK=_v()
+_(oJ,lK)
+if(_oz(z,2,e,s,gg)){lK.wxVkey=1
+}
+var aL=_v()
+_(oJ,aL)
+if(_oz(z,3,e,s,gg)){aL.wxVkey=1
+}
+var tM=_v()
+_(oJ,tM)
+if(_oz(z,4,e,s,gg)){tM.wxVkey=1
+}
+lK.wxXCkey=1
+aL.wxXCkey=1
+tM.wxXCkey=1
 _(cI,oJ)
-var lK=_mz(z,'uni-rate',['bind:__l',7,'isFill',1,'margin',2,'max',3,'value',4,'vueId',5],[],e,s,gg)
-_(cI,lK)
+var eN=_n('view')
+_rz(z,eN,'class',5,e,s,gg)
+var bO=_mz(z,'uni-rate',['bind:__l',6,'isFill',1,'margin',2,'max',3,'value',4,'vueId',5],[],e,s,gg)
+_(eN,bO)
+var oP=_mz(z,'uni-rate',['bind:__l',12,'isFill',1,'margin',2,'max',3,'value',4,'vueId',5],[],e,s,gg)
+_(eN,oP)
+_(cI,eN)
 _(r,cI)
 return r
 }
@@ -1339,132 +1371,137 @@ e_[x[2]]={f:m2,j:[],i:[],ti:[],ic:[]}
 d_[x[3]]={}
 var m3=function(e,s,r,gg){
 var z=gz$gwx_4()
-var tM=_n('view')
-_rz(z,tM,'class',0,e,s,gg)
-var eN=_mz(z,'m-input',['focus',-1,'clearable',-1,'bind:__l',1,'bind:input',1,'class',2,'data-event-opts',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
-_(tM,eN)
-var bO=_mz(z,'m-input',['displayable',-1,'bind:__l',9,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(tM,bO)
-_(r,tM)
+var oR=_n('view')
+_rz(z,oR,'class',0,e,s,gg)
+var fS=_mz(z,'m-input',['focus',-1,'clearable',-1,'bind:__l',1,'bind:input',1,'class',2,'data-event-opts',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
+_(oR,fS)
+var cT=_mz(z,'m-input',['displayable',-1,'bind:__l',9,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(oR,cT)
+_(r,oR)
 return r
 }
 e_[x[3]]={f:m3,j:[],i:[],ti:[],ic:[]}
 d_[x[4]]={}
 var m4=function(e,s,r,gg){
 var z=gz$gwx_5()
-var xQ=_v()
-_(r,xQ)
-var oR=function(cT,fS,hU,gg){
-var cW=_mz(z,'view',['bindtap',4,'data-event-opts',1],[],cT,fS,gg)
-var oX=_mz(z,'rreecc',['bind:__l',6,'bind:gotoRate',1,'data-event-opts',2,'idCode',3,'jyz',4,'ms',5,'status',6,'ts',7,'vueId',8,'xm',9],[],cT,fS,gg)
-_(cW,oX)
-_(hU,cW)
-return hU
+var oV=_v()
+_(r,oV)
+var cW=function(lY,oX,aZ,gg){
+var e2=_mz(z,'view',['bindtap',4,'data-event-opts',1],[],lY,oX,gg)
+var b3=_mz(z,'rreecc',['bind:__l',6,'bind:gotoRate',1,'data-event-opts',2,'idCode',3,'jyz',4,'ms',5,'status',6,'ts',7,'vueId',8,'xm',9],[],lY,oX,gg)
+_(e2,b3)
+_(aZ,e2)
+return aZ
 }
-xQ.wxXCkey=4
-_2z(z,2,oR,e,s,gg,xQ,'order','index','index')
+oV.wxXCkey=4
+_2z(z,2,cW,e,s,gg,oV,'order','index','index')
 return r
 }
 e_[x[4]]={f:m4,j:[],i:[],ti:[],ic:[]}
 d_[x[5]]={}
 var m5=function(e,s,r,gg){
 var z=gz$gwx_6()
-var aZ=_n('view')
-_rz(z,aZ,'class',0,e,s,gg)
-var t1=_mz(z,'uni-rate',['bind:__l',1,'isFill',1,'margin',2,'max',3,'vueId',4],[],e,s,gg)
-_(aZ,t1)
-var e2=_mz(z,'uni-rate',['bind:__l',6,'isFill',1,'margin',2,'max',3,'vueId',4],[],e,s,gg)
-_(aZ,e2)
-_(r,aZ)
+var x5=_n('view')
+_rz(z,x5,'class',0,e,s,gg)
+var o6=_mz(z,'uni-rate',['bind:__l',1,'bind:change',1,'data-event-opts',2,'isFill',3,'margin',4,'max',5,'vueId',6],[],e,s,gg)
+_(x5,o6)
+var f7=_mz(z,'uni-rate',['bind:__l',8,'bind:change',1,'data-event-opts',2,'isFill',3,'margin',4,'max',5,'value',6,'vueId',7],[],e,s,gg)
+_(x5,f7)
+_(r,x5)
 return r
 }
 e_[x[5]]={f:m5,j:[],i:[],ti:[],ic:[]}
 d_[x[6]]={}
 var m6=function(e,s,r,gg){
 var z=gz$gwx_7()
-var o4=_mz(z,'m-input',['focus',-1,'clearable',-1,'bind:__l',0,'bind:input',1,'data-event-opts',1,'placeholder',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
-_(r,o4)
+var h9=_mz(z,'m-input',['focus',-1,'clearable',-1,'bind:__l',0,'bind:input',1,'data-event-opts',1,'placeholder',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
+_(r,h9)
 return r
 }
 e_[x[6]]={f:m6,j:[],i:[],ti:[],ic:[]}
 d_[x[7]]={}
 var m7=function(e,s,r,gg){
 var z=gz$gwx_8()
-var o6=_n('view')
-_rz(z,o6,'class',0,e,s,gg)
-var f7=_mz(z,'m-input',['focus',-1,'clearable',-1,'bind:__l',1,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(o6,f7)
-var c8=_mz(z,'m-input',['displayable',-1,'bind:__l',8,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(o6,c8)
-var h9=_mz(z,'m-input',['clearable',-1,'bind:__l',15,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(o6,h9)
-_(r,o6)
+var cAB=_n('view')
+_rz(z,cAB,'class',0,e,s,gg)
+var oBB=_mz(z,'m-input',['focus',-1,'clearable',-1,'bind:__l',1,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(cAB,oBB)
+var lCB=_mz(z,'m-input',['displayable',-1,'bind:__l',8,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(cAB,lCB)
+var aDB=_mz(z,'m-input',['clearable',-1,'bind:__l',15,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(cAB,aDB)
+_(r,cAB)
 return r
 }
 e_[x[7]]={f:m7,j:[],i:[],ti:[],ic:[]}
 d_[x[8]]={}
 var m8=function(e,s,r,gg){
 var z=gz$gwx_9()
-var cAB=_n('view')
-_rz(z,cAB,'style',0,e,s,gg)
-var oBB=_mz(z,'mpvue-picker',['bind:__l',1,'bind:onConfirm',1,'class',2,'data-event-opts',3,'data-ref',4,'deepLength',5,'mode',6,'pickerValueArray',7,'vueId',8],[],e,s,gg)
-_(cAB,oBB)
-var lCB=_mz(z,'mpvue-picker',['bind:__l',10,'bind:onConfirm',1,'class',2,'data-event-opts',3,'data-ref',4,'deepLength',5,'mode',6,'pickerValueArray',7,'vueId',8],[],e,s,gg)
-_(cAB,lCB)
-_(r,cAB)
+var eFB=_n('view')
+_rz(z,eFB,'style',0,e,s,gg)
+var bGB=_mz(z,'mpvue-picker',['bind:__l',1,'bind:onConfirm',1,'class',2,'data-event-opts',3,'data-ref',4,'deepLength',5,'mode',6,'pickerValueArray',7,'vueId',8],[],e,s,gg)
+_(eFB,bGB)
+var oHB=_mz(z,'mpvue-picker',['bind:__l',10,'bind:onConfirm',1,'class',2,'data-event-opts',3,'data-ref',4,'deepLength',5,'mode',6,'pickerValueArray',7,'vueId',8],[],e,s,gg)
+_(eFB,oHB)
+_(r,eFB)
 return r
 }
 e_[x[8]]={f:m8,j:[],i:[],ti:[],ic:[]}
 d_[x[9]]={}
 var m9=function(e,s,r,gg){
 var z=gz$gwx_10()
-var tEB=_n('view')
-_rz(z,tEB,'class',0,e,s,gg)
-var eFB=_v()
-_(tEB,eFB)
-if(_oz(z,1,e,s,gg)){eFB.wxVkey=1
+var oJB=_n('view')
+_rz(z,oJB,'class',0,e,s,gg)
+var fKB=_v()
+_(oJB,fKB)
+if(_oz(z,1,e,s,gg)){fKB.wxVkey=1
 }
-var bGB=_v()
-_(tEB,bGB)
-if(_oz(z,2,e,s,gg)){bGB.wxVkey=1
+var cLB=_v()
+_(oJB,cLB)
+if(_oz(z,2,e,s,gg)){cLB.wxVkey=1
 }
-var oHB=_v()
-_(tEB,oHB)
-if(_oz(z,3,e,s,gg)){oHB.wxVkey=1
+var hMB=_v()
+_(oJB,hMB)
+if(_oz(z,3,e,s,gg)){hMB.wxVkey=1
 }
-var xIB=_v()
-_(tEB,xIB)
-if(_oz(z,4,e,s,gg)){xIB.wxVkey=1
+var oNB=_v()
+_(oJB,oNB)
+if(_oz(z,4,e,s,gg)){oNB.wxVkey=1
 }
-var oJB=_v()
-_(tEB,oJB)
-if(_oz(z,5,e,s,gg)){oJB.wxVkey=1
+var cOB=_v()
+_(oJB,cOB)
+if(_oz(z,5,e,s,gg)){cOB.wxVkey=1
 }
-eFB.wxXCkey=1
-bGB.wxXCkey=1
-oHB.wxXCkey=1
-xIB.wxXCkey=1
-oJB.wxXCkey=1
-_(r,tEB)
+fKB.wxXCkey=1
+cLB.wxXCkey=1
+hMB.wxXCkey=1
+oNB.wxXCkey=1
+cOB.wxXCkey=1
+_(r,oJB)
 return r
 }
 e_[x[9]]={f:m9,j:[],i:[],ti:[],ic:[]}
 d_[x[10]]={}
 var m10=function(e,s,r,gg){
 var z=gz$gwx_11()
-var cLB=_n('view')
-_rz(z,cLB,'class',0,e,s,gg)
-var hMB=_v()
-_(cLB,hMB)
-if(_oz(z,1,e,s,gg)){hMB.wxVkey=1
+var lQB=_n('view')
+_rz(z,lQB,'class',0,e,s,gg)
+var aRB=_v()
+_(lQB,aRB)
+if(_oz(z,1,e,s,gg)){aRB.wxVkey=1
 }
-var oNB=_v()
-_(cLB,oNB)
-if(_oz(z,2,e,s,gg)){oNB.wxVkey=1
+var tSB=_v()
+_(lQB,tSB)
+if(_oz(z,2,e,s,gg)){tSB.wxVkey=1
 }
-hMB.wxXCkey=1
-oNB.wxXCkey=1
-_(r,cLB)
+var eTB=_v()
+_(lQB,eTB)
+if(_oz(z,3,e,s,gg)){eTB.wxVkey=1
+}
+aRB.wxXCkey=1
+tSB.wxXCkey=1
+eTB.wxXCkey=1
+_(r,lQB)
 return r
 }
 e_[x[10]]={f:m10,j:[],i:[],ti:[],ic:[]}
@@ -1477,19 +1514,19 @@ e_[x[11]]={f:m11,j:[],i:[],ti:[],ic:[]}
 d_[x[12]]={}
 var m12=function(e,s,r,gg){
 var z=gz$gwx_13()
-var lQB=_v()
-_(r,lQB)
-var aRB=function(eTB,tSB,bUB,gg){
-var xWB=_mz(z,'view',['bindtap',4,'class',1,'data-event-opts',2,'style',3],[],eTB,tSB,gg)
-var oXB=_mz(z,'uni-icon',['bind:__l',8,'color',1,'size',2,'type',3,'vueId',4],[],eTB,tSB,gg)
-_(xWB,oXB)
-var fYB=_mz(z,'uni-icon',['bind:__l',13,'color',1,'size',2,'type',3,'vueId',4],[],eTB,tSB,gg)
-_(xWB,fYB)
-_(bUB,xWB)
-return bUB
+var xWB=_v()
+_(r,xWB)
+var oXB=function(cZB,fYB,h1B,gg){
+var c3B=_mz(z,'view',['bindtap',4,'class',1,'data-event-opts',2,'style',3],[],cZB,fYB,gg)
+var o4B=_mz(z,'uni-icon',['bind:__l',8,'color',1,'size',2,'type',3,'vueId',4],[],cZB,fYB,gg)
+_(c3B,o4B)
+var l5B=_mz(z,'uni-icon',['bind:__l',13,'color',1,'size',2,'type',3,'vueId',4],[],cZB,fYB,gg)
+_(c3B,l5B)
+_(h1B,c3B)
+return h1B
 }
-lQB.wxXCkey=4
-_2z(z,2,aRB,e,s,gg,lQB,'star','index','index')
+xWB.wxXCkey=4
+_2z(z,2,oXB,e,s,gg,xWB,'star','index','index')
 return r
 }
 e_[x[12]]={f:m12,j:[],i:[],ti:[],ic:[]}
@@ -2022,7 +2059,8 @@ fly.interceptors.request.use(function (request) {
 });
 
 
-fly.interceptors.response.use(function (response) {
+fly.interceptors.response.use(
+function (response) {
   if (response.data.err == 0) {
     return response.data.data;
   } else if (response.data.err == 999) {
@@ -2040,9 +2078,12 @@ fly.interceptors.response.use(function (response) {
     // }
   } else
   {
-    console.log(response, " at main.js:66");
-    return Promise.reject(new Error(response.data.msg));
+    return Promise.reject(new Error("error"));
   }
+},
+function (err) {
+  console.log('走到出错了', " at main.js:71");
+  return err;
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createApp"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
@@ -13283,6 +13324,7 @@ define('pages/template/recordTemple/recordTemple.js',function(require, module, e
     //
     //
     //
+    //
     var _default =
     {
       name: 'rreecc',
@@ -13997,19 +14039,22 @@ var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | page
     gotoRate: function gotoRate(orderId) {
       console.log(orderId, " at pages/main/main.vue:69");
       uni.navigateTo({
-        url: 'orderRate' });
+        url: 'orderRate?orderId=' + orderId });
 
+    },
+    pullOrder: function pullOrder() {var _this = this;
+      this.$fly.post('api/mgr-orders', {}).
+
+      then(function (res) {
+        console.log(res, " at pages/main/main.vue:78");
+        _this.list = res;
+      }).catch(function (error) {
+        Console.log(error);
+      });
     } },
 
-  onShow: function onShow() {var _this = this;
-    this.$fly.post('api/mgr-orders', {}).
-
-    then(function (res) {
-      console.log(res, " at pages/main/main.vue:79");
-      _this.list = res;
-    }).catch(function (error) {
-      Console.log(error);
-    });
+  onShow: function onShow() {
+    this.pullOrder();
   },
   onLoad: function onLoad() {var _this2 = this;
     if (!this.hasLogin) {
@@ -14038,6 +14083,13 @@ var rreecc = function rreecc() {return __webpack_require__.e(/*! import() | page
         } });
 
     }
+  },
+  onPullDownRefresh: function onPullDownRefresh() {
+    this.pullOrder();
+    console.log('下拉刷新', " at pages/main/main.vue:118");
+    setTimeout(function () {
+      uni.stopPullDownRefresh();
+    }, 500);
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
@@ -15469,7 +15521,11 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var UniRate = function UniRate() {return __webpack_require__.e(/*! import() | pages/template/uni-rate/uni-rate */ "pages/template/uni-rate/uni-rate").then(__webpack_require__.bind(null, /*! ../template/uni-rate/uni-rate.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/uni-rate/uni-rate.vue"));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var UniRate = function UniRate() {return __webpack_require__.e(/*! import() | pages/template/uni-rate/uni-rate */ "pages/template/uni-rate/uni-rate").then(__webpack_require__.bind(null, /*! ../template/uni-rate/uni-rate.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/uni-rate/uni-rate.vue"));};var _default =
+
+
+
+
 
 
 
@@ -15608,19 +15664,49 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   components: {
     UniRate: UniRate },
 
-  methods: {},
+  methods: {
+    orderCancel: function orderCancel() {var _this = this;
+      uni.showModal({
+        title: '提示',
+        content: '是否取消申请单',
+        success: function success(res) {
+          if (res.confirm) {
+            _this.$fly.request('api/delete-orders', {
+              repairNum: _this.order.repair_num },
+            {
+              method: 'post',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded' } }).
 
+            then(function (res) {
+              uni.navigateBack();
+              uni.showToast({
+                icon: 'success',
+                title: '已取消' });
 
-  onLoad: function onLoad(option) {var _this = this;
-    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:144");
+            }).catch(function (Error) {
+              console.log(Error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:165");
+              uni.showToast({
+                icon: 'none',
+                title: '取消失败' });
+
+            });
+          }
+        } });
+
+    } },
+
+  onLoad: function onLoad(option) {var _this2 = this;
+    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:177");
     this.$fly.post("api/mgr-orders-details", {
       repairNum: option.orderNo }).
     then(function (res) {
-      _this.order = res;
+      _this2.order = res;
     }).catch(function (error) {
-      console.log(error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:150");
+      console.log(error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:183");
     });
   } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
 
@@ -15789,11 +15875,42 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 {
+  data: function data() {
+    return {
+      star_a: 0,
+      star_q: 0,
+      orderCode: '' };
 
+  },
   components: {
     UniRate: UniRate },
 
-  methods: {} };exports.default = _default;
+  methods: {
+    submit: function submit() {
+      console.log(this.star_a + '  ' + this.star_q, " at pages/main/orderRate.vue:38");
+
+      this.$fly.post('api/ratings', {
+        star_a: this.star_a,
+        star_q: this.star_q,
+        repairNum: this.orderCode }).
+      then(function (res) {
+
+      }).catch(function (error) {
+
+      });
+    },
+    changeQ: function changeQ(star) {
+      console.log(star, " at pages/main/orderRate.vue:51");
+      this.star_q = star.value;
+    },
+    changeA: function changeA(star) {
+      console.log(star, " at pages/main/orderRate.vue:55");
+      this.star_a = star.value;
+    } },
+
+  onLoad: function onLoad(option) {
+    this.orderCode = option.orderId;
+  } };exports.default = _default;
 
 /***/ }),
 

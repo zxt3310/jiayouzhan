@@ -1,7 +1,11 @@
 <template>
 	<view class="content">
 		<view class="headBar">
-			<text>{{statusText[order.status]}}</text>
+			<text v-if="order.status != -1">{{statusText[order.status]}}</text>
+			<text v-if="order.status == -1">已取消</text>
+			<view class="cancleBtn">
+				<button v-if="order.status < 2" @tap="orderCancel">取消申请</button>
+			</view>
 		</view>
 		<view class="orderInfo">
 			<view class="title">
@@ -138,7 +142,36 @@
 			UniRate
 		},
 		methods: {
-			
+			orderCancel(){
+				uni.showModal({
+					title: '提示',
+					content: '是否取消申请单',
+					success: res => {
+						if(res.confirm){
+							this.$fly.request('api/delete-orders',{
+								repairNum:this.order.repair_num
+							},{
+								method:'post',
+								headers:{
+									'Content-Type':'application/x-www-form-urlencoded'
+								}
+							}).then((res)=>{
+								uni.navigateBack();
+								uni.showToast({
+									icon:'success',
+									title:'已取消'
+								})
+							}).catch((Error)=>{
+								console.log(Error);
+								uni.showToast({
+									icon:'none',
+									title:'取消失败'
+								})
+							})
+						}
+					}
+				});
+			}
 		},
 		onLoad(option){
 			console.log(option);
@@ -161,6 +194,14 @@
 		flex-direction: row;
 		font-size: 22px;
 		font-family: PingFangSC-Medium;
+		justify-content: space-between;
+	}
+	.cancleBtn{
+		height: 100%;
+		button{
+			font-size: 14px;
+			background-color: white;
+		}
 	}
 	
 	.orderInfo{

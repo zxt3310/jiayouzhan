@@ -81,7 +81,8 @@ fly.interceptors.request.use(function (request) {
 });
 
 
-fly.interceptors.response.use(function (response) {
+fly.interceptors.response.use(
+function (response) {
   if (response.data.err == 0) {
     return response.data.data;
   } else if (response.data.err == 999) {
@@ -99,9 +100,12 @@ fly.interceptors.response.use(function (response) {
     // }
   } else
   {
-    console.log(response, " at main.js:66");
-    return Promise.reject(new Error(response.data.msg));
+    return Promise.reject(new Error("error"));
   }
+},
+function (err) {
+  console.log('走到出错了', " at main.js:71");
+  return err;
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createApp"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 

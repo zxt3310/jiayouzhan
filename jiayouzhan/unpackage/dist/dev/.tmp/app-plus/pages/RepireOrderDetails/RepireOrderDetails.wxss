@@ -11,6 +11,17 @@
           flex-direction: row;
   font-size: 22px;
   font-family: PingFangSC-Medium;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.cancleBtn {
+  height: 100%;
+}
+.cancleBtn button {
+    font-size: 14px;
+    background-color: white;
 }
 .orderInfo {
   padding: 20rpx;

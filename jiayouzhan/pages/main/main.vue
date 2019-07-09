@@ -68,19 +68,22 @@
 			gotoRate: function (orderId){
 				console.log(orderId);
 				uni.navigateTo({
-					url:'orderRate'
+					url:'orderRate?orderId='+orderId
+				})
+			},
+			pullOrder(){
+				this.$fly.post('api/mgr-orders',{
+				
+				}).then((res)=>{
+					console.log(res);
+					this.list = res;
+				}).catch((error)=>{
+					Console.log(error);
 				})
 			}
 		},
 		onShow() {
-			this.$fly.post('api/mgr-orders',{
-				
-			}).then((res)=>{
-				console.log(res);
-				this.list = res;
-			}).catch((error)=>{
-				Console.log(error);
-			})
+			this.pullOrder();
 		},
         onLoad() {
             if (!this.hasLogin) {
@@ -109,7 +112,14 @@
                     }
                 });
             }
-        }
+        },
+		onPullDownRefresh() {
+			this.pullOrder();
+			console.log('下拉刷新');
+			setTimeout(function(){
+				uni.stopPullDownRefresh();
+			},500);
+		}
     }
 </script>
 

@@ -6,16 +6,16 @@
 		
 		<view class="rateArea">
 			<view>服务态度</view>
-			<uni-rate :max="5" :isFill="false" :margin="30"></uni-rate>
+			<uni-rate :max="5" :isFill="false" :margin="30" v-on:change="changeA"></uni-rate>
 		</view>
 		
 		<view class="rateArea">
 			<view>服务质量</view>
-			<uni-rate :max="5" :isFill="false" :margin="30"></uni-rate>
+			<uni-rate :max="5" :value="star_a" :isFill="false" :margin="30" v-on:change="changeQ"></uni-rate>
 		</view>
 		
 		<view class="submit">
-			<button>提交</button>
+			<button @tap="submit">提交</button>
 		</view>
 	</view>
 </template>
@@ -23,12 +23,41 @@
 <script>
 	import UniRate from '../template/uni-rate/uni-rate.vue'
 	export default{
-		
+		data(){
+			return{
+				star_a:0,
+				star_q:0,
+				orderCode:''
+			}
+		},
 		components:{
 			UniRate
 		},
 		methods:{
-			
+			submit(){
+				console.log(this.star_a + '  ' + this.star_q);
+				
+				this.$fly.post('api/ratings',{
+					star_a:this.star_a,
+					star_q:this.star_q,
+					repairNum:this.orderCode
+				}).then((res)=>{
+					
+				}).catch((error)=>{
+					
+				})
+			},
+			changeQ: function(star){
+				console.log(star)
+				this.star_q = star.value;
+			},
+			changeA: function(star){
+				console.log(star)
+				this.star_a = star.value;
+			}
+		},
+		onLoad(option) {
+			this.orderCode = option.orderId;
 		}
 		
 	}

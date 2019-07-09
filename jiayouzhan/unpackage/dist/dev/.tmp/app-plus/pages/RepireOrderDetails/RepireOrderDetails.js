@@ -98,7 +98,11 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var UniRate = function UniRate() {return __webpack_require__.e(/*! import() | pages/template/uni-rate/uni-rate */ "pages/template/uni-rate/uni-rate").then(__webpack_require__.bind(null, /*! ../template/uni-rate/uni-rate.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/uni-rate/uni-rate.vue"));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var UniRate = function UniRate() {return __webpack_require__.e(/*! import() | pages/template/uni-rate/uni-rate */ "pages/template/uni-rate/uni-rate").then(__webpack_require__.bind(null, /*! ../template/uni-rate/uni-rate.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/uni-rate/uni-rate.vue"));};var _default =
+
+
+
+
 
 
 
@@ -237,19 +241,49 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   components: {
     UniRate: UniRate },
 
-  methods: {},
+  methods: {
+    orderCancel: function orderCancel() {var _this = this;
+      uni.showModal({
+        title: '提示',
+        content: '是否取消申请单',
+        success: function success(res) {
+          if (res.confirm) {
+            _this.$fly.request('api/delete-orders', {
+              repairNum: _this.order.repair_num },
+            {
+              method: 'post',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded' } }).
 
+            then(function (res) {
+              uni.navigateBack();
+              uni.showToast({
+                icon: 'success',
+                title: '已取消' });
 
-  onLoad: function onLoad(option) {var _this = this;
-    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:144");
+            }).catch(function (Error) {
+              console.log(Error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:165");
+              uni.showToast({
+                icon: 'none',
+                title: '取消失败' });
+
+            });
+          }
+        } });
+
+    } },
+
+  onLoad: function onLoad(option) {var _this2 = this;
+    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:177");
     this.$fly.post("api/mgr-orders-details", {
       repairNum: option.orderNo }).
     then(function (res) {
-      _this.order = res;
+      _this2.order = res;
     }).catch(function (error) {
-      console.log(error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:150");
+      console.log(error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:183");
     });
   } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
 

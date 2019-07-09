@@ -123,11 +123,42 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 {
+  data: function data() {
+    return {
+      star_a: 0,
+      star_q: 0,
+      orderCode: '' };
 
+  },
   components: {
     UniRate: UniRate },
 
-  methods: {} };exports.default = _default;
+  methods: {
+    submit: function submit() {
+      console.log(this.star_a + '  ' + this.star_q, " at pages/main/orderRate.vue:38");
+
+      this.$fly.post('api/ratings', {
+        star_a: this.star_a,
+        star_q: this.star_q,
+        repairNum: this.orderCode }).
+      then(function (res) {
+
+      }).catch(function (error) {
+
+      });
+    },
+    changeQ: function changeQ(star) {
+      console.log(star, " at pages/main/orderRate.vue:51");
+      this.star_q = star.value;
+    },
+    changeA: function changeA(star) {
+      console.log(star, " at pages/main/orderRate.vue:55");
+      this.star_a = star.value;
+    } },
+
+  onLoad: function onLoad(option) {
+    this.orderCode = option.orderId;
+  } };exports.default = _default;
 
 /***/ }),
 
