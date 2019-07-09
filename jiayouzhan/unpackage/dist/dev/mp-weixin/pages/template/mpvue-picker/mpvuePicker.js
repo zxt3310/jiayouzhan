@@ -383,16 +383,40 @@ var _default2 =
         // 如果是第一列滚动
         if (_changeValue[0] !== this.pickerValue[0]) {
           this.pickerValueMulThreeTwo = [];
+
           for (var _i8 = 0, _length6 = _pickerValueArray[_changeValue[0]].children.length; _i8 < _length6; _i8++) {
             pickerValueMulThreeTwo.push(_pickerValueArray[_changeValue[0]].children[_i8]);
           }
-          // 重新渲染第三列
-          for (var _i9 = 0, _length7 = _pickerValueArray[_changeValue[0]].children[0].children.length; _i9 <
-          _length7; _i9++) {
-            pickerValueMulThreeThree.push(_pickerValueArray[_changeValue[0]].children[0].children[_i9]);
+
+          if (pickerValueMulThreeTwo.length == 0) {
+            var alpha = {
+              label: "",
+              value: 0,
+              children: [] };
+
+            pickerValueMulThreeTwo.push(alpha);
           }
+          // 重新渲染第三列
+
+          if (_pickerValueArray[_changeValue[0]].children[0] != undefined) {
+            for (var _i9 = 0, _length7 = _pickerValueArray[_changeValue[0]].children[0].children.length; _i9 <
+            _length7; _i9++) {
+              pickerValueMulThreeThree.push(_pickerValueArray[_changeValue[0]].children[0].children[_i9]);
+            }
+          }
+
           _changeValue[1] = 0;
           _changeValue[2] = 0;
+
+          if (pickerValueMulThreeThree.length == 0) {
+            var _alpha = {
+              label: "",
+              value: 0 };
+
+            pickerValueMulThreeThree.push(_alpha);
+            console.log('这里打一下日志');
+          }
+
           this.pickerValueMulThreeTwo = pickerValueMulThreeTwo;
           this.pickerValueMulThreeThree = pickerValueMulThreeThree;
         } else if (_changeValue[1] !== this.pickerValue[1]) {
@@ -406,6 +430,15 @@ var _default2 =
             _i10]);
           }
           _changeValue[2] = 0;
+
+          if (pickerValueMulThreeThree.length == 0) {
+            var _alpha2 = {
+              label: "",
+              value: 0 };
+
+            pickerValueMulThreeThree.push(_alpha2);
+          }
+
           this.pickerValueMulThreeThree = pickerValueMulThreeThree;
         }
         this.pickerValue = _changeValue;

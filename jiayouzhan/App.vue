@@ -60,12 +60,11 @@
 	}
 
 	.input-group {
-		background-color: #ffffff;
-		margin-top: 40upx;
+		padding: 40upx;
 		position: relative;
 	}
 
-	.input-group::before {
+	/* .input-group::before {
 		position: absolute;
 		right: 0;
 		top: 0;
@@ -87,9 +86,9 @@
 		-webkit-transform: scaleY(.5);
 		transform: scaleY(.5);
 		background-color: #c8c7cc;
-	}
+	} */
 
-	.input-row {
+/* 	.input-row {
 		display: flex;
 		flex-direction: row;
 		position: relative;
@@ -102,9 +101,9 @@
 		padding: 15upx 0;
 		padding-left: 30upx;
 		line-height: 50upx;
-	}
+	} */
 
-	.input-row.border::after {
+	/* .input-row.border::after {
 		position: absolute;
 		right: 0;
 		bottom: 0;
@@ -115,13 +114,17 @@
 		transform: scaleY(.5);
 		background-color: #c8c7cc;
 	}
-
+ */
 	.btn-row {
-		margin-top: 50upx;
-		padding: 20upx;
+		display: flex;
+		align-items: center;
+		height: 20%;
+		padding: 70upx;
 	}
 
 	button.primary {
-		background-color: #0faeff;
+		background-color: #1C713D;
+		color:white;
+		flex: 1;
 	}
 </style>

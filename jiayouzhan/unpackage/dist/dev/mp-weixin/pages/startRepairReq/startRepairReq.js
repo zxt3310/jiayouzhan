@@ -172,6 +172,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _fly = _interopRequireDefault(__webpack_require__(/*! ../../commonJs/fly.js */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/commonJs/fly.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var mpvuePicker = function mpvuePicker() {return __webpack_require__.e(/*! import() | pages/template/mpvue-picker/mpvuePicker */ "pages/template/mpvue-picker/mpvuePicker").then(__webpack_require__.bind(null, /*! ../template/mpvue-picker/mpvuePicker.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/mpvue-picker/mpvuePicker.vue"));};
 var sourceType = [
 ['camera'],
@@ -186,72 +187,37 @@ var sizeType = [
 {
   data: function data() {
     return {
-      mode: '',
-      pickerAry: [],
-      pickerDefault: [],
-      deep: 0,
-      imageList: [] };
+      mode: 'multiLinkageSelector',
+      pickerAry: [], //展示列表
+      faultyPickerAry: [], //故障列表
+      gasPickerAry: [], //加油站列表
+      faultyId: 0, //故障ID
+      fau_name: '请选择', //故障项目
+      faulty_desc: '', //描述		
+      gasId: 0, //加油站ID
+      gas_name: '请选择', //加油站名字
+      gas_addr: '', //加油站地址
+      deepL: 0,
+      imageList: [],
+      contact: '',
+      phone: '' };
 
   },
   components: {
     mpvuePicker: mpvuePicker },
 
   methods: {
-    pickershow: function pickershow() {
-      this.mode = 'multiLinkageSelector';
-      this.pickerAry = [
-      {
-        label: '第一',
-        value: 1,
-        children:
-        [
-        {
-          label: '1-1',
-          value: 1 },
-
-        {
-          label: '1-2',
-          value: 2 }] },
-
-
-
-      {
-        label: '第二',
-        value: 2,
-        children:
-        [
-        {
-          label: '2-1',
-          value: 1 },
-
-        {
-          label: '2-2',
-          value: 2 },
-
-        {
-          label: '2-3',
-          value: 3 }] },
-
-
-
-      {
-        label: '第三',
-        value: 3,
-        children:
-        [
-        {
-          label: '3-1',
-          value: 1 },
-
-        {
-          label: '3-2',
-          value: 2 }] }];
-
-
-
-      this.pickerDefault = [0];
-      this.deep = 2;
-      this.$refs.mpvuePicker.show();
+    faultyPickerShow: function faultyPickerShow() {
+      //this.pickerAry = faultyPickerAry;
+      this.mode = 'selector';
+      this.deepL = 1;
+      this.$refs.faultyPicker.show();
+    },
+    gasPickerShow: function gasPickerShow() {
+      //this.pickerAry = gasPickerAry;
+      this.mode = 'selector';
+      this.deepL = 1;
+      this.$refs.gasPicker.show();
     },
     chooseImage: function () {var _chooseImage = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _this = this;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:if (!(
                 this.imageList.length === 4)) {_context.next = 3;break;}
@@ -281,17 +247,82 @@ var sizeType = [
       this.imageList.splice(this.imageList.findIndex(function (item) {return item === current;}), 1);
     },
 
+    faultyConfirm: function faultyConfirm(faulty) {
+      this.faultyId = faulty.value[0];
+      this.fau_name = faulty.label;
+      console.log(this.faultyId);
+    },
+
+    gasConfirm: function gasConfirm(gas) {
+      console.log(gas);
+      this.gas_name = gas.label;
+      this.gasId = gas.value[0];
+
+      var index = gas.index[0];
+      this.gas_addr = this.gasPickerAry[index].address;
+      console.log(this.gasId);
+    },
+    bindDesc: function bindDesc(e) {
+      this.faulty_desc = e.detail.value;
+    },
+    bindContact: function bindContact(e) {
+      this.contact = e.detail.value;
+    },
+    bindPhone: function bindPhone(e) {
+      this.phone = e.detail.value;
+    },
+    //提交表单
     submit: function submit() {
-      // console.log(this.$fly)
-      // this.$fly.get("")
-      // .then(function(response){
-      // 	console.log(response)
-      // }).catch(function(error){
-      // 	console.log(error.url);
-      // })
-      _fly.default.print(3);
-      _fly.default.wuli('哈哈哈');
-    } } };exports.default = _default;
+      console.log(this.faultyId + '  ' + this.faulty_desc + '  ' + this.gasId + '  ' + this.contact + '  ' + this.phone);
+
+      var post = {
+        faulty_item: this.faultyId,
+        faulth_desc: this.faulty_desc,
+        gas_station_id: this.gasId,
+        contact: this.contact,
+        contact_phone: this.phone };
+
+
+      this.$fly.post('api/sub-maint-order', {
+        faulty_item: this.fau_name,
+        faulty_desc: this.faulty_desc,
+        gas_station_id: this.gasId,
+        contact: this.contact,
+        contact_phone: this.phone }).
+      then(function (res) {
+        console.log(res);
+        uni.navigateBack();
+        uni.showToast({
+          icon: 'success',
+          title: '提交成功' });
+
+      }).catch(function (error) {
+        console.log(error);
+        uni.showToast({
+          icon: 'none',
+          title: '提交失败，请重试' });
+
+      });
+    } },
+
+  onLoad: function onLoad() {var _this2 = this;
+    this.$fly.post('api/issue-desc', {}).
+
+    then(function (res) {
+      _this2.faultyPickerAry = res;
+    }).catch(function (error) {
+
+    });
+
+
+    this.$fly.post('api/retrive-gas-station', {}).
+
+    then(function (res) {
+      _this2.gasPickerAry = res;
+    }).catch(function (error) {
+
+    });
+  } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
 
 /***/ }),

@@ -284,15 +284,24 @@ var sizeType = [
 
 
       this.$fly.post('api/sub-maint-order', {
-        faulty_item: this.faultyId,
-        faulth_desc: this.faulty_desc,
+        faulty_item: this.fau_name,
+        faulty_desc: this.faulty_desc,
         gas_station_id: this.gasId,
         contact: this.contact,
         contact_phone: this.phone }).
       then(function (res) {
         console.log(res, " at pages/startRepairReq/startRepairReq.vue:193");
+        uni.navigateBack();
+        uni.showToast({
+          icon: 'success',
+          title: '提交成功' });
+
       }).catch(function (error) {
-        console.log(error, " at pages/startRepairReq/startRepairReq.vue:195");
+        console.log(error, " at pages/startRepairReq/startRepairReq.vue:200");
+        uni.showToast({
+          icon: 'none',
+          title: '提交失败，请重试' });
+
       });
     } },
 
@@ -340,8 +349,13 @@ var sizeType = [
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 

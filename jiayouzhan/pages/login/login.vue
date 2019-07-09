@@ -1,28 +1,33 @@
 <template>
     <view class="content">
+		
+		<view class="logo">
+			<view/>
+		</view>
+		
         <view class="input-group">
-            <view class="input-row border">
-                <text class="title">账号：</text>
-                <m-input class="m-input" type="text" clearable focus v-model="account" placeholder="请输入账号"></m-input>
+            <view class="input-row">
+                <image src="../../static/img/phone.png" mode=""></image>
+                <m-input class="m-input" type="text" clearable focus v-model="account" placeholder="请输入手机号"></m-input>
             </view>
             <view class="input-row">
-                <text class="title">密码：</text>
+                <image src="../../static/img/pwd.png" mode=""></image>
                 <m-input type="password" displayable v-model="password" placeholder="请输入密码"></m-input>
             </view>
         </view>
         <view class="btn-row">
             <button type="primary" class="primary" @tap="bindLogin">登录</button>
         </view>
-        <view class="action-row">
+       <!-- <view class="action-row">
             <navigator url="../reg/reg">注册账号</navigator>
             <text>|</text>
             <navigator url="../pwd/pwd">忘记密码</navigator>
-        </view>
-        <view class="oauth-row" v-if="hasProvider" v-bind:style="{top: positionTop + 'px'}">
+        </view> -->
+        <!-- <view class="oauth-row" v-if="hasProvider" v-bind:style="{top: positionTop + 'px'}">
             <view class="oauth-image" v-for="provider in providerList" :key="provider.value">
                 <image :src="provider.image" @tap="oauth(provider.value)"></image>
             </view>
-        </view>
+        </view> -->
     </view>
 </template>
 
@@ -119,9 +124,15 @@
                 //     });
                 // }
 				var that = this;
-				this.$fly.post('api/check-credentials',{
+				this.$fly.request('api/check-credentials',{
 					mobile:data.account,
-					password:data.password
+					password:data.password,
+					rank:2
+				},{
+					method:"post",
+					headers:{
+						'Content-Type':'application/x-www-form-urlencoded'
+					}
 				}).then(function(response){
 					console.log('登录成功');
 					console.log(response);
@@ -190,12 +201,42 @@
         },
         onReady() {
             this.initPosition();
-            this.initProvider();
+            //this.initProvider();
         }
     }
 </script>
 
-<style>
+<style lang="scss">
+	.logo{
+		height: 35%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-width: 1px;
+		border-color: #c7c7c7;
+		view{
+			height: 216upx;
+			width: 216upx;
+			background-color: #1c713d;
+		}
+	}
+	
+	.input-row{
+		margin-top: 40upx;
+		display: flex;
+		flex-direction: row;
+		padding: 20upx;
+		border-style: solid;
+		border-width: 1px;
+		border-color: #c7c7c7;
+		
+		image{
+			height: 52upx;
+			width: 36upx;
+			margin-right: 20upx;
+		}
+	}
+	
     .action-row {
         display: flex;
         flex-direction: row;

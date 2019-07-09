@@ -48,6 +48,7 @@ _App.default.mpType = 'app';
 var Fly = __webpack_require__(/*! flyio/dist/npm/wx */ "./node_modules/flyio/dist/npm/wx.js");
 var fly = new Fly();
 fly.config.baseURL = "http://gsj.dev.rsc.ranknowcn.com";
+fly.config.withCredentials = true;
 
 _vue.default.prototype.$fly = fly;
 
@@ -60,8 +61,8 @@ createApp(app).$mount();
 //拦截请求
 fly.interceptors.request.use(function (request) {
   //给所有请求添加自定义header
-  var token = uni.getStorageSync('token');
-  request.headers["Authorization"] = 'bearer ' + token;
+  var token = uni.getStorageSync('userInfo');
+  request.headers["Authorization"] = 'bearer ' + token.token;
   if (request.method == 'GET') {
     console.log('GET');
   }
@@ -79,10 +80,25 @@ fly.interceptors.request.use(function (request) {
   return request;
 });
 
+
 fly.interceptors.response.use(function (response) {
   if (response.data.err == 0) {
     return response.data.data;
-  } else {
+  } else if (response.data.err == 999) {
+    // if(app.$store.hasLogin){
+    //app.$store.logout();
+    uni.reLaunch({
+      url: '../login/login' });
+
+    uni.showToast({
+      icon: 'none',
+      title: '登录过期' });
+
+    // }else{
+    // 	console.log('新用户，请登录');
+    // }
+  } else
+  {
     console.log(response);
     return Promise.reject(new Error(response.data.msg));
   }
@@ -323,7 +339,7 @@ var store = new _vuex.default.Store({
     /**
             * 是否需要强制登录
             */
-    forcedLogin: false,
+    forcedLogin: true,
     hasLogin: info.haslogin,
     userName: "" },
 

@@ -12,7 +12,7 @@
 			<view class="inputsytle">
 				<text style="align-self: flex-start;margin-top: 8px;">故障描述</text>
 				<view class="inputContext">
-					<textarea style="margin-top: 2px;" value={{faulty_desc}} placeholder="请输入" @input="bindDesc"></textarea>
+					<textarea style="margin-top: 2px;" :value="faulty_desc" placeholder="请输入" @input="bindDesc"></textarea>
 				</view>
 			</view>
 			
@@ -27,21 +27,21 @@
 			<view class="inputsytle">
 				<text style="align-self: flex-start;margin-top: 8px;">详细地址</text>
 				<view class="inputContext">
-					<textarea style="margin-top: 2px;" value={{gas_addr}}></textarea>
+					<textarea style="margin-top: 2px;" :value="gas_addr"></textarea>
 				</view>
 			</view>
 			
 			<view class="inputsytle">
 				<text style="align-self: center;">联系人</text>
 				<view class="inputContext">
-					<input type="text" placeholder="请输入" value={{contact}} @input="bindContact"/>
+					<input type="text" placeholder="请输入" :value="contact" @input="bindContact"/>
 				</view>
 			</view>
 			
 			<view class="inputsytle">
 				<text style="align-self: center;">联系电话</text>
 				<view class="inputContext">
-					<input type="text" placeholder="请输入" value={{phone}} @input="bindPhone"/>
+					<input type="text" placeholder="请输入" :value="phone" @input="bindPhone"/>
 				</view>
 			</view>
 			
@@ -184,15 +184,24 @@
 				}
 				
 				this.$fly.post('api/sub-maint-order',{
-					faulty_item:this.faultyId,
-					faulth_desc:this.faulty_desc,
+					faulty_item:this.fau_name,
+					faulty_desc:this.faulty_desc,
 					gas_station_id:this.gasId,
 					contact:this.contact,
 					contact_phone:this.phone
 				}).then((res)=>{
 					console.log(res);
+					uni.navigateBack();
+					uni.showToast({
+						icon:'success',
+						title:'提交成功'
+					})
 				}).catch((error)=>{
 					console.log(error);
+					uni.showToast({
+						icon:'none',
+						title:'提交失败，请重试'
+					})
 				})
 			}
 		},

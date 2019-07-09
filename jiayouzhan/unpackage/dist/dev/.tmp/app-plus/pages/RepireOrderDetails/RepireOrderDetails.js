@@ -225,10 +225,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
         "maint_c_id": "" },
 
       statusText: [
-      '已完成',
       '待处理',
       '已接单',
-      '进行中'] };
+      '到达加油站',
+      '进行中',
+      '已完成',
+      '已评价'] };
 
 
   },
@@ -239,13 +241,13 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
   onLoad: function onLoad(option) {var _this = this;
-    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:142");
+    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:144");
     this.$fly.post("api/mgr-orders-details", {
       repairNum: option.orderNo }).
     then(function (res) {
       _this.order = res;
     }).catch(function (error) {
-      console.log(error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:148");
+      console.log(error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:150");
     });
   } };exports.default = _default;
 

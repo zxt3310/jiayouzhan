@@ -152,16 +152,21 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
         url: '../login/login' });
 
     },
-    bindLogout: function bindLogout() {
-      this.logout();
-      /**
-                      * 如果需要强制登录跳转回登录页面
-                      */
-      if (this.forcedLogin) {
-        uni.reLaunch({
-          url: '../login/login' });
+    bindLogout: function bindLogout() {var _this = this;
+      uni.showModal({
+        title: '提示',
+        content: '是否注销',
+        success: function success(res) {
+          if (res.confirm) {
+            _this.logout();
+            if (_this.forcedLogin) {
+              uni.reLaunch({
+                url: '../login/login' });
 
-      }
+            }
+          }
+        } });
+
     } }) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
 

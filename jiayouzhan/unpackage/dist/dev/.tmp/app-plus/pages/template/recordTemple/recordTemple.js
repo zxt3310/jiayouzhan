@@ -139,16 +139,20 @@ var _default =
   data: function data() {
     return {
       statusColor: [
-      '1c713d',
       'fe4a47',
       '4185de',
-      '201a62'],
+      '4185de',
+      '201a62',
+      '1c713d',
+      '1c713d'],
 
       statusText: [
-      '已完成',
       '待处理',
       '已接单',
-      '进行中'] };
+      '到达加油站',
+      '进行中',
+      '已完成',
+      '已评价'] };
 
 
   },

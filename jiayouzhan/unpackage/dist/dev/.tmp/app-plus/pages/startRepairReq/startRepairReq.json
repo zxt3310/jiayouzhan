@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "维修申请",
   "navigationBarBackgroundColor": "#F2F7F8",
+  "animationType": "slide-in-bottom",
   "usingComponents": {
     "mpvue-picker": "/pages/template/mpvue-picker/mpvuePicker"
   }
