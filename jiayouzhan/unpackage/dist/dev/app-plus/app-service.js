@@ -1093,19 +1093,21 @@ Z([3,'content'])
 Z([3,'headBar'])
 Z([[2,'!='],[[6],[[7],[3,'order']],[3,'status']],[[2,'-'],[1,1]]])
 Z([[2,'=='],[[6],[[7],[3,'order']],[3,'status']],[[2,'-'],[1,1]]])
-Z([[2,'<'],[[6],[[7],[3,'order']],[3,'status']],[1,2]])
+Z([[2,'&&'],[[2,'<'],[[6],[[7],[3,'order']],[3,'status']],[1,2]],[[2,'!='],[[6],[[7],[3,'order']],[3,'status']],[[2,'-'],[1,1]]]])
 Z([3,'title'])
 Z([3,'__l'])
+Z([1,true])
 Z([1,false])
 Z([1,20])
 Z([1,5])
-Z([1,2])
+Z([[6],[[7],[3,'order']],[3,'rating_a']])
 Z([3,'1'])
 Z(z[6])
 Z(z[7])
 Z(z[8])
 Z(z[9])
-Z([1,4])
+Z(z[10])
+Z([[6],[[7],[3,'order']],[3,'rating_q']])
 Z([3,'2'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_3);return __WXML_GLOBAL__.ops_cached.$gwx_3
 }
@@ -1359,9 +1361,9 @@ tM.wxXCkey=1
 _(cI,oJ)
 var eN=_n('view')
 _rz(z,eN,'class',5,e,s,gg)
-var bO=_mz(z,'uni-rate',['bind:__l',6,'isFill',1,'margin',2,'max',3,'value',4,'vueId',5],[],e,s,gg)
+var bO=_mz(z,'uni-rate',['bind:__l',6,'disabled',1,'isFill',2,'margin',3,'max',4,'value',5,'vueId',6],[],e,s,gg)
 _(eN,bO)
-var oP=_mz(z,'uni-rate',['bind:__l',12,'isFill',1,'margin',2,'max',3,'value',4,'vueId',5],[],e,s,gg)
+var oP=_mz(z,'uni-rate',['bind:__l',13,'disabled',1,'isFill',2,'margin',3,'max',4,'value',5,'vueId',6],[],e,s,gg)
 _(eN,oP)
 _(cI,eN)
 _(r,cI)
@@ -13782,7 +13784,7 @@ define('pages/template/uni-rate/uni-rate.js',function(require, module, exports, 
       },
       computed: {
         stars: function stars() {
-          var value = Number(this.valueSync) ? Number(this.valueSync) : 0;
+          var value = Number(this.value) ? Number(this.value) : 0;
           var starList = [];
           var floorValue = Math.floor(value);
           var ceilValue = Math.ceil(value);
@@ -15649,7 +15651,9 @@ __webpack_require__.r(__webpack_exports__);
         "owner": "30",
         "admin_user_id": "",
         "mobile": "",
-        "maint_c_id": "" },
+        "maint_c_id": "",
+        "rating_a": 0,
+        "rating_q": 0 },
 
       statusText: [
       '待处理',
@@ -15685,7 +15689,7 @@ __webpack_require__.r(__webpack_exports__);
                 title: '已取消' });
 
             }).catch(function (Error) {
-              console.log(Error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:165");
+              console.log(Error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:167");
               uni.showToast({
                 icon: 'none',
                 title: '取消失败' });
@@ -15697,13 +15701,13 @@ __webpack_require__.r(__webpack_exports__);
     } },
 
   onLoad: function onLoad(option) {var _this2 = this;
-    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:177");
+    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:179");
     this.$fly.post("api/mgr-orders-details", {
       repairNum: option.orderNo }).
     then(function (res) {
       _this2.order = res;
     }).catch(function (error) {
-      console.log(error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:183");
+      console.log(error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:185");
     });
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))

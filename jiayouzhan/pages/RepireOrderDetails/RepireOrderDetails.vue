@@ -4,7 +4,7 @@
 			<text v-if="order.status != -1">{{statusText[order.status]}}</text>
 			<text v-if="order.status == -1">已取消</text>
 			<view class="cancleBtn">
-				<button v-if="order.status < 2" @tap="orderCancel">取消申请</button>
+				<button v-if="order.status < 2 && order.status != -1" @tap="orderCancel">取消申请</button>
 			</view>
 		</view>
 		<view class="orderInfo">
@@ -79,13 +79,13 @@
 				<view class="infodetail">
 					<view>服务态度</view>
 					<view>
-						<uni-rate :margin="20" :value="2" :max="5" :isFill="false"></uni-rate>
+						<uni-rate :margin="20" :value="order.rating_a" :max="5" :isFill="false" :disabled="true"></uni-rate>
 					</view>
 				</view>
 				<view class="infodetail">
 					<view>服务质量</view>
 					<view>
-						<uni-rate :margin="20" :value="4" :max="5" :isFill="false"></uni-rate>
+						<uni-rate :margin="20" :value="order.rating_q" :max="5" :isFill="false" :disabled="true"></uni-rate>
 					</view>
 				</view>
 			</view>
@@ -126,7 +126,9 @@
 					"owner": "30",
 					"admin_user_id": "",
 					"mobile": "",
-					"maint_c_id": ""
+					"maint_c_id": "",
+					"rating_a": 0,
+					"rating_q": 0
 				},
 				statusText:[
 					'待处理',

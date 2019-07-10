@@ -226,7 +226,9 @@ __webpack_require__.r(__webpack_exports__);
         "owner": "30",
         "admin_user_id": "",
         "mobile": "",
-        "maint_c_id": "" },
+        "maint_c_id": "",
+        "rating_a": 0,
+        "rating_q": 0 },
 
       statusText: [
       '待处理',
@@ -262,7 +264,7 @@ __webpack_require__.r(__webpack_exports__);
                 title: '已取消' });
 
             }).catch(function (Error) {
-              console.log(Error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:165");
+              console.log(Error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:167");
               uni.showToast({
                 icon: 'none',
                 title: '取消失败' });
@@ -274,13 +276,13 @@ __webpack_require__.r(__webpack_exports__);
     } },
 
   onLoad: function onLoad(option) {var _this2 = this;
-    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:177");
+    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:179");
     this.$fly.post("api/mgr-orders-details", {
       repairNum: option.orderNo }).
     then(function (res) {
       _this2.order = res;
     }).catch(function (error) {
-      console.log(error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:183");
+      console.log(error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:185");
     });
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))

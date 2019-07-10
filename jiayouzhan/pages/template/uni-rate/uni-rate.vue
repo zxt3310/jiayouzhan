@@ -65,7 +65,7 @@
 		},
 		computed: {
 			stars() {
-				const value = Number(this.valueSync) ? Number(this.valueSync) : 0
+				const value = Number(this.value) ? Number(this.value) : 0
 				const starList = []
 				const floorValue = Math.floor(value)
 				const ceilValue = Math.ceil(value)

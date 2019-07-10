@@ -165,7 +165,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   },
   computed: {
     stars: function stars() {
-      var value = Number(this.valueSync) ? Number(this.valueSync) : 0;
+      var value = Number(this.value) ? Number(this.value) : 0;
       var starList = [];
       var floorValue = Math.floor(value);
       var ceilValue = Math.ceil(value);
