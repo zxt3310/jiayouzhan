@@ -336,21 +336,23 @@ var info = uni.getStorageSync('userInfo');
 console.log(info, " at store/index.js:30");
 
 var store = new _vuex.default.Store({
-  modules: {
-    test: moduleA },
-
   state: {
     /**
             * 是否需要强制登录
             */
     forcedLogin: true,
     hasLogin: info.haslogin,
-    userName: "" },
+    userName: info.username,
+    userPhone: info.userphone },
 
   mutations: {
-    login: function login(state, userName) {
-      state.userName = userName || '新用户';
+    login: function login(state, name) {
+      // console.log(phone);
+      state.userName = name || '新用户';
       state.hasLogin = true;
+    },
+    logPhone: function logPhone(state, phone) {
+      state.userPhone = phone;
     },
     logout: function logout(state) {
       state.userName = "";
@@ -358,7 +360,7 @@ var store = new _vuex.default.Store({
       uni.removeStorage({
         key: 'userInfo',
         success: function success(e) {
-          console.log('登出成功', " at store/index.js:55");
+          console.log('登出成功', " at store/index.js:57");
         } });
 
     } } });var _default =

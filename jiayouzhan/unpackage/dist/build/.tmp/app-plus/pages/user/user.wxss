@@ -42,7 +42,8 @@
       font-size: 14px;
 }
 .menuList .menu {
-  padding: 30rpx;
+  background-color: white;
+  padding: 20rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -61,11 +62,11 @@
   font-size: 14px;
 }
 .menuList .menu image {
-    height: 56rpx;
-    width: 56rpx;
-    background-color: black;
+    height: 44rpx;
+    width: 44rpx;
+    margin-left: 30rpx;
 }
 .menuList .menu text {
-    margin-left: 40rpx;
+    margin-left: 20rpx;
 }
 

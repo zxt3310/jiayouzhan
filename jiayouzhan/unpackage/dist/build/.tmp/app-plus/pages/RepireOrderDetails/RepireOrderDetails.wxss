@@ -1,5 +1,5 @@
 .headBar {
-  padding: 30rpx;
+  padding: 20rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9,7 +9,19 @@
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  font-size: 14px;
+  font-size: 22px;
+  font-family: PingFangSC-Medium;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.cancleBtn {
+  height: 100%;
+}
+.cancleBtn button {
+    font-size: 14px;
+    background-color: white;
 }
 .orderInfo {
   padding: 20rpx;
@@ -17,6 +29,31 @@
 }
 .orderInfo .title {
     margin-bottom: 40rpx;
+    border-width: 1px;
+    border-color: #e1e9ea;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+}
+.orderInfo .title .tag {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+}
+.orderInfo .title .tag image {
+        width: 5px;
+        height: 22px;
+}
+.orderInfo .title .tag text {
+        font-family: PingFangSC-Medium;
+        margin-left: 10px;
 }
 .orderInfo .title .infodetail {
       display: -webkit-box;
@@ -29,12 +66,20 @@
           -ms-flex-direction: row;
               flex-direction: row;
 }
+.orderInfo .title .infodetail view {
+        line-height: 24px;
+}
 .orderInfo .title .infodetail view:last-child {
-        width: 80%;
+          width: 80%;
 }
 .orderInfo .title .infodetail view:first-child {
-        -webkit-align-self: center;
-            -ms-flex-item-align: center;
-                align-self: center;
+          -webkit-align-self: center;
+              -ms-flex-item-align: center;
+                  align-self: center;
+          color: #909090;
+}
+.orderInfo .title .infodetail text:first-child {
+        color: #909090;
+        width: 20%;
 }
 

@@ -1,5 +1,5 @@
 <template>
-	<view class="thiscontent">
+	<view class="thiscontent" @tap="hideKey">
 		<view style="background-color: white; border-radius: 20px;">
 			<view class="inputsytle">
 				<text>故障项目</text>
@@ -12,7 +12,7 @@
 			<view class="inputsytle">
 				<text style="align-self: flex-start;margin-top: 8px;">故障描述</text>
 				<view class="inputContext">
-					<textarea style="margin-top: 2px;" :value="faulty_desc" placeholder="请输入" @input="bindDesc"></textarea>
+					<textarea style="margin-top: 2px;" :value="faulty_desc" placeholder="请输入" @input="bindDesc" @click.stop=""></textarea>
 				</view>
 			</view>
 			
@@ -27,21 +27,21 @@
 			<view class="inputsytle">
 				<text style="align-self: flex-start;margin-top: 8px;">详细地址</text>
 				<view class="inputContext">
-					<textarea style="margin-top: 2px;" :value="gas_addr"></textarea>
+					<textarea style="margin-top: 2px;" :value="gas_addr" @click.stop=""></textarea>
 				</view>
 			</view>
 			
 			<view class="inputsytle">
 				<text style="align-self: center;">联系人</text>
 				<view class="inputContext">
-					<input type="text" placeholder="请输入" :value="contact" @input="bindContact"/>
+					<input type="text" placeholder="请输入" :value="contact" @input="bindContact" @click.stop=""/>
 				</view>
 			</view>
 			
 			<view class="inputsytle">
 				<text style="align-self: center;">联系电话</text>
 				<view class="inputContext">
-					<input type="text" placeholder="请输入" :value="phone" @input="bindPhone"/>
+					<input type="text" placeholder="请输入" :value="phone" @input="bindPhone" @tap.stop=""/>
 				</view>
 			</view>
 			
@@ -51,7 +51,7 @@
 					<view class="uni-uploader__files">
 						<block v-for="(image,index) in imageList" :key="index">
 							<view class="uni-uploader__file">
-								<image class="uni-uploader__img" :src="image" :data-src="image" @tap="previewImage" @longpress="deleteImgkmkl"></image>
+								<image class="uni-uploader__img" :src="image" :data-src="image" @tap="previewImage" @longpress="deleteImg"></image>
 							</view>
 						</block>
 						<view class="uni-uploader__input-box">
@@ -108,16 +108,26 @@
 		},
 		methods: {
 			faultyPickerShow(){
-				//this.pickerAry = faultyPickerAry;
+				// #ifdef APP-PLUS
+					plus.key.hideSoftKeybord();
+				// #endif
 				this.mode = 'selector';
 				this.deepL = 1;
 				this.$refs.faultyPicker.show();
 			},
 			gasPickerShow(){
-				//this.pickerAry = gasPickerAry;
+				// #ifdef APP-PLUS
+					plus.key.hideSoftKeybord();
+				// #endif
+				
 				this.mode = 'selector';
 				this.deepL = 1;
 				this.$refs.gasPicker.show();
+			},
+			hideKey(){
+				// #ifdef APP-PLUS
+					plus.key.hideSoftKeybord();
+				// #endif
 			},
 			chooseImage: async function() {
 				if (this.imageList.length === 4) {
@@ -222,7 +232,7 @@
 			}).catch((error)=>{
 				
 			});
-		}
+		},
 	}
 </script>
 

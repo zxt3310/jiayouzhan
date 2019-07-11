@@ -54,7 +54,7 @@
         },
         computed: mapState(['forcedLogin']),
         methods: {
-            ...mapMutations(['login']),
+            ...mapMutations(['login','logPhone']),
             initProvider() {
                 const filters = ['weixin', 'qq', 'sinaweibo'];
                 uni.getProvider({
@@ -142,7 +142,9 @@
 					
 					var userInfo = {
 						token:token,
-						haslogin:true
+						haslogin:true,
+						username:response.name,
+						userphone:response.mobile
 					}
 					
 					uni.setStorage({
@@ -152,7 +154,10 @@
 							console.log('save');
 						})
 					})
-					that.toMain('userTest');
+					console.log(response.mobile);
+					that.login(response.name);
+					that.logPhone(response.mobile);
+					that.toMain();
 					
 				}).catch(function(error){
 					console.log('fail')
@@ -183,8 +188,7 @@
                     }
                 });
             },
-            toMain(userName) {
-                this.login(userName);
+            toMain() {
                 /**
                  * 强制登录时使用reLaunch方式跳转过来
                  * 返回首页也使用reLaunch方式

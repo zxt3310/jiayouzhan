@@ -208,16 +208,26 @@ var sizeType = [
 
   methods: {
     faultyPickerShow: function faultyPickerShow() {
-      //this.pickerAry = faultyPickerAry;
+
+      plus.key.hideSoftKeybord();
+
       this.mode = 'selector';
       this.deepL = 1;
       this.$refs.faultyPicker.show();
     },
     gasPickerShow: function gasPickerShow() {
-      //this.pickerAry = gasPickerAry;
+
+      plus.key.hideSoftKeybord();
+
+
       this.mode = 'selector';
       this.deepL = 1;
       this.$refs.gasPicker.show();
+    },
+    hideKey: function hideKey() {
+
+      plus.key.hideSoftKeybord();
+
     },
     chooseImage: function () {var _chooseImage = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _this = this;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:if (!(
                 this.imageList.length === 4)) {_context.next = 3;break;}
@@ -250,17 +260,17 @@ var sizeType = [
     faultyConfirm: function faultyConfirm(faulty) {
       this.faultyId = faulty.value[0];
       this.fau_name = faulty.label;
-      console.log(this.faultyId, " at pages/startRepairReq/startRepairReq.vue:153");
+      console.log(this.faultyId, " at pages/startRepairReq/startRepairReq.vue:163");
     },
 
     gasConfirm: function gasConfirm(gas) {
-      console.log(gas, " at pages/startRepairReq/startRepairReq.vue:157");
+      console.log(gas, " at pages/startRepairReq/startRepairReq.vue:167");
       this.gas_name = gas.label;
       this.gasId = gas.value[0];
 
       var index = gas.index[0];
       this.gas_addr = this.gasPickerAry[index].address;
-      console.log(this.gasId, " at pages/startRepairReq/startRepairReq.vue:163");
+      console.log(this.gasId, " at pages/startRepairReq/startRepairReq.vue:173");
     },
     bindDesc: function bindDesc(e) {
       this.faulty_desc = e.detail.value;
@@ -273,7 +283,7 @@ var sizeType = [
     },
     //提交表单
     submit: function submit() {
-      console.log(this.faultyId + '  ' + this.faulty_desc + '  ' + this.gasId + '  ' + this.contact + '  ' + this.phone, " at pages/startRepairReq/startRepairReq.vue:176");
+      console.log(this.faultyId + '  ' + this.faulty_desc + '  ' + this.gasId + '  ' + this.contact + '  ' + this.phone, " at pages/startRepairReq/startRepairReq.vue:186");
 
       var post = {
         faulty_item: this.faultyId,
@@ -290,14 +300,14 @@ var sizeType = [
         contact: this.contact,
         contact_phone: this.phone }).
       then(function (res) {
-        console.log(res, " at pages/startRepairReq/startRepairReq.vue:193");
+        console.log(res, " at pages/startRepairReq/startRepairReq.vue:203");
         uni.navigateBack();
         uni.showToast({
           icon: 'success',
           title: '提交成功' });
 
       }).catch(function (error) {
-        console.log(error, " at pages/startRepairReq/startRepairReq.vue:200");
+        console.log(error, " at pages/startRepairReq/startRepairReq.vue:210");
         uni.showToast({
           icon: 'none',
           title: '提交失败，请重试' });

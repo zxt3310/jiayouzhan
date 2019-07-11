@@ -1094,6 +1094,9 @@ Z([3,'headBar'])
 Z([[2,'!='],[[6],[[7],[3,'order']],[3,'status']],[[2,'-'],[1,1]]])
 Z([[2,'=='],[[6],[[7],[3,'order']],[3,'status']],[[2,'-'],[1,1]]])
 Z([[2,'&&'],[[2,'<'],[[6],[[7],[3,'order']],[3,'status']],[1,2]],[[2,'!='],[[6],[[7],[3,'order']],[3,'status']],[[2,'-'],[1,1]]]])
+Z([3,'orderInfo'])
+Z([[2,'>'],[[6],[[7],[3,'order']],[3,'status']],[1,0]])
+Z([[2,'>'],[[6],[[7],[3,'order']],[3,'status']],[1,4]])
 Z([3,'title'])
 Z([3,'__l'])
 Z([1,true])
@@ -1102,11 +1105,11 @@ Z([1,20])
 Z([1,5])
 Z([[6],[[7],[3,'order']],[3,'rating_a']])
 Z([3,'1'])
-Z(z[6])
-Z(z[7])
-Z(z[8])
 Z(z[9])
 Z(z[10])
+Z(z[11])
+Z(z[12])
+Z(z[13])
 Z([[6],[[7],[3,'order']],[3,'rating_q']])
 Z([3,'2'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_3);return __WXML_GLOBAL__.ops_cached.$gwx_3
@@ -1222,9 +1225,12 @@ function gz$gwx_9(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_9)return __WXML_GLOBAL__.ops_cached.$gwx_9
 __WXML_GLOBAL__.ops_cached.$gwx_9=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'__e'])
+Z([3,'thiscontent'])
+Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'hideKey']],[[4],[[5],[1,'$event']]]]]]]]]]])
 Z([3,'background-color:white;border-radius:20px;'])
 Z([3,'__l'])
-Z([3,'__e'])
+Z(z[0])
 Z([3,'vue-ref'])
 Z([[4],[[5],[[4],[[5],[[5],[1,'^onConfirm']],[[4],[[5],[[4],[[5],[1,'faultyConfirm']]]]]]]]])
 Z([3,'faultyPicker'])
@@ -1232,13 +1238,13 @@ Z([[7],[3,'deepL']])
 Z([[7],[3,'mode']])
 Z([[7],[3,'faultyPickerAry']])
 Z([3,'1'])
-Z(z[1])
-Z(z[2])
-Z(z[3])
+Z(z[4])
+Z(z[0])
+Z(z[6])
 Z([[4],[[5],[[4],[[5],[[5],[1,'^onConfirm']],[[4],[[5],[[4],[[5],[1,'gasConfirm']]]]]]]]])
 Z([3,'gasPicker'])
-Z(z[6])
-Z(z[7])
+Z(z[9])
+Z(z[10])
 Z([[7],[3,'gasPickerAry']])
 Z([3,'2'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_9);return __WXML_GLOBAL__.ops_cached.$gwx_9
@@ -1361,10 +1367,24 @@ tM.wxXCkey=1
 _(cI,oJ)
 var eN=_n('view')
 _rz(z,eN,'class',5,e,s,gg)
-var bO=_mz(z,'uni-rate',['bind:__l',6,'disabled',1,'isFill',2,'margin',3,'max',4,'value',5,'vueId',6],[],e,s,gg)
+var bO=_v()
 _(eN,bO)
-var oP=_mz(z,'uni-rate',['bind:__l',13,'disabled',1,'isFill',2,'margin',3,'max',4,'value',5,'vueId',6],[],e,s,gg)
+if(_oz(z,6,e,s,gg)){bO.wxVkey=1
+}
+var oP=_v()
 _(eN,oP)
+if(_oz(z,7,e,s,gg)){oP.wxVkey=1
+var xQ=_n('view')
+_rz(z,xQ,'class',8,e,s,gg)
+var oR=_mz(z,'uni-rate',['bind:__l',9,'disabled',1,'isFill',2,'margin',3,'max',4,'value',5,'vueId',6],[],e,s,gg)
+_(xQ,oR)
+var fS=_mz(z,'uni-rate',['bind:__l',16,'disabled',1,'isFill',2,'margin',3,'max',4,'value',5,'vueId',6],[],e,s,gg)
+_(xQ,fS)
+_(oP,xQ)
+}
+bO.wxXCkey=1
+oP.wxXCkey=1
+oP.wxXCkey=3
 _(cI,eN)
 _(r,cI)
 return r
@@ -1373,137 +1393,139 @@ e_[x[2]]={f:m2,j:[],i:[],ti:[],ic:[]}
 d_[x[3]]={}
 var m3=function(e,s,r,gg){
 var z=gz$gwx_4()
-var oR=_n('view')
-_rz(z,oR,'class',0,e,s,gg)
-var fS=_mz(z,'m-input',['focus',-1,'clearable',-1,'bind:__l',1,'bind:input',1,'class',2,'data-event-opts',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
-_(oR,fS)
-var cT=_mz(z,'m-input',['displayable',-1,'bind:__l',9,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(oR,cT)
-_(r,oR)
+var hU=_n('view')
+_rz(z,hU,'class',0,e,s,gg)
+var oV=_mz(z,'m-input',['focus',-1,'clearable',-1,'bind:__l',1,'bind:input',1,'class',2,'data-event-opts',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
+_(hU,oV)
+var cW=_mz(z,'m-input',['displayable',-1,'bind:__l',9,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(hU,cW)
+_(r,hU)
 return r
 }
 e_[x[3]]={f:m3,j:[],i:[],ti:[],ic:[]}
 d_[x[4]]={}
 var m4=function(e,s,r,gg){
 var z=gz$gwx_5()
-var oV=_v()
-_(r,oV)
-var cW=function(lY,oX,aZ,gg){
-var e2=_mz(z,'view',['bindtap',4,'data-event-opts',1],[],lY,oX,gg)
-var b3=_mz(z,'rreecc',['bind:__l',6,'bind:gotoRate',1,'data-event-opts',2,'idCode',3,'jyz',4,'ms',5,'status',6,'ts',7,'vueId',8,'xm',9],[],lY,oX,gg)
-_(e2,b3)
-_(aZ,e2)
-return aZ
+var lY=_v()
+_(r,lY)
+var aZ=function(e2,t1,b3,gg){
+var x5=_mz(z,'view',['bindtap',4,'data-event-opts',1],[],e2,t1,gg)
+var o6=_mz(z,'rreecc',['bind:__l',6,'bind:gotoRate',1,'data-event-opts',2,'idCode',3,'jyz',4,'ms',5,'status',6,'ts',7,'vueId',8,'xm',9],[],e2,t1,gg)
+_(x5,o6)
+_(b3,x5)
+return b3
 }
-oV.wxXCkey=4
-_2z(z,2,cW,e,s,gg,oV,'order','index','index')
+lY.wxXCkey=4
+_2z(z,2,aZ,e,s,gg,lY,'order','index','index')
 return r
 }
 e_[x[4]]={f:m4,j:[],i:[],ti:[],ic:[]}
 d_[x[5]]={}
 var m5=function(e,s,r,gg){
 var z=gz$gwx_6()
-var x5=_n('view')
-_rz(z,x5,'class',0,e,s,gg)
-var o6=_mz(z,'uni-rate',['bind:__l',1,'bind:change',1,'data-event-opts',2,'isFill',3,'margin',4,'max',5,'vueId',6],[],e,s,gg)
-_(x5,o6)
-var f7=_mz(z,'uni-rate',['bind:__l',8,'bind:change',1,'data-event-opts',2,'isFill',3,'margin',4,'max',5,'value',6,'vueId',7],[],e,s,gg)
-_(x5,f7)
-_(r,x5)
+var c8=_n('view')
+_rz(z,c8,'class',0,e,s,gg)
+var h9=_mz(z,'uni-rate',['bind:__l',1,'bind:change',1,'data-event-opts',2,'isFill',3,'margin',4,'max',5,'vueId',6],[],e,s,gg)
+_(c8,h9)
+var o0=_mz(z,'uni-rate',['bind:__l',8,'bind:change',1,'data-event-opts',2,'isFill',3,'margin',4,'max',5,'value',6,'vueId',7],[],e,s,gg)
+_(c8,o0)
+_(r,c8)
 return r
 }
 e_[x[5]]={f:m5,j:[],i:[],ti:[],ic:[]}
 d_[x[6]]={}
 var m6=function(e,s,r,gg){
 var z=gz$gwx_7()
-var h9=_mz(z,'m-input',['focus',-1,'clearable',-1,'bind:__l',0,'bind:input',1,'data-event-opts',1,'placeholder',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
-_(r,h9)
+var oBB=_mz(z,'m-input',['focus',-1,'clearable',-1,'bind:__l',0,'bind:input',1,'data-event-opts',1,'placeholder',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
+_(r,oBB)
 return r
 }
 e_[x[6]]={f:m6,j:[],i:[],ti:[],ic:[]}
 d_[x[7]]={}
 var m7=function(e,s,r,gg){
 var z=gz$gwx_8()
-var cAB=_n('view')
-_rz(z,cAB,'class',0,e,s,gg)
-var oBB=_mz(z,'m-input',['focus',-1,'clearable',-1,'bind:__l',1,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(cAB,oBB)
-var lCB=_mz(z,'m-input',['displayable',-1,'bind:__l',8,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(cAB,lCB)
-var aDB=_mz(z,'m-input',['clearable',-1,'bind:__l',15,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(cAB,aDB)
-_(r,cAB)
+var aDB=_n('view')
+_rz(z,aDB,'class',0,e,s,gg)
+var tEB=_mz(z,'m-input',['focus',-1,'clearable',-1,'bind:__l',1,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(aDB,tEB)
+var eFB=_mz(z,'m-input',['displayable',-1,'bind:__l',8,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(aDB,eFB)
+var bGB=_mz(z,'m-input',['clearable',-1,'bind:__l',15,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(aDB,bGB)
+_(r,aDB)
 return r
 }
 e_[x[7]]={f:m7,j:[],i:[],ti:[],ic:[]}
 d_[x[8]]={}
 var m8=function(e,s,r,gg){
 var z=gz$gwx_9()
-var eFB=_n('view')
-_rz(z,eFB,'style',0,e,s,gg)
-var bGB=_mz(z,'mpvue-picker',['bind:__l',1,'bind:onConfirm',1,'class',2,'data-event-opts',3,'data-ref',4,'deepLength',5,'mode',6,'pickerValueArray',7,'vueId',8],[],e,s,gg)
-_(eFB,bGB)
-var oHB=_mz(z,'mpvue-picker',['bind:__l',10,'bind:onConfirm',1,'class',2,'data-event-opts',3,'data-ref',4,'deepLength',5,'mode',6,'pickerValueArray',7,'vueId',8],[],e,s,gg)
-_(eFB,oHB)
-_(r,eFB)
+var xIB=_mz(z,'view',['bindtap',0,'class',1,'data-event-opts',1],[],e,s,gg)
+var oJB=_n('view')
+_rz(z,oJB,'style',3,e,s,gg)
+var fKB=_mz(z,'mpvue-picker',['bind:__l',4,'bind:onConfirm',1,'class',2,'data-event-opts',3,'data-ref',4,'deepLength',5,'mode',6,'pickerValueArray',7,'vueId',8],[],e,s,gg)
+_(oJB,fKB)
+var cLB=_mz(z,'mpvue-picker',['bind:__l',13,'bind:onConfirm',1,'class',2,'data-event-opts',3,'data-ref',4,'deepLength',5,'mode',6,'pickerValueArray',7,'vueId',8],[],e,s,gg)
+_(oJB,cLB)
+_(xIB,oJB)
+_(r,xIB)
 return r
 }
 e_[x[8]]={f:m8,j:[],i:[],ti:[],ic:[]}
 d_[x[9]]={}
 var m9=function(e,s,r,gg){
 var z=gz$gwx_10()
-var oJB=_n('view')
-_rz(z,oJB,'class',0,e,s,gg)
-var fKB=_v()
-_(oJB,fKB)
-if(_oz(z,1,e,s,gg)){fKB.wxVkey=1
-}
-var cLB=_v()
-_(oJB,cLB)
-if(_oz(z,2,e,s,gg)){cLB.wxVkey=1
-}
-var hMB=_v()
-_(oJB,hMB)
-if(_oz(z,3,e,s,gg)){hMB.wxVkey=1
-}
-var oNB=_v()
-_(oJB,oNB)
-if(_oz(z,4,e,s,gg)){oNB.wxVkey=1
-}
+var oNB=_n('view')
+_rz(z,oNB,'class',0,e,s,gg)
 var cOB=_v()
-_(oJB,cOB)
-if(_oz(z,5,e,s,gg)){cOB.wxVkey=1
+_(oNB,cOB)
+if(_oz(z,1,e,s,gg)){cOB.wxVkey=1
 }
-fKB.wxXCkey=1
-cLB.wxXCkey=1
-hMB.wxXCkey=1
-oNB.wxXCkey=1
+var oPB=_v()
+_(oNB,oPB)
+if(_oz(z,2,e,s,gg)){oPB.wxVkey=1
+}
+var lQB=_v()
+_(oNB,lQB)
+if(_oz(z,3,e,s,gg)){lQB.wxVkey=1
+}
+var aRB=_v()
+_(oNB,aRB)
+if(_oz(z,4,e,s,gg)){aRB.wxVkey=1
+}
+var tSB=_v()
+_(oNB,tSB)
+if(_oz(z,5,e,s,gg)){tSB.wxVkey=1
+}
 cOB.wxXCkey=1
-_(r,oJB)
+oPB.wxXCkey=1
+lQB.wxXCkey=1
+aRB.wxXCkey=1
+tSB.wxXCkey=1
+_(r,oNB)
 return r
 }
 e_[x[9]]={f:m9,j:[],i:[],ti:[],ic:[]}
 d_[x[10]]={}
 var m10=function(e,s,r,gg){
 var z=gz$gwx_11()
-var lQB=_n('view')
-_rz(z,lQB,'class',0,e,s,gg)
-var aRB=_v()
-_(lQB,aRB)
-if(_oz(z,1,e,s,gg)){aRB.wxVkey=1
+var bUB=_n('view')
+_rz(z,bUB,'class',0,e,s,gg)
+var oVB=_v()
+_(bUB,oVB)
+if(_oz(z,1,e,s,gg)){oVB.wxVkey=1
 }
-var tSB=_v()
-_(lQB,tSB)
-if(_oz(z,2,e,s,gg)){tSB.wxVkey=1
+var xWB=_v()
+_(bUB,xWB)
+if(_oz(z,2,e,s,gg)){xWB.wxVkey=1
 }
-var eTB=_v()
-_(lQB,eTB)
-if(_oz(z,3,e,s,gg)){eTB.wxVkey=1
+var oXB=_v()
+_(bUB,oXB)
+if(_oz(z,3,e,s,gg)){oXB.wxVkey=1
 }
-aRB.wxXCkey=1
-tSB.wxXCkey=1
-eTB.wxXCkey=1
-_(r,lQB)
+oVB.wxXCkey=1
+xWB.wxXCkey=1
+oXB.wxXCkey=1
+_(r,bUB)
 return r
 }
 e_[x[10]]={f:m10,j:[],i:[],ti:[],ic:[]}
@@ -1516,19 +1538,19 @@ e_[x[11]]={f:m11,j:[],i:[],ti:[],ic:[]}
 d_[x[12]]={}
 var m12=function(e,s,r,gg){
 var z=gz$gwx_13()
-var xWB=_v()
-_(r,xWB)
-var oXB=function(cZB,fYB,h1B,gg){
-var c3B=_mz(z,'view',['bindtap',4,'class',1,'data-event-opts',2,'style',3],[],cZB,fYB,gg)
-var o4B=_mz(z,'uni-icon',['bind:__l',8,'color',1,'size',2,'type',3,'vueId',4],[],cZB,fYB,gg)
-_(c3B,o4B)
-var l5B=_mz(z,'uni-icon',['bind:__l',13,'color',1,'size',2,'type',3,'vueId',4],[],cZB,fYB,gg)
-_(c3B,l5B)
-_(h1B,c3B)
-return h1B
+var h1B=_v()
+_(r,h1B)
+var o2B=function(o4B,c3B,l5B,gg){
+var t7B=_mz(z,'view',['bindtap',4,'class',1,'data-event-opts',2,'style',3],[],o4B,c3B,gg)
+var e8B=_mz(z,'uni-icon',['bind:__l',8,'color',1,'size',2,'type',3,'vueId',4],[],o4B,c3B,gg)
+_(t7B,e8B)
+var b9B=_mz(z,'uni-icon',['bind:__l',13,'color',1,'size',2,'type',3,'vueId',4],[],o4B,c3B,gg)
+_(t7B,b9B)
+_(l5B,t7B)
+return l5B
 }
-xWB.wxXCkey=4
-_2z(z,2,oXB,e,s,gg,xWB,'star','index','index')
+h1B.wxXCkey=4
+_2z(z,2,o2B,e,s,gg,h1B,'star','index','index')
 return r
 }
 e_[x[12]]={f:m12,j:[],i:[],ti:[],ic:[]}
@@ -1555,7 +1577,7 @@ return root;
 
 
 
-__wxAppCode__['app.json']={"pages":["pages/main/main","pages/login/login","pages/reg/reg","pages/pwd/pwd","pages/user/user","pages/startRepairReq/startRepairReq","pages/RepireOrderDetails/RepireOrderDetails","pages/main/orderRate"],"subPackages":[],"window":{"navigationBarTextStyle":"black","navigationBarBackgroundColor":"white","backgroundColor":"#f2f7f8","backgroundColorTop":"#f2f7f8"},"tabBar":{"color":"#b9b8c2","selectedColor":"#1c713d","backgroundColor":"#ffffff","list":[{"pagePath":"pages/main/main","text":"维修记录","iconPath":"static/img/home.png","selectedIconPath":"static/img/homeHL.png"},{"pagePath":"pages/user/user","text":"我的","iconPath":"static/img/user.png","selectedIconPath":"static/img/userHL.png"}]},"nvueCompiler":"weex","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"appname":"jiayouzhan","compilerVersion":"2.0.1","usingComponents":{}};
+__wxAppCode__['app.json']={"pages":["pages/main/main","pages/login/login","pages/reg/reg","pages/pwd/pwd","pages/user/user","pages/startRepairReq/startRepairReq","pages/RepireOrderDetails/RepireOrderDetails","pages/main/orderRate"],"subPackages":[],"window":{"navigationBarTextStyle":"black","navigationBarBackgroundColor":"white","backgroundColor":"#f2f7f8","backgroundColorTop":"#f2f7f8"},"tabBar":{"color":"#b9b8c2","selectedColor":"#1c713d","backgroundColor":"#ffffff","list":[{"pagePath":"pages/main/main","text":"维修记录","iconPath":"static/img/home.png","selectedIconPath":"static/img/homeHL.png"},{"pagePath":"pages/user/user","text":"我的","iconPath":"static/img/user.png","selectedIconPath":"static/img/userHL.png"}]},"nvueCompiler":"weex","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"appname":"加油站","compilerVersion":"2.0.1","usingComponents":{}};
 __wxAppCode__['app.wxml']=$gwx('./app.wxml');
 
 __wxAppCode__['components/m-icon/m-icon.json']={"usingComponents":{},"component":true};
@@ -2316,21 +2338,23 @@ var info = uni.getStorageSync('userInfo');
 console.log(info, " at store/index.js:30");
 
 var store = new _vuex.default.Store({
-  modules: {
-    test: moduleA },
-
   state: {
     /**
             * 是否需要强制登录
             */
     forcedLogin: true,
     hasLogin: info.haslogin,
-    userName: "" },
+    userName: info.username,
+    userPhone: info.userphone },
 
   mutations: {
-    login: function login(state, userName) {
-      state.userName = userName || '新用户';
+    login: function login(state, name) {
+      // console.log(phone);
+      state.userName = name || '新用户';
       state.hasLogin = true;
+    },
+    logPhone: function logPhone(state, phone) {
+      state.userPhone = phone;
     },
     logout: function logout(state) {
       state.userName = "";
@@ -2338,7 +2362,7 @@ var store = new _vuex.default.Store({
       uni.removeStorage({
         key: 'userInfo',
         success: function success(e) {
-          console.log('登出成功', " at store/index.js:55");
+          console.log('登出成功', " at store/index.js:57");
         } });
 
     } } });var _default =
@@ -13327,6 +13351,8 @@ define('pages/template/recordTemple/recordTemple.js',function(require, module, e
     //
     //
     //
+    //
+    //
     var _default =
     {
       name: 'rreecc',
@@ -14293,7 +14319,7 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
   },
   computed: (0, _vuex.mapState)(['forcedLogin']),
   methods: _objectSpread({},
-  (0, _vuex.mapMutations)(['login']), {
+  (0, _vuex.mapMutations)(['login', 'logPhone']), {
     initProvider: function initProvider() {var _this = this;
       var filters = ['weixin', 'qq', 'sinaweibo'];
       uni.getProvider({
@@ -14381,21 +14407,26 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
 
         var userInfo = {
           token: token,
-          haslogin: true };
+          haslogin: true,
+          username: response.name,
+          userphone: response.mobile };
 
 
         uni.setStorage({
           key: 'userInfo',
           data: userInfo,
           success: function success(e) {
-            console.log('save', " at pages/login/login.vue:152");
+            console.log('save', " at pages/login/login.vue:154");
           } });
 
-        that.toMain('userTest');
+        console.log(response.mobile, " at pages/login/login.vue:157");
+        that.login(response.name);
+        that.logPhone(response.mobile);
+        that.toMain();
 
       }).catch(function (error) {
-        console.log('fail', " at pages/login/login.vue:158");
-        console.log(error, " at pages/login/login.vue:159");
+        console.log('fail', " at pages/login/login.vue:163");
+        console.log(error, " at pages/login/login.vue:164");
         uni.showToast({
           icon: 'none',
           title: error.message });
@@ -14418,16 +14449,15 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
 
         },
         fail: function fail(err) {
-          console.error('授权登录失败：' + JSON.stringify(err), " at pages/login/login.vue:182");
+          console.error('授权登录失败：' + JSON.stringify(err), " at pages/login/login.vue:187");
         } });
 
     },
-    toMain: function toMain(userName) {
-      this.login(userName);
+    toMain: function toMain() {
       /**
-                             * 强制登录时使用reLaunch方式跳转过来
-                             * 返回首页也使用reLaunch方式
-                             */
+                                * 强制登录时使用reLaunch方式跳转过来
+                                * 返回首页也使用reLaunch方式
+                                */
       if (this.forcedLogin) {
         uni.reLaunch({
           url: '../main/main' });
@@ -14985,7 +15015,7 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
 
 {
   computed: _objectSpread({},
-  (0, _vuex.mapState)(['hasLogin', 'forcedLogin'])),
+  (0, _vuex.mapState)(['hasLogin', 'forcedLogin', 'userName', 'userPhone'])),
 
   methods: _objectSpread({},
   (0, _vuex.mapMutations)(['logout']), {
@@ -15264,16 +15294,26 @@ var sizeType = [
 
   methods: {
     faultyPickerShow: function faultyPickerShow() {
-      //this.pickerAry = faultyPickerAry;
+
+      plus.key.hideSoftKeybord();
+
       this.mode = 'selector';
       this.deepL = 1;
       this.$refs.faultyPicker.show();
     },
     gasPickerShow: function gasPickerShow() {
-      //this.pickerAry = gasPickerAry;
+
+      plus.key.hideSoftKeybord();
+
+
       this.mode = 'selector';
       this.deepL = 1;
       this.$refs.gasPicker.show();
+    },
+    hideKey: function hideKey() {
+
+      plus.key.hideSoftKeybord();
+
     },
     chooseImage: function () {var _chooseImage = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _this = this;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:if (!(
                 this.imageList.length === 4)) {_context.next = 3;break;}
@@ -15306,17 +15346,17 @@ var sizeType = [
     faultyConfirm: function faultyConfirm(faulty) {
       this.faultyId = faulty.value[0];
       this.fau_name = faulty.label;
-      console.log(this.faultyId, " at pages/startRepairReq/startRepairReq.vue:153");
+      console.log(this.faultyId, " at pages/startRepairReq/startRepairReq.vue:163");
     },
 
     gasConfirm: function gasConfirm(gas) {
-      console.log(gas, " at pages/startRepairReq/startRepairReq.vue:157");
+      console.log(gas, " at pages/startRepairReq/startRepairReq.vue:167");
       this.gas_name = gas.label;
       this.gasId = gas.value[0];
 
       var index = gas.index[0];
       this.gas_addr = this.gasPickerAry[index].address;
-      console.log(this.gasId, " at pages/startRepairReq/startRepairReq.vue:163");
+      console.log(this.gasId, " at pages/startRepairReq/startRepairReq.vue:173");
     },
     bindDesc: function bindDesc(e) {
       this.faulty_desc = e.detail.value;
@@ -15329,7 +15369,7 @@ var sizeType = [
     },
     //提交表单
     submit: function submit() {
-      console.log(this.faultyId + '  ' + this.faulty_desc + '  ' + this.gasId + '  ' + this.contact + '  ' + this.phone, " at pages/startRepairReq/startRepairReq.vue:176");
+      console.log(this.faultyId + '  ' + this.faulty_desc + '  ' + this.gasId + '  ' + this.contact + '  ' + this.phone, " at pages/startRepairReq/startRepairReq.vue:186");
 
       var post = {
         faulty_item: this.faultyId,
@@ -15346,14 +15386,14 @@ var sizeType = [
         contact: this.contact,
         contact_phone: this.phone }).
       then(function (res) {
-        console.log(res, " at pages/startRepairReq/startRepairReq.vue:193");
+        console.log(res, " at pages/startRepairReq/startRepairReq.vue:203");
         uni.navigateBack();
         uni.showToast({
           icon: 'success',
           title: '提交成功' });
 
       }).catch(function (error) {
-        console.log(error, " at pages/startRepairReq/startRepairReq.vue:200");
+        console.log(error, " at pages/startRepairReq/startRepairReq.vue:210");
         uni.showToast({
           icon: 'none',
           title: '提交失败，请重试' });
@@ -15639,19 +15679,10 @@ __webpack_require__.r(__webpack_exports__);
         "status": 0,
         "related_order": "",
         "action": "",
-        "voice": "",
-        "notified": "",
         "created_at": "",
         "updated_at": "",
-        "deleted_at": "",
         "gs_name": "",
         "address": "",
-        "lat": "39.888809",
-        "lon": "116.435602",
-        "owner": "30",
-        "admin_user_id": "",
-        "mobile": "",
-        "maint_c_id": "",
         "rating_a": 0,
         "rating_q": 0 },
 
@@ -15689,7 +15720,7 @@ __webpack_require__.r(__webpack_exports__);
                 title: '已取消' });
 
             }).catch(function (Error) {
-              console.log(Error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:167");
+              console.log(Error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:158");
               uni.showToast({
                 icon: 'none',
                 title: '取消失败' });
@@ -15701,13 +15732,13 @@ __webpack_require__.r(__webpack_exports__);
     } },
 
   onLoad: function onLoad(option) {var _this2 = this;
-    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:179");
+    console.log(option, " at pages/RepireOrderDetails/RepireOrderDetails.vue:170");
     this.$fly.post("api/mgr-orders-details", {
       repairNum: option.orderNo }).
     then(function (res) {
       _this2.order = res;
     }).catch(function (error) {
-      console.log(error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:185");
+      console.log(error, " at pages/RepireOrderDetails/RepireOrderDetails.vue:176");
     });
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))

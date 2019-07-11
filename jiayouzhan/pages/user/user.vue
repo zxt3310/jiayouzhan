@@ -9,8 +9,8 @@
 				<image style="width: 100%; height: 100%;" src="" mode=""></image>
 			</view>
 			<view class="headerInfo">
-				<view>用户昵称</view>
-				<view>性别</view>
+				<view>{{userName}}</view>
+				<view>{{userPhone}}</view>
 			</view>
 		</view>
 		
@@ -43,7 +43,7 @@
 
     export default {
         computed: {
-            ...mapState(['hasLogin', 'forcedLogin'])
+            ...mapState(['hasLogin', 'forcedLogin','userName','userPhone'])
         },
         methods: {
             ...mapMutations(['logout']),

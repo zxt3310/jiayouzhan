@@ -4,7 +4,9 @@
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	padding:10px;
+	padding:15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	width: 100%;
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
@@ -30,6 +32,27 @@
 	        justify-content: space-between;
 }
 .contentText {
-	line-height: 100%;
+	line-height: 24px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	font-size: 14px;
+	font-family: PingFangSC-Regular;
+}
+.contentTextTitle{
+	width: 22%; 
+	text-align: center;
+	color: #909090;
+}
+.PJ{
+	padding: 5px 15px 5px 15px;
+	font-size: 14px;
+	background-color: #fec957;
 }
 

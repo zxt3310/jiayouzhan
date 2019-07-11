@@ -29,14 +29,14 @@
 				</view>
 			</view>
 			
-			<view class="title">
+			<view class="title" v-if="order.status>0">
 				<view class="tag">
 					<image src="../../static/img/icoTag.png" mode=""></image>
 					<text>故障处理状况</text>
 				</view>
 				<view class="infodetail">
 					<text>处 理 人</text>
-					<text>{{order.order_taker}}</text>
+					<text>{{order.name}}</text>
 				</view>
 				<view class="infodetail">
 					<text>接单时间</text>
@@ -44,16 +44,16 @@
 				</view>
 				<view class="infodetail">
 					<text>完成时间</text>
-					<text>{{order.completion}}</text>
+					<text>{{order.completion==null? "处理中...":order.completion}}</text>
 				</view>
 				<view class="infodetail">
 					<text>处理说明</text>
-					<text>{{action}}</text>
+					<text>{{order.result==null? "":order.result}}</text>
 				</view>
-				<view class="infodetail">
+				<!-- <view class="infodetail">
 					<text>验 证 码</text>
 					<text>587923（请将验证码告知上门维修人员）</text>
-				</view>
+				</view> -->
 			</view>
 			
 			<view class="title">
@@ -71,7 +71,7 @@
 				</view>
 			</view>
 			
-			<view class="title">
+			<view class="title" v-if="order.status>4">
 				<view class="tag">
 					<image src="../../static/img/icoTag.png" mode=""></image>
 					<text>服务评价</text>
@@ -114,19 +114,10 @@
 					"status": 0,
 					"related_order":"",
 					"action": "",
-					"voice": "",
-					"notified": "",
 					"created_at": "",
 					"updated_at": "",
-					"deleted_at": "",
 					"gs_name": "",
 					"address": "",
-					"lat": "39.888809",
-					"lon": "116.435602",
-					"owner": "30",
-					"admin_user_id": "",
-					"mobile": "",
-					"maint_c_id": "",
 					"rating_a": 0,
 					"rating_q": 0
 				},
@@ -239,14 +230,12 @@
 					&:first-child{
 						align-self: center;
 						color: #909090;
-						text-align: center;
 					}
 				}
 				text{
 					&:first-child{
 						color: #909090;
 						width: 20%;
-						text-align: center;
 					}
 				}
 			}

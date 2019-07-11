@@ -3,8 +3,10 @@
 		<view style="background-color: white; width:100%;">
 		<!-- 头 -->
 			<view class="header">
-				<image style="width: 22px; height: 22px;" src="/static/img/icoDot.png" mode=""></image>
-				<text style="font-family: PingFangSC-Medium;">{{idCode}}</text>
+				<view style="display: flex;flex-direction: row; align-items: center;">
+					<image style="width: 22px; height: 22px;" src="/static/img/icoDot.png" mode=""></image>
+					<text style="font-family: PingFangSC-Medium;margin-left: 20upx;">{{idCode}}</text>
+				</view>
 				<view v-if="status !=4 & status != -1" style="font-size: 14px;" :style="{color:getcolor(status)}">{{statusText[status]}}</view>
 				<view v-if="status == -1" style="font-size: 14px; color: #888888;">已取消</view>
 				<view class="PJ" v-if="status == 4" @tap.stop="gotoRate(idCode)">
@@ -19,7 +21,7 @@
 				</view>
 				<view class="contentText">
 					<view class="contentTextTitle">故障描述</view>
-					<text>{{ms}}</text>
+					<view style="max-width: 75%;">{{ms}}</view>
 				</view>
 				<view class="contentText">
 					<view class="contentTextTitle">加 油 站</view>

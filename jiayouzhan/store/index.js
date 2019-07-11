@@ -30,22 +30,24 @@ var info = uni.getStorageSync('userInfo')
 console.log(info)
 
 const store = new Vuex.Store({
-	modules:{
-		test : moduleA
-	},
     state: {
         /**
          * 是否需要强制登录
          */
         forcedLogin: true,
         hasLogin: info.haslogin,
-        userName: ""
+        userName: info.username,
+		userPhone: info.userphone
     },
     mutations: {
-        login(state, userName) {
-            state.userName = userName || '新用户';
+        login(state,name) {
+			// console.log(phone);
+            state.userName = name || '新用户';
             state.hasLogin = true;
         },
+		logPhone(state,phone){
+			state.userPhone = phone;
+		},
         logout(state) {
             state.userName = "";
             state.hasLogin = false;

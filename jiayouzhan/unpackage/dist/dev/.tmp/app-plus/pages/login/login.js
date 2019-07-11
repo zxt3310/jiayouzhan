@@ -154,7 +154,7 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
   },
   computed: (0, _vuex.mapState)(['forcedLogin']),
   methods: _objectSpread({},
-  (0, _vuex.mapMutations)(['login']), {
+  (0, _vuex.mapMutations)(['login', 'logPhone']), {
     initProvider: function initProvider() {var _this = this;
       var filters = ['weixin', 'qq', 'sinaweibo'];
       uni.getProvider({
@@ -242,21 +242,26 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
 
         var userInfo = {
           token: token,
-          haslogin: true };
+          haslogin: true,
+          username: response.name,
+          userphone: response.mobile };
 
 
         uni.setStorage({
           key: 'userInfo',
           data: userInfo,
           success: function success(e) {
-            console.log('save', " at pages/login/login.vue:152");
+            console.log('save', " at pages/login/login.vue:154");
           } });
 
-        that.toMain('userTest');
+        console.log(response.mobile, " at pages/login/login.vue:157");
+        that.login(response.name);
+        that.logPhone(response.mobile);
+        that.toMain();
 
       }).catch(function (error) {
-        console.log('fail', " at pages/login/login.vue:158");
-        console.log(error, " at pages/login/login.vue:159");
+        console.log('fail', " at pages/login/login.vue:163");
+        console.log(error, " at pages/login/login.vue:164");
         uni.showToast({
           icon: 'none',
           title: error.message });
@@ -279,16 +284,15 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
 
         },
         fail: function fail(err) {
-          console.error('授权登录失败：' + JSON.stringify(err), " at pages/login/login.vue:182");
+          console.error('授权登录失败：' + JSON.stringify(err), " at pages/login/login.vue:187");
         } });
 
     },
-    toMain: function toMain(userName) {
-      this.login(userName);
+    toMain: function toMain() {
       /**
-                             * 强制登录时使用reLaunch方式跳转过来
-                             * 返回首页也使用reLaunch方式
-                             */
+                                * 强制登录时使用reLaunch方式跳转过来
+                                * 返回首页也使用reLaunch方式
+                                */
       if (this.forcedLogin) {
         uni.reLaunch({
           url: '../main/main' });

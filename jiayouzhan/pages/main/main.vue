@@ -128,7 +128,7 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		padding: 40upx;
+		padding: 40upx 0upx 40upx 40upx;
 		view{
 			&:first-child{
 				font-size: 44upx;

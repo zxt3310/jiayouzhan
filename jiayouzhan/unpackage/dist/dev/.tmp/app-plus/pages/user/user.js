@@ -143,7 +143,7 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
 
 {
   computed: _objectSpread({},
-  (0, _vuex.mapState)(['hasLogin', 'forcedLogin'])),
+  (0, _vuex.mapState)(['hasLogin', 'forcedLogin', 'userName', 'userPhone'])),
 
   methods: _objectSpread({},
   (0, _vuex.mapMutations)(['logout']), {
