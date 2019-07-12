@@ -223,7 +223,7 @@
 				display: flex;
 				flex-direction: row;
 				view {
-					line-height: 24px;
+					line-height: 30px;
 					&:last-child{
 						width: 80%;
 					}
@@ -233,6 +233,7 @@
 					}
 				}
 				text{
+					line-height: 30px;
 					&:first-child{
 						color: #909090;
 						width: 20%;

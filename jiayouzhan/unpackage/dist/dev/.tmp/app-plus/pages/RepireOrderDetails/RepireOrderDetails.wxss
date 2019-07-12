@@ -67,7 +67,7 @@
               flex-direction: row;
 }
 .orderInfo .title .infodetail view {
-        line-height: 24px;
+        line-height: 30px;
 }
 .orderInfo .title .infodetail view:last-child {
           width: 80%;
@@ -78,8 +78,11 @@
                   align-self: center;
           color: #909090;
 }
+.orderInfo .title .infodetail text {
+        line-height: 30px;
+}
 .orderInfo .title .infodetail text:first-child {
-        color: #909090;
-        width: 20%;
+          color: #909090;
+          width: 20%;
 }
 

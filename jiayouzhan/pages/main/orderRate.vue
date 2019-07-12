@@ -6,12 +6,12 @@
 		
 		<view class="rateArea">
 			<view>服务态度</view>
-			<uni-rate :max="5" :isFill="false" :margin="30" v-on:change="changeA"></uni-rate>
+			<uni-rate :max="5" :value="star_q" :isFill="false" :margin="30" v-on:change="changeQ"></uni-rate>
 		</view>
 		
 		<view class="rateArea">
 			<view>服务质量</view>
-			<uni-rate :max="5" :value="star_a" :isFill="false" :margin="30" v-on:change="changeQ"></uni-rate>
+			<uni-rate :max="5" :value="star_a" :isFill="false" :margin="30" v-on:change="changeA"></uni-rate>
 		</view>
 		
 		<view class="submit">
@@ -42,9 +42,16 @@
 					star_q:this.star_q,
 					repairNum:this.orderCode
 				}).then((res)=>{
-					
+					uni.navigateBack();
+					uni.showToast({
+						icon:'success',
+						title:'评价成功'
+					});
 				}).catch((error)=>{
-					
+					uni.showToast({
+						icon:'none',
+						title:'出错啦'
+					});
 				})
 			},
 			changeQ: function(star){

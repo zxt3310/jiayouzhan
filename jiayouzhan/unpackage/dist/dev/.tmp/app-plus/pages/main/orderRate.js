@@ -98,7 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var UniRate = function UniRate() {return __webpack_require__.e(/*! import() | pages/template/uni-rate/uni-rate */ "pages/template/uni-rate/uni-rate").then(__webpack_require__.bind(null, /*! ../template/uni-rate/uni-rate.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/uni-rate/uni-rate.vue"));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var UniRate = function UniRate() {return __webpack_require__.e(/*! import() | pages/template/uni-rate/uni-rate */ "pages/template/uni-rate/uni-rate").then(__webpack_require__.bind(null, /*! ../template/uni-rate/uni-rate.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/uni-rate/uni-rate.vue"));};var _default =
 
 
 
@@ -142,23 +142,31 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
         star_q: this.star_q,
         repairNum: this.orderCode }).
       then(function (res) {
+        uni.navigateBack();
+        uni.showToast({
+          icon: 'success',
+          title: '评价成功' });
 
       }).catch(function (error) {
+        uni.showToast({
+          icon: 'none',
+          title: '出错啦' });
 
       });
     },
     changeQ: function changeQ(star) {
-      console.log(star, " at pages/main/orderRate.vue:51");
+      console.log(star, " at pages/main/orderRate.vue:58");
       this.star_q = star.value;
     },
     changeA: function changeA(star) {
-      console.log(star, " at pages/main/orderRate.vue:55");
+      console.log(star, " at pages/main/orderRate.vue:62");
       this.star_a = star.value;
     } },
 
   onLoad: function onLoad(option) {
     this.orderCode = option.orderId;
   } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
 

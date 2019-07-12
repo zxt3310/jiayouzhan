@@ -1165,14 +1165,15 @@ __WXML_GLOBAL__.ops_cached.$gwx_6=[];
 Z([3,'thiscontent'])
 Z([3,'__l'])
 Z([3,'__e'])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^change']],[[4],[[5],[[4],[[5],[1,'changeA']]]]]]]]])
+Z([[4],[[5],[[4],[[5],[[5],[1,'^change']],[[4],[[5],[[4],[[5],[1,'changeQ']]]]]]]]])
 Z([1,false])
 Z([1,30])
 Z([1,5])
+Z([[7],[3,'star_q']])
 Z([3,'1'])
 Z(z[1])
 Z(z[2])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^change']],[[4],[[5],[[4],[[5],[1,'changeQ']]]]]]]]])
+Z([[4],[[5],[[4],[[5],[[5],[1,'^change']],[[4],[[5],[[4],[[5],[1,'changeA']]]]]]]]])
 Z(z[4])
 Z(z[5])
 Z(z[6])
@@ -1425,9 +1426,9 @@ var m5=function(e,s,r,gg){
 var z=gz$gwx_6()
 var c8=_n('view')
 _rz(z,c8,'class',0,e,s,gg)
-var h9=_mz(z,'uni-rate',['bind:__l',1,'bind:change',1,'data-event-opts',2,'isFill',3,'margin',4,'max',5,'vueId',6],[],e,s,gg)
+var h9=_mz(z,'uni-rate',['bind:__l',1,'bind:change',1,'data-event-opts',2,'isFill',3,'margin',4,'max',5,'value',6,'vueId',7],[],e,s,gg)
 _(c8,h9)
-var o0=_mz(z,'uni-rate',['bind:__l',8,'bind:change',1,'data-event-opts',2,'isFill',3,'margin',4,'max',5,'value',6,'vueId',7],[],e,s,gg)
+var o0=_mz(z,'uni-rate',['bind:__l',9,'bind:change',1,'data-event-opts',2,'isFill',3,'margin',4,'max',5,'value',6,'vueId',7],[],e,s,gg)
 _(c8,o0)
 _(r,c8)
 return r
@@ -15885,7 +15886,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var UniRate = function UniRate() {return __webpack_require__.e(/*! import() | pages/template/uni-rate/uni-rate */ "pages/template/uni-rate/uni-rate").then(__webpack_require__.bind(null, /*! ../template/uni-rate/uni-rate.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/uni-rate/uni-rate.vue"));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var UniRate = function UniRate() {return __webpack_require__.e(/*! import() | pages/template/uni-rate/uni-rate */ "pages/template/uni-rate/uni-rate").then(__webpack_require__.bind(null, /*! ../template/uni-rate/uni-rate.vue */ "../../../../../../Users/zxt/Documents/2019/jiayouzhan/jiayouzhan/pages/template/uni-rate/uni-rate.vue"));};var _default =
 
 
 
@@ -15929,23 +15930,31 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
         star_q: this.star_q,
         repairNum: this.orderCode }).
       then(function (res) {
+        uni.navigateBack();
+        uni.showToast({
+          icon: 'success',
+          title: '评价成功' });
 
       }).catch(function (error) {
+        uni.showToast({
+          icon: 'none',
+          title: '出错啦' });
 
       });
     },
     changeQ: function changeQ(star) {
-      console.log(star, " at pages/main/orderRate.vue:51");
+      console.log(star, " at pages/main/orderRate.vue:58");
       this.star_q = star.value;
     },
     changeA: function changeA(star) {
-      console.log(star, " at pages/main/orderRate.vue:55");
+      console.log(star, " at pages/main/orderRate.vue:62");
       this.star_a = star.value;
     } },
 
   onLoad: function onLoad(option) {
     this.orderCode = option.orderId;
   } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
 
