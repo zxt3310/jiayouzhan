@@ -3,7 +3,11 @@
 		onLaunch: function() {
 			console.log('App Launch');
 		},
-		onShow: function() {
+		onShow: function(option) {
+			uni.showModal({
+				title:'启动',
+				content:option.a
+			})
 			console.log('App Show');
 		},
 		onHide: function() {
