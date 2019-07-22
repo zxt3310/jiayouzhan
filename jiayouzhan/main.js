@@ -63,11 +63,11 @@ fly.interceptors.response.use(
 			// }
 		}
 		else{
-			return Promise.reject(new Error("error"))
+			return Promise.reject(new Error(response.data.errmsg))
 		}
 	},
 	(err) => {
-		console.log('走到出错了')
+		console.log('走到出错了');
 		return err;
 	}
 

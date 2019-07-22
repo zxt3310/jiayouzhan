@@ -27,7 +27,6 @@ const moduleA = {
 }
 
 var info = uni.getStorageSync('userInfo')
-console.log(info)
 
 const store = new Vuex.Store({
     state: {
@@ -37,7 +36,8 @@ const store = new Vuex.Store({
         forcedLogin: true,
         hasLogin: info.haslogin,
         userName: info.username,
-		userPhone: info.userphone
+		userPhone: info.userphone,
+		token:info.token
     },
     mutations: {
         login(state,name) {

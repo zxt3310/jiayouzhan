@@ -74,6 +74,12 @@
 <script>
 	import mpvuePicker from '../template/mpvue-picker/mpvuePicker.vue';
 	import test from '../../commonJs/fly.js'
+	import {
+	    mapState
+	} from 'vuex';
+	
+	var fs = require('fs');
+	
 	var sourceType = [
 		['camera'],
 		['album'],
@@ -100,12 +106,14 @@
 				deepL:0,
 				imageList:[],
 				contact:'',
-				phone:''
+				phone:'',
+				repair_num:"2019072215415200000"
 			}
 		},
 		components:{
 			mpvuePicker
 		},
+		computed: mapState(['token']),
 		methods: {
 			faultyPickerShow(){
 				// #ifdef APP-PLUS
@@ -201,11 +209,13 @@
 					contact_phone:this.phone
 				}).then((res)=>{
 					console.log(res);
-					uni.navigateBack();
-					uni.showToast({
-						icon:'success',
-						title:'提交成功'
-					})
+					this.repair_num = res.repairNum;
+					this.submitPic();
+				 //    uni.navigateBack();
+					// uni.showToast({
+					// 	icon:'success',
+					// 	title:'提交成功'
+					// })
 				}).catch((error)=>{
 					console.log(error);
 					uni.showToast({
@@ -213,6 +223,56 @@
 						title:'提交失败，请重试'
 					})
 				})
+			},
+			submitPic(){
+				var formData = {
+					type:'img',
+					repairNum:this.repair_num
+				}
+				
+				var files = [];
+				for (let i=0;i<this.imageList.length; i++) {
+					var file = {};
+					file.name = 'pic' + (i+1);
+					file.uri = this.imageList[i];
+					files.push(file);
+				}
+				
+				uni.uploadFile({
+					url:'http://gsj.dev.rsc.ranknowcn.com/api/upload-images',
+					files:files,
+					formData:formData,
+					header:{
+						Authorization:'bearer ' + this.token
+					},
+					success: (res) => {
+						let err = res.data.err;
+						if (err != 0){
+							uni.showToast({
+								title:'上传失败，请重试'
+							})
+						}else{
+							uni.navigateBack();
+							uni.showToast({
+								icon:'success',
+								title:'提交成功'
+							})
+						}
+					}
+				})
+			},
+			submitPicFly(){
+				console.log(fs);
+				var formData = {
+					type:'img',
+					repairNum:this.repair_num,
+					file:fs.createReadStream(),
+					
+				}
+				this.$fly.upload('api/upload-images',formData).then((res)=>{
+					console.log(res);
+				});
+				
 			}
 		},
 		onLoad() {

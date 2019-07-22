@@ -82,7 +82,7 @@
 		.headerimg{
 			width: 140upx;
 			height: 140upx;
-			background-color: black;
+			background-color: lightgrey;
 			border-radius: 70upx;
 		}
 		.headerInfo{
