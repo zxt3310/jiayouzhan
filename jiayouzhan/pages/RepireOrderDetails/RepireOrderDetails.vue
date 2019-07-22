@@ -27,6 +27,14 @@
 					<text>提交时间</text>
 					<text>{{order.created_at}}</text>
 				</view>
+				
+				<view class="infodetail">
+					<view style="width: 20%;align-self: flex-start;">故障图片</view>
+					<view class="pic" v-for="(img,index) in order.pic" :key="index">
+						<!-- <image :src="img" mode=""></image> -->
+						abc
+					</view>
+				</view>
 			</view>
 			
 			<view class="title" v-if="order.status>0">
@@ -119,7 +127,8 @@
 					"gs_name": "",
 					"address": "",
 					"rating_a": 0,
-					"rating_q": 0
+					"rating_q": 0,
+					pic:[]
 				},
 				statusText:[
 					'待处理',

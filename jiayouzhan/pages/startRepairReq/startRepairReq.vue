@@ -78,7 +78,7 @@
 	    mapState
 	} from 'vuex';
 	
-	var fs = require('fs');
+	var fs =require('fs')
 	
 	var sourceType = [
 		['camera'],
