@@ -193,6 +193,10 @@
 			submit(){
 				console.log(this.faultyId + '  ' + this.faulty_desc + '  ' + this.gasId + '  ' + this.contact + '  ' + this.phone);
 				
+				uni.showLoading({
+					title:'正在提交'
+				})
+				
 				var post = {
 					faulty_item:this.faultyId,
 					faulth_desc:this.faulty_desc,
@@ -210,18 +214,24 @@
 				}).then((res)=>{
 					console.log(res);
 					this.repair_num = res.repairNum;
-					this.submitPic();
-				 //    uni.navigateBack();
-					// uni.showToast({
-					// 	icon:'success',
-					// 	title:'提交成功'
-					// })
+					if (this.imageList.length > 0){
+						this.submitPic();
+					}
+					else{
+						uni.hideLoading();
+						uni.navigateBack();
+						uni.showToast({
+							icon:'success',
+							title:'提交成功'
+						});
+					}
 				}).catch((error)=>{
 					console.log(error);
+					uni.hideLoading();
 					uni.showToast({
 						icon:'none',
 						title:'提交失败，请重试'
-					})
+					});
 				})
 			},
 			submitPic(){
@@ -246,18 +256,27 @@
 						Authorization:'bearer ' + this.token
 					},
 					success: (res) => {
-						let err = res.data.err;
+						let ret = JSON.parse(res.data);
+						let err = ret.err;
 						if (err != 0){
+							uni.hideLoading();
 							uni.showToast({
 								title:'上传失败，请重试'
 							})
 						}else{
+							uni.hideLoading();
 							uni.navigateBack();
 							uni.showToast({
 								icon:'success',
 								title:'提交成功'
 							})
 						}
+					},
+					fail: (error) => {
+						uni.hideLoading();
+						uni.showToast({
+							title:'图片上传失败'
+						})
 					}
 				})
 			},

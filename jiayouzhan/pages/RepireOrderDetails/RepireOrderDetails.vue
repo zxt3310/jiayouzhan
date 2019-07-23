@@ -30,9 +30,8 @@
 				
 				<view class="infodetail">
 					<view style="width: 20%;align-self: flex-start;">故障图片</view>
-					<view class="pic" v-for="(img,index) in order.pic" :key="index">
-						<!-- <image :src="img" mode=""></image> -->
-						abc
+					<view class="picture">
+						<image :src="img" :data-src="img" mode="aspectFill" v-for="(img) in order.pic" @tap="previewImage"></image>
 					</view>
 				</view>
 			</view>
@@ -63,7 +62,7 @@
 					<text>587923（请将验证码告知上门维修人员）</text>
 				</view> -->
 			</view>
-			
+				
 			<view class="title">
 				<view class="tag">
 					<image src="../../static/img/icoTag.png" mode=""></image>
@@ -112,7 +111,6 @@
 					"gas_station_id": "",
 					"faulty_item": "",
 					"faulty_desc": "",
-					"pic": "",
 					"contact": "",
 					"contact_phone": "",
 					"order_taker": "",
@@ -128,7 +126,7 @@
 					"address": "",
 					"rating_a": 0,
 					"rating_q": 0,
-					pic:[]
+					"pic":[]
 				},
 				statusText:[
 					'待处理',
@@ -173,7 +171,14 @@
 						}
 					}
 				});
-			}
+			},
+			previewImage: function(e) {
+				var current = e.target.dataset.src
+				uni.previewImage({
+					current: current,
+					urls: this.order.pic
+				})
+			},
 		},
 		onLoad(option){
 			console.log(option);
@@ -251,5 +256,16 @@
 			}
 		}
 	}
-	
+	.picture {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 80%;
+		image{
+			margin-right: 20upx;
+			margin-bottom: 20upx;
+			width: 30vw;
+			height: 30vw;
+		}
+	}
 </style>

@@ -84,4 +84,25 @@
           color: #909090;
           width: 20%;
 }
+.picture {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  width: 80%;
+}
+.picture image {
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+    width: 30vw;
+    height: 30vw;
+}
 

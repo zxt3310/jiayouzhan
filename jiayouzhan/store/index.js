@@ -48,6 +48,9 @@ const store = new Vuex.Store({
 		logPhone(state,phone){
 			state.userPhone = phone;
 		},
+		logAuthor(state,author){
+			state.token = author;
+		},
         logout(state) {
             state.userName = "";
             state.hasLogin = false;

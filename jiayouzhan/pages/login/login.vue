@@ -54,7 +54,7 @@
         },
         computed: mapState(['forcedLogin']),
         methods: {
-            ...mapMutations(['login','logPhone']),
+            ...mapMutations(['login','logPhone','logAuthor']),
             initProvider() {
                 const filters = ['weixin', 'qq', 'sinaweibo'];
                 uni.getProvider({
@@ -138,7 +138,6 @@
 					console.log(response);
 					//存token
 					var token = response.accessToken;
-					console.log(typeof(token));
 					
 					var userInfo = {
 						token:token,
@@ -157,6 +156,7 @@
 					console.log(response.mobile);
 					that.login(response.name);
 					that.logPhone(response.mobile);
+					that.logAuthor(token);
 					that.toMain();
 					
 				}).catch(function(error){
