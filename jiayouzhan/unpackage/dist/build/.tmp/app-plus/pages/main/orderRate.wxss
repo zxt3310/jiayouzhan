@@ -54,7 +54,6 @@
     height: 88rpx;
     background-color: #1c713d;
     color: white;
-    -webkit-border-radius: 5px;
-            border-radius: 5px;
+    border-radius: 5px;
 }
 

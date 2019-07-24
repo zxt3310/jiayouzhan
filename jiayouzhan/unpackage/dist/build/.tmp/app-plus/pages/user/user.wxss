@@ -15,9 +15,8 @@
 .headBar .headerimg {
     width: 140rpx;
     height: 140rpx;
-    background-color: black;
-    -webkit-border-radius: 70rpx;
-            border-radius: 70rpx;
+    background-color: lightgrey;
+    border-radius: 70rpx;
 }
 .headBar .headerInfo {
     display: -webkit-box;
