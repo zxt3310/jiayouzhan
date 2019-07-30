@@ -15,10 +15,9 @@
   border-width: 1px;
   border-color: #c7c7c7;
 }
-.logo view {
+.logo image {
     height: 216rpx;
     width: 216rpx;
-    background-color: #1c713d;
 }
 .input-row {
   margin-top: 40rpx;

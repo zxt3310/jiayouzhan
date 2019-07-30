@@ -2,7 +2,7 @@
     <view class="content">
 		
 		<view class="logo">
-			<view/>
+			<image src="../../static/img/logo_120.png" mode=""></image>
 		</view>
 		
         <view class="input-group">
@@ -218,10 +218,9 @@
 		align-items: center;
 		border-width: 1px;
 		border-color: #c7c7c7;
-		view{
+		image{
 			height: 216upx;
 			width: 216upx;
-			background-color: #1c713d;
 		}
 	}
 	
